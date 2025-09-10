@@ -84,11 +84,9 @@ export default function NewsPage() {
                         <span className="text-xs text-neutral-400">+{news.tags.length - 2}</span>
                       )}
                     </div>
-                    <Button asChild variant="ghost" size="sm" className="group">
-                      <Link href={`/news/${news.slug}`}>
-                        続きを読む
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                    <Button as="a" href={`/news/${news.slug}`} className="group px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+                      続きを読む
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
                 </CardContent>
@@ -121,11 +119,11 @@ export default function NewsPage() {
             いち早くお知らせいたします。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="blue">
-              <Link href="/contact">お問い合わせ</Link>
+            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              お問い合わせ
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/brands">ブランドを見る</Link>
+            <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md hover:bg-white hover:text-primary">
+              サービスを見る
             </Button>
           </div>
         </div>

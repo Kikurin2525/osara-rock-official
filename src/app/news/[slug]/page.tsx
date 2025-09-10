@@ -53,11 +53,9 @@ export default function NewsDetailPage({ params }: Props) {
       {/* ナビゲーション */}
       <section className="py-8 bg-white border-b border-neutral-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/news">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              ニュース一覧に戻る
-            </Link>
+          <Button as="a" href="/news" className="px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            ニュース一覧に戻る
           </Button>
         </div>
       </section>
@@ -148,11 +146,9 @@ export default function NewsDetailPage({ params }: Props) {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Button asChild variant="outline">
-                <Link href="/news">
-                  ニュース一覧を見る
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+              <Button as="a" href="/news" className="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+                ニュース一覧を見る
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
           </div>
@@ -170,11 +166,11 @@ export default function NewsDetailPage({ params }: Props) {
             お気軽にお声がけください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="blue">
-              <Link href="/contact">お問い合わせ</Link>
+            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              お問い合わせ
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/locations">拠点を探す</Link>
+            <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md hover:bg-white hover:text-primary">
+              サービスを見る
             </Button>
           </div>
         </div>

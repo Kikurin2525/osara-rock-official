@@ -15,11 +15,9 @@ export default function PrivacyPage() {
       {/* ナビゲーション */}
       <section className="py-6 bg-white border-b border-neutral-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/contact">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              お問い合わせページに戻る
-            </Link>
+          <Button as="a" href="/contact" className="px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            お問い合わせページに戻る
           </Button>
         </div>
       </section>
@@ -150,8 +148,8 @@ export default function PrivacyPage() {
           <p className="text-neutral-600 mb-6">
             ご不明な点がございましたら、お気軽にお問い合わせください。
           </p>
-          <Button asChild variant="blue">
-            <Link href="/contact">お問い合わせ</Link>
+          <Button as="a" href="/contact" className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            お問い合わせ
           </Button>
         </div>
       </section>

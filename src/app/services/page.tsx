@@ -73,8 +73,8 @@ export default function ServicesPage() {
                     清潔で安心できる環境と、お客様目線のサービスで、<br />
                     皆様の特別な時間をサポートいたします。
                   </p>
-                  <Button asChild variant="blue" size="lg">
-                    <Link href="/contact">詳しくお問い合わせ</Link>
+                  <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    詳しくお問い合わせ
                   </Button>
                 </CardContent>
               </Card>
@@ -99,8 +99,8 @@ export default function ServicesPage() {
                     幅広くサポートいたします。<br />
                     新規開業から既存事業の改善まで、お気軽にご相談ください。
                   </p>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/contact">詳しくお問い合わせ</Link>
+                  <Button as="a" href="/contact" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+                    詳しくお問い合わせ
                   </Button>
                 </CardContent>
               </Card>
@@ -120,11 +120,11 @@ export default function ServicesPage() {
             何でもお気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="blue">
-              <Link href="/contact">お問い合わせ</Link>
+            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              お問い合わせ
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/about">会社概要</Link>
+            <Button as="a" href="/about" className="px-6 py-3 text-base border border-white text-white rounded-md hover:bg-white hover:text-primary">
+              会社概要
             </Button>
           </div>
         </div>

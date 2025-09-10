@@ -259,9 +259,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      size="lg"
-                      variant="blue"
-                      className="w-full"
+                      className="w-full px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
                       aria-describedby={submitStatus.type ? 'form-status' : undefined}
                     >
                       {isSubmitting ? (

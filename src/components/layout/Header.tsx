@@ -48,20 +48,19 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button asChild variant="blue" size="sm">
-              <Link href="/contact">お問い合わせ</Link>
+            <Button as="a" href="/contact" className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              お問い合わせ
             </Button>
           </div>
 
           {/* モバイルメニューボタン */}
           <div className="lg:hidden">
             <Button
-              variant="ghost"
-              size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+              className="p-2 rounded-md hover:bg-gray-100"
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -87,10 +86,8 @@ export function Header() {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button asChild variant="blue" className="w-full">
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    お問い合わせ
-                  </Link>
+                <Button as="a" href="/contact" className="w-full px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700" onClick={() => setMobileMenuOpen(false)}>
+                  お問い合わせ
                 </Button>
               </div>
             </div>

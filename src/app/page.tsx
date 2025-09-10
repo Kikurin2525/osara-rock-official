@@ -17,11 +17,11 @@ export default function HomePage() {
             あなたの大切な時間と物語をサポートします。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="blue">
-              <Link href="/services">サービスを見る</Link>
+            <Button as="a" href="/services" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              サービスを見る
             </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/contact">お問い合わせ</Link>
+            <Button as="a" href="/contact" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+              お問い合わせ
             </Button>
           </div>
         </div>
@@ -147,8 +147,8 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild size="lg" variant="outline">
-              <Link href="/services">サービス詳細を見る</Link>
+            <Button as="a" href="/services" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+              サービス詳細を見る
             </Button>
           </div>
         </div>
@@ -163,8 +163,8 @@ export default function HomePage() {
           <p className="text-xl text-white/90 mb-8">
             サービスについてのご質問やご相談など、何でもお気軽にどうぞ。
           </p>
-          <Button asChild size="lg" variant="blue">
-            <Link href="/contact">お問い合わせ</Link>
+          <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            お問い合わせ
           </Button>
         </div>
       </section>
