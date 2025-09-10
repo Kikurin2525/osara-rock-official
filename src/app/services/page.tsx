@@ -73,8 +73,14 @@ export default function ServicesPage() {
                     清潔で安心できる環境と、お客様目線のサービスで、<br />
                     皆様の特別な時間をサポートいたします。
                   </p>
-                  <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
-                    詳しくお問い合わせ
+                  <Button 
+                    as="a" 
+                    href="https://linktr.ee/osara_rock"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 text-base bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-full hover:from-amber-500 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                  >
+                    📍 運営スペース一覧を見る
                   </Button>
                 </CardContent>
               </Card>
