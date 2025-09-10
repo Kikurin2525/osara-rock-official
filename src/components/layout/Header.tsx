@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center space-x-3">
               <Image 
                 src="/logo1.png" 
                 alt="Osara Rock" 
@@ -32,6 +32,11 @@ export function Header() {
                 priority
                 className="h-8 sm:h-10 w-auto"
               />
+              <div className="hidden sm:block">
+                <span className="text-lg font-semibold text-black">
+                  オサラロック
+                </span>
+              </div>
             </Link>
           </div>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { companyInfo } from '@/data/company';
 import { Instagram, Twitter } from 'lucide-react';
 
@@ -21,12 +22,16 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* 会社情報 */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OR</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image 
+                src="/logo1.png" 
+                alt="Osara Rock" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto"
+              />
               <div>
-                <h3 className="text-lg font-semibold text-primary">
+                <h3 className="text-lg font-semibold text-black">
                   オサラロック
                 </h3>
                 <p className="text-xs text-neutral-600 -mt-1">
