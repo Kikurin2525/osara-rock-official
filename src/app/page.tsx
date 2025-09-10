@@ -39,13 +39,17 @@ export default function HomePage() {
       {/* サービス紹介 */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 relative">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               サービス
             </h2>
-            <p className="text-lg text-neutral-600">
-              2つのメイン事業でお客様をサポート
-            </p>
+            <div className="flex items-center justify-center mb-6">
+              <div className="h-1 w-16 bg-gradient-to-r from-primary to-primary-blue rounded-full mr-4"></div>
+              <p className="text-lg text-neutral-600 font-medium px-6 py-2 bg-gradient-to-r from-amber-50 to-orange-50 rounded-full border-2 border-primary/20">
+                2つのメイン事業でお客様をサポート
+              </p>
+              <div className="h-1 w-16 bg-gradient-to-r from-primary-blue to-primary rounded-full ml-4"></div>
+            </div>
           </div>
 
           <div className="space-y-16">
@@ -111,6 +115,18 @@ export default function HomePage() {
                     <p className="text-sm opacity-90">とらのワークスペース</p>
                   </div>
                 </div>
+              </div>
+              
+              <div className="text-center mt-8">
+                <Button 
+                  as="a" 
+                  href="https://linktr.ee/osara_rock"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 text-base bg-gradient-to-r from-primary to-primary-blue text-white rounded-full hover:from-primary-navy hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                >
+                  📍 運営スペース一覧を見る
+                </Button>
               </div>
             </div>
 
