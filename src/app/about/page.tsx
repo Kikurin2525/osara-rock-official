@@ -185,43 +185,28 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-12 text-center">
               代表メッセージ
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* 画像 */}
-              <div className="order-2 lg:order-1">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                  <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="代表取締役のポートレート"
-                    fill
-                    className="object-cover"
-                  />
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-lg">
+                <div className="text-lg text-neutral-700 leading-relaxed space-y-6">
+                  <p>
+                    株式会社オサラロックは、2021年の創業以来、「人の大切な時間と物語を受け止めるお皿」として、
+                    多くのお客様の特別な瞬間をサポートしてまいりました。
+                  </p>
+                  <p>
+                    ダンスの練習に励む方、大切な仲間との時間を過ごす方、理想の写真撮影を求める方、
+                    集中して作業したい方——様々な「物語」を持つお客様お一人おひとりに寄り添い、
+                    最高の体験をご提供することが私たちの使命です。
+                  </p>
+                  <p>
+                    これからも「Rock Your Story, We&apos;re the Plate.」の理念のもと、
+                    お客様の物語をしっかりと受け止められる存在として、
+                    さらなるサービスの向上と新しい価値の創造に取り組んでまいります。
+                  </p>
                 </div>
-              </div>
-              
-              {/* メッセージ */}
-              <div className="order-1 lg:order-2">
-                <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-lg">
-                  <div className="text-lg text-neutral-700 leading-relaxed space-y-6">
-                    <p>
-                      株式会社オサラロックは、2021年の創業以来、「人の大切な時間と物語を受け止めるお皿」として、
-                      多くのお客様の特別な瞬間をサポートしてまいりました。
-                    </p>
-                    <p>
-                      ダンスの練習に励む方、大切な仲間との時間を過ごす方、理想の写真撮影を求める方、
-                      集中して作業したい方——様々な「物語」を持つお客様お一人おひとりに寄り添い、
-                      最高の体験をご提供することが私たちの使命です。
-                    </p>
-                    <p>
-                      これからも「Rock Your Story, We&apos;re the Plate.」の理念のもと、
-                      お客様の物語をしっかりと受け止められる存在として、
-                      さらなるサービスの向上と新しい価値の創造に取り組んでまいります。
-                    </p>
-                  </div>
-                  <div className="mt-8 pt-6 border-t border-neutral-200">
-                    <p className="text-lg font-semibold text-primary">
-                      株式会社オサラロック　代表取締役
-                    </p>
-                  </div>
+                <div className="mt-8 pt-6 border-t border-neutral-200">
+                  <p className="text-lg font-semibold text-primary">
+                    株式会社オサラロック　代表取締役
+                  </p>
                 </div>
               </div>
             </div>

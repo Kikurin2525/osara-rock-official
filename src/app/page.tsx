@@ -12,7 +12,7 @@ export default function HomePage() {
             src="/hero.jpg"
             alt="オサラロック ヒーロー背景"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-40"
             priority
           />
         </div>
@@ -25,14 +25,6 @@ export default function HomePage() {
             ダンススタジオから姫系フォトスタジオまで、<br />
             あなたの大切な時間と物語をサポートします。
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button as="a" href="/services" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              サービスを見る
-            </Button>
-            <Button as="a" href="/contact" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
-              お問い合わせ
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -43,13 +35,9 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               サービス
             </h2>
-            <div className="flex items-center justify-center mb-6">
-              <div className="h-1 w-16 bg-gradient-to-r from-primary to-primary-blue rounded-full mr-4"></div>
-              <p className="text-lg text-neutral-600 font-medium px-6 py-2 bg-gradient-to-r from-amber-50 to-orange-50 rounded-full border-2 border-primary/20">
-                2つのメイン事業でお客様をサポート
-              </p>
-              <div className="h-1 w-16 bg-gradient-to-r from-primary-blue to-primary rounded-full ml-4"></div>
-            </div>
+            <p className="text-lg text-neutral-600">
+              2つのメイン事業でお客様をサポート
+            </p>
           </div>
 
           <div className="space-y-16">

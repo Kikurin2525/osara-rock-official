@@ -33,7 +33,7 @@ export default function ServicesPage() {
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
             alt="モダンなオフィス空間での会議の様子"
             fill
-            className="object-cover opacity-5"
+            className="object-cover opacity-40"
             priority
           />
         </div>

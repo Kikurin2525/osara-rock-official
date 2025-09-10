@@ -32,7 +32,7 @@ export default function NewsPage() {
             src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
             alt="ニュースや最新情報を伝える新聞やメディアのイメージ"
             fill
-            className="object-cover opacity-5"
+            className="object-cover opacity-40"
             priority
           />
         </div>
