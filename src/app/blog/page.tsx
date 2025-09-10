@@ -10,7 +10,44 @@ export const metadata: Metadata = {
   description: '株式会社オサラロックのブログ。業界の最新情報や経営者の思い、スタッフの声などをお届けします。',
 };
 
-const blogPosts = [];
+type BlogPost = {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  category: string;
+};
+
+const blogPosts: BlogPost[] = [
+  {
+    slug: "self-photo-basics",
+    title: "スマホ1台でOK！セルフフォト初心者の始め方",
+    description:
+      "推し活やコスプレでセルフフォトをはじめたい人へ。スマホだけで失敗しない3ステップ。",
+    date: "2025-09-09",
+    tags: ["撮影", "推し活", "初心者"],
+    category: "撮影",
+  },
+  {
+    slug: "first-dance-studio",
+    title: "ダンス初心者でも安心！レンタルスタジオの使い方",
+    description:
+      "予約から当日の流れ、片付けまで。失敗しないチェックポイントを初心者向けに解説。",
+    date: "2025-09-09",
+    tags: ["ダンス", "スタジオ", "初心者"],
+    category: "ダンス",
+  },
+  {
+    slug: "birthday-party-2hours",
+    title: "2時間で楽しむ！初心者向けバースデーパーティの進め方",
+    description:
+      "準備30分・本番80分・片付け10分。最低限の飾り付けで“映える”空間を作るコツ。",
+    date: "2025-09-09",
+    tags: ["パーティ", "生誕祭", "初心者"],
+    category: "パーティ",
+  },
+];
 
 const categories = [
   { id: 'all', name: '全て' },
