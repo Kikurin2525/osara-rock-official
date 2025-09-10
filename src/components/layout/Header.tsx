@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Menu, X } from 'lucide-react';
@@ -22,18 +23,15 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* ロゴ */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OR</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-lg font-semibold text-primary">
-                  オサラロック
-                </span>
-                <p className="text-xs text-neutral-600 -mt-1">
-                  Osara Rock Inc.
-                </p>
-              </div>
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo1.png" 
+                alt="Osara Rock" 
+                width={120} 
+                height={40} 
+                priority
+                className="h-8 sm:h-10 w-auto"
+              />
             </Link>
           </div>
 
