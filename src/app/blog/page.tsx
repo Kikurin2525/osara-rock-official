@@ -56,3 +56,31 @@ const blogPosts: BlogPost[] = [
     imageUrl: "/images/blog/party.jpg",
   },
 ];
+
+export default function BlogPage() {
+  return (
+    <main className="container mx-auto max-w-5xl px-4 py-10">
+      <h1 className="text-3xl font-bold mb-6">ブログ</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPosts.map((post) => (
+          <article
+            key={post.id}
+            className="rounded-xl border bg-white/5 p-5 hover:shadow-lg transition"
+          >
+            <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+            <p className="text-sm text-neutral-500 mb-3">{post.date}</p>
+            <p className="text-neutral-300 mb-4">{post.description}</p>
+            {/* 画像を使う場合だけ表示（imageUrlは型でoptionalにしてある） */}
+            {post.imageUrl ? (
+              <div className="rounded-lg overflow-hidden">
+                {/* next/image をもうimportしてあるならOK */}
+                <Image src={post.imageUrl} alt={post.title} width={600} height={360} />
+              </div>
+            ) : null}
+          </article>
+        ))}
+      </div>
+    </main>
+  );
+}
