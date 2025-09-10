@@ -31,9 +31,9 @@ export default function HomePage() {
       </section>
 
       {/* サービス紹介 */}
-      <section className="py-20 bg-gradient-to-br from-primary-navy to-primary">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16 relative">
+          <div className="text-center mb-16 relative bg-gradient-to-br from-primary-navy to-primary py-8 rounded-2xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
               サービス
             </h2>
@@ -46,8 +46,8 @@ export default function HomePage() {
             {/* レンタルスペース事業 */}
             <div>
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">レンタルスペース事業</h3>
-                <p className="text-white/80">お客様の大切な時間と物語をサポートするスペースを運営</p>
+                <h3 className="text-2xl font-bold text-primary mb-2">レンタルスペース事業</h3>
+                <p className="text-neutral-600">お客様の大切な時間と物語をサポートするスペースを運営</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
@@ -123,10 +123,10 @@ export default function HomePage() {
             {/* 運営代行・コンサルティング事業 */}
             <div>
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">運営代行・コンサルティング事業</h3>
-                <p className="text-white/80">豊富な実績とノウハウで事業成功をサポート</p>
+                <h3 className="text-2xl font-bold text-primary mb-2">運営代行・コンサルティング事業</h3>
+                <p className="text-neutral-600">豊富な実績とノウハウで事業成功をサポート</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
+              <div className="bg-neutral-50 rounded-lg p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                   <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                     <Image
@@ -140,19 +140,19 @@ export default function HomePage() {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-white/90">新規開業・立地選定・設備計画</span>
+                        <span className="text-neutral-700">新規開業・立地選定・設備計画</span>
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-white/90">運営代行・日々の管理業務</span>
+                        <span className="text-neutral-700">運営代行・日々の管理業務</span>
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-white/90">利用率向上・収益最適化</span>
+                        <span className="text-neutral-700">利用率向上・収益最適化</span>
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-white/90">マーケティング・ブランディング支援</span>
+                        <span className="text-neutral-700">マーケティング・ブランディング支援</span>
                       </li>
                     </ul>
                   </div>
