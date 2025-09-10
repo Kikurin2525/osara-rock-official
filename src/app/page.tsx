@@ -30,10 +30,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* サービス紹介 */}
-      <section className="py-20 bg-white">
+      {/* サービスタイトル */}
+      <section className="py-12 bg-gradient-to-br from-primary-navy to-primary">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16 relative bg-gradient-to-br from-primary-navy to-primary py-8 rounded-2xl">
+          <div className="text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
               サービス
             </h2>
@@ -41,6 +41,12 @@ export default function HomePage() {
               2つのメイン事業でお客様をサポート
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* サービス詳細 */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
 
           <div className="space-y-16">
             {/* レンタルスペース事業 */}
@@ -169,10 +175,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 実績・数字で見るオサラロック */}
-      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
+      {/* 実績タイトル */}
+      <section className="py-12 bg-gradient-to-br from-primary-navy/20 to-primary/20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
               数字で見るオサラロック
             </h2>
@@ -180,6 +186,12 @@ export default function HomePage() {
               お客様に選ばれ続ける理由
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* 実績・数字 */}
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 直営店舗数 */}
