@@ -6,7 +6,7 @@ import { ArrowLeft, PartyPopper, Clock, Gift } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '2時間で楽しむ！初心者向けバースデーパーティの進め方',
-  description: '準備30分・本番80分・片付け10分。最低限の飾り付けで"映える"空間を作るコツ。',
+  description: '準備30分・本番80分・片付け10分。最低限の飾り付けで&quot;映える&quot;空間を作るコツ。',
 };
 
 export default function BirthdayParty2HoursPage() {
@@ -42,7 +42,7 @@ export default function BirthdayParty2HoursPage() {
             </h1>
             <p className="text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
               準備30分・本番80分・片付け10分。<br />
-              最低限の飾り付けで"映える"空間を作るコツ。
+              最低限の飾り付けで&quot;映える&quot;空間を作るコツ。
             </p>
             <div className="mt-8 text-sm text-neutral-500">
               公開日：2025年9月9日

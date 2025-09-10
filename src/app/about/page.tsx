@@ -93,7 +93,7 @@ export default function AboutPage() {
                   {companyInfo.mission}
                 </p>
                 <p className="text-white/90 leading-relaxed">
-                  人々の大切な時間と物語を受け止める"お皿"として、<br />
+                  人々の大切な時間と物語を受け止める&quot;お皿&quot;として、<br />
                   付加価値・楽しさ・喜び・思い出を提供し続ける。<br />
                   私たちは、レンタルスペース・スタジオを通じて、<br />
                   利用者一人ひとりの体験を豊かにし、安心と笑顔を届けます。
