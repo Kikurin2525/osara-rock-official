@@ -1,103 +1,173 @@
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col">
+      {/* ヒーローセクション */}
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-neutral-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+            思い出を受け止める、<br />
+            <span className="text-primary-blue">お皿のような場所づくり</span>
+          </h1>
+          <p className="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
+            ダンススタジオから姫系フォトスタジオまで、<br />
+            あなたの大切な時間と物語をサポートします。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="blue">
+              <Link href="/services">サービスを見る</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/contact">お問い合わせ</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* サービス紹介 */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              サービス
+            </h2>
+            <p className="text-lg text-neutral-600">
+              2つのメイン事業でお客様をサポート
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* レンタルスペース事業 */}
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-primary mb-2">レンタルスペース事業</h3>
+                <p className="text-neutral-600">お客様の大切な時間と物語をサポートするスペースを運営</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="ダンススタジオ"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold">ダンススタジオ</h4>
+                    <p className="text-sm opacity-90">誰でも気軽に使えるスタジオ設計</p>
+                  </div>
+                </div>
+
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="姫系フォトスタジオ"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold">推し活に最適な姫系スタジオ</h4>
+                    <p className="text-sm opacity-90">Tiarina</p>
+                  </div>
+                </div>
+
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="パーティスペース"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold">最高の思い出の1ページを</h4>
+                    <p className="text-sm opacity-90">パーティスペース</p>
+                  </div>
+                </div>
+
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
+                  <Image
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="ワークスペース"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold">ワークスペース</h4>
+                    <p className="text-sm opacity-90">集中できる環境</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 運営代行・コンサルティング事業 */}
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-primary mb-2">運営代行・コンサルティング事業</h3>
+                <p className="text-neutral-600">豊富な実績とノウハウで事業成功をサポート</p>
+              </div>
+              <div className="bg-neutral-50 rounded-lg p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="コンサルティング"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-neutral-700">新規開業・立地選定・設備計画</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-neutral-700">運営代行・日々の管理業務</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-neutral-700">利用率向上・収益最適化</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-neutral-700">マーケティング・ブランディング支援</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/services">サービス詳細を見る</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* お問い合わせ */}
+      <section className="py-20 bg-primary text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            お気軽にお問い合わせください
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            サービスについてのご質問やご相談など、何でもお気軽にどうぞ。
+          </p>
+          <Button asChild size="lg" variant="blue">
+            <Link href="/contact">お問い合わせ</Link>
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
