@@ -59,8 +59,34 @@ const blogPosts: BlogPost[] = [
 
 export default function BlogPage() {
   return (
-    <main className="container mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-bold mb-6">ブログ</h1>
+    <div className="flex flex-col">
+      {/* ヒーローセクション */}
+      <section className="relative bg-gradient-to-br from-neutral-50 to-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="ブログ・記事・情報発信のイメージ"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
+              ブログ
+            </h1>
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              業界の最新情報や経営者の思い、スタッフの声など、<br className="hidden sm:block" />
+              株式会社オサラロックからのメッセージをお届けします。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ブログ一覧 */}
+      <section className="py-20 bg-neutral-50">
+        <main className="container mx-auto max-w-5xl px-4">
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
@@ -80,7 +106,9 @@ export default function BlogPage() {
             ) : null}
           </article>
         ))}
-      </div>
-    </main>
+        </div>
+        </main>
+      </section>
+    </div>
   );
 }

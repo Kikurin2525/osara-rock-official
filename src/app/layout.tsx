@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     default: "株式会社オサラロック | レンタルスペース・スタジオ運営",
     template: "%s | 株式会社オサラロック",
   },
+  icons: {
+    icon: '/logo1.png',
+    shortcut: '/logo1.png',
+    apple: '/logo1.png',
+  },
   description: "株式会社オサラロックは、ダンススタジオ、パーティスペース、フォトスタジオ、ワークスペースを運営しています。思い出を受け止める、お皿のような場所づくりをお手伝いします。",
   keywords: ["レンタルスペース", "ダンススタジオ", "パーティスペース", "フォトスタジオ", "ワークスペース", "貸し会議室"],
   authors: [{ name: "株式会社オサラロック" }],

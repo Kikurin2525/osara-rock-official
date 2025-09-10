@@ -39,12 +39,11 @@ export default function ServicesPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
               サービス
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              レンタルスペース事業から運営代行・コンサルティングまで、<br />
-              お客様の成功を支える幅広いサービスをご提供します。
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              レンタルスペース事業から運営代行・<br className="hidden sm:block" />コンサルティングまで、お客様の成功を<br className="hidden sm:block" />支える幅広いサービスをご提供します。
             </p>
           </div>
         </div>
@@ -118,11 +117,11 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
             お気軽にお問い合わせください
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            サービスについてのご質問やご相談など、<br />
+          <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            サービスについてのご質問やご相談など、<br className="hidden sm:block" />
             何でもお気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

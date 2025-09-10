@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* ヒーローセクション */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-neutral-50 to-white">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-neutral-50 to-white">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero.jpg"
@@ -16,13 +16,13 @@ export default function HomePage() {
             priority
           />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-            思い出を受け止める、<br />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+            思い出を受け止める、<br className="hidden sm:block" />
             <span className="text-primary-blue">お皿のような場所づくり</span>
           </h1>
-          <p className="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
-            ダンススタジオから姫系フォトスタジオまで、<br />
+          <p className="text-lg sm:text-xl text-neutral-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            ダンススタジオから姫系フォトスタジオまで、<br className="hidden sm:block" />
             あなたの大切な時間と物語をサポートします。
           </p>
         </div>
@@ -32,10 +32,10 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16 relative">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
               サービス
             </h2>
-            <p className="text-lg text-neutral-600">
+            <p className="text-base sm:text-lg text-neutral-600">
               2つのメイン事業でお客様をサポート
             </p>
           </div>
@@ -171,10 +171,10 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
               数字で見るオサラロック
             </h2>
-            <p className="text-lg text-neutral-600">
+            <p className="text-base sm:text-lg text-neutral-600">
               お客様に選ばれ続ける理由
             </p>
           </div>
@@ -229,11 +229,11 @@ export default function HomePage() {
       {/* お問い合わせ */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
             お気軽にお問い合わせください
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            サービスについてのご質問やご相談など、何でもお気軽にどうぞ。
+          <p className="text-lg sm:text-xl text-white/90 mb-8">
+            サービスについてのご質問やご相談など、<br className="hidden sm:block" />何でもお気軽にどうぞ。
           </p>
           <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
             お問い合わせ

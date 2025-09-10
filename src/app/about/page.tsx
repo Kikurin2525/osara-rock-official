@@ -45,14 +45,23 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* ヒーローセクション */}
-      <section className="bg-gradient-to-br from-neutral-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-neutral-50 to-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="会社概要・オフィス環境のイメージ"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
               会社概要
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              思い出を受け止める、お皿のような場所づくり。<br />
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              思い出を受け止める、お皿のような場所づくり。<br className="hidden sm:block" />
               株式会社オサラロックの理念と歩みをご紹介します。
             </p>
           </div>

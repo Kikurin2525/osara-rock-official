@@ -38,11 +38,11 @@ export default function NewsPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
               ニュース
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              新店舗情報やキャンペーン、各種お知らせなど、<br />
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              新店舗情報やキャンペーン、各種お知らせなど、<br className="hidden sm:block" />
               株式会社オサラロックの最新情報をお届けします。
             </p>
           </div>
