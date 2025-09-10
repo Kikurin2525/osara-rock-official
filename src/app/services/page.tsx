@@ -78,7 +78,7 @@ export default function ServicesPage() {
                     href="https://linktr.ee/osara_rock"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-8 py-3 text-base bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-full hover:from-amber-500 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                    className="px-8 py-3 text-base bg-gradient-to-r from-primary to-primary-blue text-white rounded-full hover:from-primary-navy hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                   >
                     📍 運営スペース一覧を見る
                   </Button>
