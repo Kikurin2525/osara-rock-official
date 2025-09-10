@@ -65,7 +65,7 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="font-semibold">誰でも使いやすいダンススタジオ DAYS</h4>
+                    <h4 className="font-semibold">誰でも使いやすいダンススタジオ</h4>
                     <p className="text-sm opacity-90">DAYS</p>
                   </div>
                 </div>
@@ -86,29 +86,29 @@ export default function HomePage() {
 
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
                   <Image
-                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="パーティスペース"
+                    src="/party.jpeg"
+                    alt="パーティスペース Rays・cotton"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h4 className="font-semibold">最高の思い出の1ページを</h4>
-                    <p className="text-sm opacity-90">パーティスペース</p>
+                    <p className="text-sm opacity-90">パーティスペース（Rays・cotton etc.）</p>
                   </div>
                 </div>
 
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
                   <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="ワークスペース"
+                    src="/torano.jpeg"
+                    alt="とらのワークスペース"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="font-semibold">ワークスペース</h4>
-                    <p className="text-sm opacity-90">集中できる環境</p>
+                    <h4 className="font-semibold">最高に集中できる環境</h4>
+                    <p className="text-sm opacity-90">とらのワークスペース</p>
                   </div>
                 </div>
               </div>
@@ -159,6 +159,65 @@ export default function HomePage() {
             <Button as="a" href="/services" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
               サービス詳細を見る
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 実績・数字で見るオサラロック */}
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              数字で見るオサラロック
+            </h2>
+            <p className="text-lg text-neutral-600">
+              お客様に選ばれ続ける理由
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 直営店舗数 */}
+            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-primary mb-2">19</div>
+              <div className="text-lg font-semibold text-neutral-800 mb-1">直営店舗</div>
+              <div className="text-sm text-neutral-600">2025年9月現在</div>
+            </div>
+
+            {/* 運営年数 */}
+            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-primary mb-2">4年+</div>
+              <div className="text-lg font-semibold text-neutral-800 mb-1">運営実績</div>
+              <div className="text-sm text-neutral-600">2021年創業以来</div>
+            </div>
+
+            {/* 満足度 */}
+            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary-blue" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-primary mb-2">4.7★</div>
+              <div className="text-lg font-semibold text-neutral-800 mb-1">お客様満足度</div>
+              <div className="text-sm text-neutral-600">スペースマーケット・インスタベース平均</div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-lg text-neutral-700 font-medium">
+              多くのお客様にご愛用いただき、<br className="sm:hidden" />
+              高い評価をいただいております
+            </p>
           </div>
         </div>
       </section>
