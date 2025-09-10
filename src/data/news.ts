@@ -99,7 +99,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     id: '001',
-    title: '【新規オープン】北千住駅3分✨ 推し活・生誕祭にぴったりの姫系撮影スタジオ「ティアリナ北千住」がOPENしました！💖',
+    title: '北千住にフォトスタジオTiarinaをオープンしました',
     slug: 'tiarina-kitasenju-opening',
     publishDate: '2025-08-26',
     category: '新店舗',

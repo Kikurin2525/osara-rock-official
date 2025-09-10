@@ -31,7 +31,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-09-09",
     tags: ["撮影", "推し活", "初心者"],
     category: "撮影",
-    imageUrl: "/images/blog/self-photo.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "2",
@@ -42,7 +42,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-09-09",
     tags: ["ダンス", "スタジオ", "初心者"],
     category: "ダンス",
-    imageUrl: "/images/blog/dance-studio.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "3",
@@ -53,7 +53,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-09-09",
     tags: ["パーティ", "生誕祭", "初心者"],
     category: "パーティ",
-    imageUrl: "/images/blog/party.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];
 

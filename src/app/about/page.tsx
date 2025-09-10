@@ -93,8 +93,10 @@ export default function AboutPage() {
                   {companyInfo.mission}
                 </p>
                 <p className="text-white/90 leading-relaxed">
-                  人の大切な時間・物語を&ldquo;受け止めるお皿&rdquo;として、
-                  付加価値・楽しさ・喜び・思い出を支えます。
+                  人々の大切な時間と物語を受け止める"お皿"として、<br />
+                  付加価値・楽しさ・喜び・思い出を提供し続ける。<br />
+                  私たちは、レンタルスペース・スタジオを通じて、<br />
+                  利用者一人ひとりの体験を豊かにし、安心と笑顔を届けます。
                 </p>
               </CardContent>
             </Card>
@@ -106,10 +108,27 @@ export default function AboutPage() {
                 </div>
                 <CardTitle className="text-2xl text-primary">ビジョン</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-lg text-neutral-700 leading-relaxed">
-                  {companyInfo.vision}
-                </p>
+              <CardContent className="text-left">
+                <div className="space-y-4 text-neutral-700 leading-relaxed">
+                  <p className="text-lg font-medium">
+                    レンタルスペースで持続可能な事業モデルを確立し、<br />
+                    誰もが活用できる形で提供する。
+                  </p>
+                  <ul className="space-y-3 text-base">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      副業から独立まで、挑戦する人々を支援する仕組みを整備する。
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      「仕事に悩む人」「自由を求める人」が新しいキャリアを築ける道を開く。
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      全国に広がるレンタルスペースを通じて、社会に多様な居場所と機会を生み出す。
+                    </li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>

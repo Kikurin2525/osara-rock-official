@@ -9,7 +9,7 @@ export default function HomePage() {
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-neutral-50 to-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.jpg"
+            src="/top2.jpg"
             alt="オサラロック ヒーロー背景"
             fill
             className="object-cover opacity-40"
