@@ -300,14 +300,15 @@ export default function AboutPage() {
             お客様のニーズに合わせた最適なスペースとサービスをご提案いたします。
             まずはお気軽にお問い合わせください。
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="blue">
-              <Link href="/contact">お問い合わせ</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/services">サービス詳細</Link>
-            </Button>
-          </div>
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md">
+    お問い合わせ
+  </Button>
+
+  <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md">
+    サービスを見る
+  </Button>
+</div>
         </div>
       </section>
     </div>
