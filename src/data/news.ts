@@ -18,7 +18,7 @@ export const newsItems: NewsItem[] = [
     slug: 'days-waseda-opening',
     publishDate: '2025-02-01',
     category: '新店舗',
-    summary: '東京都新宿区早稲田にレンタルスタジオDAYS早稲田店が新規オープン。ダンス練習や音楽活動に最適な環境をご提供いたします。',
+    summary: '早稲田にダンススタジオDAYSがオープン。初心者からプロまで幅広くご利用いただけます。',
     content: `
 # レンタルスタジオDAYS 早稲田店 グランドオープン
 
@@ -63,7 +63,7 @@ export const newsItems: NewsItem[] = [
     slug: 'peace-omiya-opening',
     publishDate: '2025-01-29',
     category: '新店舗',
-    summary: '埼玉県大宮にパーティスペース「ピース大宮」が新規オープン。生誕祭や推し活イベントに最適な空間をご提供いたします。',
+    summary: '大宮駅近くにパーティスペース「ピース大宮」オープン。生誕祭や推し活イベントに最適。',
     content: `
 # パーティスペース「ピース大宮」グランドオープン
 
@@ -103,7 +103,7 @@ export const newsItems: NewsItem[] = [
     slug: 'tiarina-kitasenju-opening',
     publishDate: '2025-08-26',
     category: '新店舗',
-    summary: '2025年9月、北千住駅徒歩3分に「ティアリナ北千住店」がオープン。選べる4つの背景と2種類のゴージャスな家具、さらにレンタルドレスを備えた姫系のセルフ撮影スタジオです。',
+    summary: '北千住駅徒歩3分の姫系フォトスタジオ「ティアリナ」オープン。推し活や生誕祭に最適です。',
     content: `
 # 【新規オープン】北千住駅3分✨ 推し活・生誕祭にぴったりの姫系撮影スタジオ「ティアリナ北千住」がOPENしました！💖
 
@@ -148,7 +148,7 @@ LEDリングライト、スマホ三脚、撮影小物を無料でご利用い�
     slug: 'company-incorporation',
     publishDate: '2024-11-22',
     category: 'お知らせ',
-    summary: '2024年11月、個人事業から法人へと発展。より充実したサービス提供と事業拡大を目指してまいります。',
+    summary: '2024年11月、株式会社オサラロックとして法人化。さらなるサービス向上を目指します。',
     content: `
 # 法人設立のお知らせ
 

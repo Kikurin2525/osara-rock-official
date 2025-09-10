@@ -61,8 +61,8 @@ export default function AboutPage() {
               会社概要
             </h1>
             <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              思い出を受け止める、お皿のような場所づくり。<br className="hidden sm:block" />
-              株式会社オサラロックの理念と歩みをご紹介します。
+              思い出を受け止める、<br className="block sm:hidden" />お皿のような場所づくり。<br />
+              株式会社オサラロックの<br className="block sm:hidden" />理念と歩みをご紹介します。
             </p>
           </div>
         </div>

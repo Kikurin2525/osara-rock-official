@@ -42,8 +42,8 @@ export default function NewsPage() {
               ニュース
             </h1>
             <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              新店舗情報やキャンペーン、各種お知らせなど、<br className="hidden sm:block" />
-              株式会社オサラロックの最新情報をお届けします。
+              新店舗情報やキャンペーン、<br className="block sm:hidden" />各種お知らせなど、<br />
+              株式会社オサラロックの<br className="block sm:hidden" />最新情報をお届けします。
             </p>
           </div>
         </div>
@@ -70,24 +70,15 @@ export default function NewsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-neutral-600 leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-neutral-600 leading-relaxed mb-4">
                     {news.summary}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-wrap gap-1">
-                      {news.tags.slice(0, 2).map((tag) => (
-                        <span key={tag} className="text-xs bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                      {news.tags.length > 2 && (
-                        <span className="text-xs text-neutral-400">+{news.tags.length - 2}</span>
-                      )}
-                    </div>
-                    <Button as="a" href={`/news/${news.slug}`} className="group px-3 py-1 text-sm rounded-md hover:bg-gray-100">
-                      続きを読む
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                  <div className="flex flex-wrap gap-1">
+                    {news.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} className="text-xs bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </CardContent>
               </Card>

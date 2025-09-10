@@ -77,8 +77,8 @@ export default function BlogPage() {
               ブログ
             </h1>
             <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              業界の最新情報や経営者の思い、スタッフの声など、<br className="hidden sm:block" />
-              株式会社オサラロックからのメッセージをお届けします。
+              業界の最新情報や経営者の思い、<br className="block sm:hidden" />スタッフの声など、<br />
+              株式会社オサラロックからの<br className="block sm:hidden" />メッセージをお届けします。
             </p>
           </div>
         </div>

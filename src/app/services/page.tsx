@@ -43,7 +43,8 @@ export default function ServicesPage() {
               サービス
             </h1>
             <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              レンタルスペース事業から運営代行・<br className="hidden sm:block" />コンサルティングまで、お客様の成功を<br className="hidden sm:block" />支える幅広いサービスをご提供します。
+              レンタルスペース事業から<br className="block sm:hidden" />運営代行・コンサルティングまで、<br />
+              お客様の成功を支える<br className="block sm:hidden" />幅広いサービスをご提供します。
             </p>
           </div>
         </div>
@@ -67,10 +68,10 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-white/90 text-lg leading-relaxed mb-8">
-                    ダンススタジオ、フォトスタジオ、パーティスペース、ワークスペースなど、<br />
-                    様々な用途に対応するレンタルスペースを運営しています。<br />
-                    清潔で安心できる環境と、お客様目線のサービスで、<br />
-                    皆様の特別な時間をサポートいたします。
+                    ダンススタジオ、フォトスタジオ、<br className="block sm:hidden" />パーティスペース、<br className="block sm:hidden" />ワークスペースなど、<br />
+                    様々な用途に対応する<br className="block sm:hidden" />レンタルスペースを運営しています。<br />
+                    清潔で安心できる環境と、<br className="block sm:hidden" />お客様目線のサービスで、<br />
+                    皆様の特別な時間を<br className="block sm:hidden" />サポートいたします。
                   </p>
                   <Button 
                     as="a" 
@@ -99,10 +100,10 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-neutral-700 text-lg leading-relaxed mb-8">
-                    これまでの運営経験とノウハウを活かし、<br />
-                    レンタルスペース事業者様の運営代行からコンサルティングまで、<br />
+                    これまでの運営経験と<br className="block sm:hidden" />ノウハウを活かし、<br />
+                    レンタルスペース事業者様の<br className="block sm:hidden" />運営代行から<br className="block sm:hidden" />コンサルティングまで、<br />
                     幅広くサポートいたします。<br />
-                    新規開業から既存事業の改善まで、お気軽にご相談ください。
+                    新規開業から既存事業の改善まで、<br className="block sm:hidden" />お気軽にご相談ください。
                   </p>
                   <Button as="a" href="/contact" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
                     詳しくお問い合わせ
@@ -121,8 +122,8 @@ export default function ServicesPage() {
             お気軽にお問い合わせください
           </h2>
           <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            サービスについてのご質問やご相談など、<br className="hidden sm:block" />
-            何でもお気軽にお問い合わせください。
+            サービスについての<br className="block sm:hidden" />ご質問やご相談など、<br />
+            何でもお気軽に<br className="block sm:hidden" />お問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
