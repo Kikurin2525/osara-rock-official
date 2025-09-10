@@ -7,7 +7,16 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* ヒーローセクション */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-neutral-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero.jpg"
+            alt="オサラロック ヒーロー背景"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
             思い出を受け止める、<br />
             <span className="text-primary-blue">お皿のような場所づくり</span>
@@ -49,22 +58,22 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
                   <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="ダンススタジオ"
+                    src="/DAYS.jpeg"
+                    alt="ダンススタジオ DAYS"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="font-semibold">ダンススタジオ</h4>
-                    <p className="text-sm opacity-90">誰でも気軽に使えるスタジオ設計</p>
+                    <h4 className="font-semibold">誰でも使いやすいダンススタジオ DAYS</h4>
+                    <p className="text-sm opacity-90">DAYS</p>
                   </div>
                 </div>
 
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden group">
                   <Image
-                    src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="姫系フォトスタジオ"
+                    src="/tiarina.jpg"
+                    alt="姫系フォトスタジオ Tiarina"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
