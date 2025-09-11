@@ -6,8 +6,38 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ArrowRight, Calendar, User, Clock, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'ブログ',
-  description: '株式会社オサラロックのブログ。業界の最新情報や経営者の思い、スタッフの声などをお届けします。',
+  title: 'ブログ | 株式会社オサラロック - レンタルスペース運営ノウハウ・業界情報',
+  description: '株式会社オサラロックのブログ。レンタルスペース運営ノウハウ、ダンス・撮影のコツ、業界最新情報、経営者の思いやスタッフの声をお届け。推し活、コスプレ、パーティに役立つ情報が満載です。',
+  keywords: 'ブログ,レンタルスペース,ダンス,撮影,推し活,コスプレ,運営ノウハウ,業界情報',
+  openGraph: {
+    title: 'ブログ | 株式会社オサラロック - レンタルスペース運営ノウハウ・業界情報',
+    description: 'レンタルスペース運営ノウハウ、ダンス・撮影のコツ、業界最新情報、経営者の思いやスタッフの声をお届け。',
+    url: 'https://osara-rock.com/blog',
+    siteName: '株式会社オサラロック',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '株式会社オサラロック ブログ',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ブログ | 株式会社オサラロック',
+    description: 'レンタルスペース運営ノウハウ、ダンス・撮影のコツ、業界最新情報をお届け。',
+    images: ['/og-default.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://osara-rock.com/blog',
+  },
 };
 
 type BlogPost = {
@@ -90,21 +120,27 @@ export default function BlogPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
-          <article
-            key={post.id}
-            className="rounded-xl border bg-white/5 p-5 hover:shadow-lg transition"
-          >
-            <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-            <p className="text-sm text-neutral-500 mb-3">{post.date}</p>
-            <p className="text-neutral-300 mb-4">{post.description}</p>
-            {/* 画像を使う場合だけ表示（imageUrlは型でoptionalにしてある） */}
-            {post.imageUrl ? (
-              <div className="rounded-lg overflow-hidden">
-                {/* next/image をもうimportしてあるならOK */}
-                <Image src={post.imageUrl} alt={post.title} width={600} height={360} />
+          <Link key={post.id} href={`/blog/${post.slug}`}>
+            <article className="rounded-xl border bg-white p-5 hover:shadow-lg transition cursor-pointer">
+              {/* 画像を使う場合だけ表示（imageUrlは型でoptionalにしてある） */}
+              {post.imageUrl ? (
+                <div className="rounded-lg overflow-hidden mb-4">
+                  {/* next/image をもうimportしてあるならOK */}
+                  <Image src={post.imageUrl} alt={post.title} width={600} height={360} className="w-full h-48 object-cover" />
+                </div>
+              ) : null}
+              <h2 className="text-xl font-semibold mb-2 text-neutral-800">{post.title}</h2>
+              <p className="text-sm text-neutral-500 mb-3">{post.date}</p>
+              <p className="text-neutral-600 mb-4">{post.description}</p>
+              <div className="flex gap-2">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="text-xs bg-primary-blue/10 text-primary-blue px-2 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
               </div>
-            ) : null}
-          </article>
+            </article>
+          </Link>
         ))}
         </div>
         </main>

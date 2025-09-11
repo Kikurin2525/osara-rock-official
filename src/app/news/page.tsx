@@ -7,8 +7,38 @@ import { getPublishedNews, getNewsByCategory } from '@/data/news';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'ニュース',
-  description: '株式会社オサラロックの最新ニュース、新店舗情報、キャンペーン情報をご紹介します。',
+  title: 'ニュース | 株式会社オサラロック - 最新情報・新店舗・キャンペーン',
+  description: '株式会社オサラロックの最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。レンタルスペース業界の最新動向や企業の取り組みをご紹介します。',
+  keywords: 'ニュース,最新情報,新店舗,キャンペーン,イベント,レンタルスペース,オサラロック',
+  openGraph: {
+    title: 'ニュース | 株式会社オサラロック - 最新情報・新店舗・キャンペーン',
+    description: '株式会社オサラロックの最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。',
+    url: 'https://osara-rock.com/news',
+    siteName: '株式会社オサラロック',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '株式会社オサラロック ニュース',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ニュース | 株式会社オサラロック',
+    description: '最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。',
+    images: ['/og-default.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://osara-rock.com/news',
+  },
 };
 
 const categories = [

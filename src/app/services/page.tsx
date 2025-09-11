@@ -18,8 +18,38 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'サービス',
-  description: 'レンタルスペース事業から運営代行・コンサルティングまで、株式会社オサラロックのサービスをご紹介します。',
+  title: 'サービス | 株式会社オサラロック - レンタルスペース事業・運営代行',
+  description: 'レンタルスペース事業から運営代行・コンサルティングまで、株式会社オサラロックの事業サービスをご紹介。ダンススタジオ、姫系フォトスタジオ、パーティスペースの運営と新規開業支援を行っています。',
+  keywords: 'レンタルスペース事業,運営代行,コンサルティング,ダンススタジオ運営,フォトスタジオ運営,新規開業支援',
+  openGraph: {
+    title: 'サービス | 株式会社オサラロック - レンタルスペース事業・運営代行',
+    description: 'レンタルスペース事業から運営代行・コンサルティングまで、19店舗直営の実績とノウハウでお客様の事業成功をサポートします。',
+    url: 'https://osara-rock.com/services',
+    siteName: '株式会社オサラロック',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '株式会社オサラロック サービス紹介',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'サービス | 株式会社オサラロック',
+    description: 'レンタルスペース事業から運営代行・コンサルティングまで、19店舗直営の実績とノウハウでお客様をサポート。',
+    images: ['/og-default.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://osara-rock.com/services',
+  },
 };
 
 

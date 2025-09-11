@@ -77,3 +77,31 @@ export default function RootLayout({
     </html>
   );
 }
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="ja">
+      <head>
+        {/* favicon の指定 */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 z-50 bg-primary text-white p-2"
+        >
+          メインコンテンツにスキップ
+        </a>
+        <StructuredData />
+        <Header />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

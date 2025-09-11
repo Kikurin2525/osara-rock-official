@@ -14,8 +14,38 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '会社概要',
-  description: '株式会社オサラロックの会社概要。ミッション・ビジョン、沿革、代表メッセージをご紹介します。',
+  title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
+  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営。2021年創業から4年以上の実績とノウハウでお客様をサポートします。',
+  keywords: '株式会社オサラロック,会社概要,レンタルスペース運営,ダンススタジオ,フォトスタジオ,企業情報',
+  openGraph: {
+    title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
+    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営。',
+    url: 'https://osara-rock.com/about',
+    siteName: '株式会社オサラロック',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '株式会社オサラロック 会社概要',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '会社概要 | 株式会社オサラロック',
+    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営する企業情報をご紹介。',
+    images: ['/og-default.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://osara-rock.com/about',
+  },
 };
 
 const values = [

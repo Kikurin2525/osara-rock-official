@@ -1,6 +1,42 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+  title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
+  description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。19店舗直営で4年以上の実績。推し活、コスプレ、生誕祭に最適な空間をご提供します。',
+  keywords: 'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,大宮,北千住',
+  openGraph: {
+    title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
+    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。19店舗直営で4年以上の実績。',
+    url: 'https://osara-rock.com',
+    siteName: '株式会社オサラロック',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '株式会社オサラロック - レンタルスペース事業',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '株式会社オサラロック | ダンス・フォトスタジオ運営',
+    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペース事業。',
+    images: ['/og-default.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://osara-rock.com',
+  },
+};
 
 export default function HomePage() {
   return (
