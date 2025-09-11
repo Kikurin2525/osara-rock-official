@@ -248,7 +248,7 @@ export default function BirthdayParty2HoursPage() {
                 href="https://linktr.ee/osara_rock" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 text-base bg-white text-primary rounded-md hover:bg-gray-50"
+                className="px-6 py-3 text-base bg-primary text-white rounded-md hover:bg-primary-navy"
               >
                 パーティスペース一覧
               </Button>
