@@ -73,11 +73,8 @@ export default function ContactPage() {
 
       const result = await response.json();
 
-      if (response.ok) {
-        setSubmitStatus({
-          type: 'success',
-          message: result.message,
-        });
+      if (result.ok) {
+        alert('送信しました。確認メールをお送りしています。');
         setFormData({
           name: '',
           email: '',
@@ -87,16 +84,10 @@ export default function ContactPage() {
           consent: false,
         });
       } else {
-        setSubmitStatus({
-          type: 'error',
-          message: result.message || 'お問い合わせの送信に失敗しました。',
-        });
+        alert(result.error || '送信に失敗しました。時間をおいて再度お試しください。');
       }
     } catch (error) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'ネットワークエラーが発生しました。しばらく時間をおいて再度お試しください。',
-      });
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       setIsSubmitting(false);
     }

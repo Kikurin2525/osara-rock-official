@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { sendSupportNotice, sendCustomerThanks } from '@/lib/send-email';
 
 const contactSchema = z.object({
   name: z.string().min(1, '氏名を入力してください').max(100, '氏名は100文字以内で入力してください'),
@@ -17,30 +18,35 @@ export async function POST(request: NextRequest) {
     // バリデーション
     const validatedData = contactSchema.parse(body);
     
-    // TODO: 実際のメール送信処理やデータベース保存処理を実装
-    // 現在はダミーレスポンスを返す
-    console.log('Contact form submission:', validatedData);
+    // メール送信処理
+    const { name, email, phone, subject, message } = validatedData;
     
-    // 本番環境では、以下のような処理を実装する想定:
-    // 1. メール送信サービス（SendGrid、AWS SES等）を使用してメール送信
-    // 2. データベースに問い合わせ内容を保存
-    // 3. 必要に応じてSlackやChatwork等への通知
+    // 社内通知メールを送信
+    await sendSupportNotice({
+      name,
+      email,
+      phone: phone || '',
+      subject,
+      message,
+    });
+
+    // お客様宛サンクスメールを送信
+    await sendCustomerThanks({
+      name,
+      email,
+      phone: phone || '',
+      subject,
+      message,
+    });
     
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'お問い合わせを受け付けました。3営業日以内にご返信いたします。' 
-      },
-      { status: 200 }
-    );
+    return NextResponse.json({ ok: true });
     
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { 
-          success: false, 
-          message: '入力内容に不備があります', 
-          errors: error.issues 
+          ok: false, 
+          error: '入力内容に不備があります' 
         },
         { status: 400 }
       );
@@ -49,8 +55,8 @@ export async function POST(request: NextRequest) {
     console.error('Contact form error:', error);
     return NextResponse.json(
       { 
-        success: false, 
-        message: 'お問い合わせの送信に失敗しました。しばらく時間をおいて再度お試しください。' 
+        ok: false, 
+        error: 'メールの送信に失敗しました。しばらく時間をおいて再度お試しください。' 
       },
       { status: 500 }
     );
