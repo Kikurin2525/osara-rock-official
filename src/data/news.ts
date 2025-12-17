@@ -13,6 +13,50 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    id: '006',
+    title: 'レンタルスタジオDAYS 方南町店をオープンしました',
+    slug: 'days-honancho-opening',
+    publishDate: '2025-12-15',
+    category: '新店舗',
+    summary: '方南町にダンススタジオDAYSがオープン。広々とした空間でダンス練習に最適です。',
+    content: `
+# レンタルスタジオDAYS 方南町店 グランドオープン
+
+この度、株式会社オサラロックは2025年12月15日、東京都杉並区方南町にレンタルスタジオDAYS方南町店をグランドオープンいたしました。
+
+## 店舗概要
+
+**所在地**: 東京都杉並区方南  
+**最寄駅**: 丸ノ内線 方南町駅より徒歩圏内  
+**営業時間**: 06:00〜24:00  
+**定休日**: 年中無休
+
+## 設備・サービス
+
+- **ダンスに最適な環境**: 衝撃を吸収する床材と大型鏡を完備
+- **音響設備**: Bluetooth対応のスピーカーシステム
+- **高速Wi-Fi**: 動画配信やオンラインレッスンにも対応
+- **リーズナブルな価格**: 定期利用や長時間利用でお得に
+
+## DAYSブランドの特徴
+
+「今日も、明日も、ここちよく。」をコンセプトに、誰もが使いやすく、居心地の良いスタジオ空間を提供します。個人練習からサークル活動、教室開講まで幅広くご利用いただけます。
+
+## オープン記念キャンペーン
+
+オープンを記念して、期間限定の特別プランをご用意しております。詳細は公式サイトをご確認ください。
+
+皆様のご利用を心よりお待ちしております。
+
+**公式サイト**: [DAYS方南町店](https://days-honancho.com/)
+
+*お問い合わせ・ご予約は公式サイトまたは当社お問い合わせフォームにて承ります。*
+    `,
+    image: '/images/news/days-honancho-opening.jpg',
+    isPublished: true,
+    tags: ['DAYS', '新店舗', 'レンタルスタジオ', '方南町', 'ダンス'],
+  },
+  {
     id: '005',
     title: '秋葉原にフォトスタジオTiarinaをオープンしました',
     slug: 'tiarina-akihabara-opening',
@@ -225,19 +269,19 @@ LEDリングライト、スマホ三脚、撮影小物を無料でご利用い�
   },
 ];
 
-export const getPublishedNews = () => 
+export const getPublishedNews = () =>
   newsItems.filter(item => item.isPublished)
     .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
-export const getNewsByCategory = (category: NewsItem['category']) => 
+export const getNewsByCategory = (category: NewsItem['category']) =>
   newsItems.filter(item => item.category === category && item.isPublished)
     .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
-export const getNewsBySlug = (slug: string) => 
+export const getNewsBySlug = (slug: string) =>
   newsItems.find(item => item.slug === slug && item.isPublished);
 
-export const getRecentNews = (limit: number = 3) => 
+export const getRecentNews = (limit: number = 3) =>
   getPublishedNews().slice(0, limit);
 
-export const getNewsById = (id: string) => 
+export const getNewsById = (id: string) =>
   newsItems.find(item => item.id === id);
