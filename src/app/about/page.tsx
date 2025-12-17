@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { companyInfo, companyTimeline } from '@/data/company';
-import { 
+import {
   Calendar,
   Target,
   Users,
@@ -15,11 +15,11 @@ import {
 
 export const metadata: Metadata = {
   title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営。2021年創業から4年以上の実績とノウハウでお客様をサポートします。',
+  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営。2021年創業から4年以上の実績とノウハウでお客様をサポートします。',
   keywords: '株式会社オサラロック,会社概要,レンタルスペース運営,ダンススタジオ,フォトスタジオ,企業情報',
   openGraph: {
     title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営。',
+    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営。',
     url: 'https://osara-rock.com/about',
     siteName: '株式会社オサラロック',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '会社概要 | 株式会社オサラロック',
-    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで19店舗を直営運営する企業情報をご紹介。',
+    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営する企業情報をご紹介。',
     images: ['/og-default.png'],
   },
   robots: {
@@ -283,7 +283,7 @@ export default function AboutPage() {
               多くのお客様に支えられながら成長してまいりました
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* 直営店舗数 */}
             <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
@@ -292,10 +292,10 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div className="text-5xl font-bold text-primary mb-3">19</div>
+              <div className="text-5xl font-bold text-primary mb-3">20</div>
               <div className="text-xl font-semibold text-neutral-800 mb-2">直営店舗</div>
               <div className="text-neutral-600">
-                2025年9月現在<br />
+                2025年12月現在<br />
                 ダンス・フォト・パーティスペースを<br />
                 都内を中心に展開
               </div>
@@ -418,15 +418,15 @@ export default function AboutPage() {
             お客様のニーズに合わせた最適なスペースとサービスをご提案いたします。
             まずはお気軽にお問い合わせください。
           </p>
-<div className="flex flex-col sm:flex-row gap-4 justify-center">
-  <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md">
-    お問い合わせ
-  </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md">
+              お問い合わせ
+            </Button>
 
-  <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md">
-    サービスを見る
-  </Button>
-</div>
+            <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md">
+              サービスを見る
+            </Button>
+          </div>
         </div>
       </section>
     </div>

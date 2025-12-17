@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
-  description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。19店舗直営で4年以上の実績。推し活、コスプレ、生誕祭に最適な空間をご提供します。',
+  description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。20店舗直営で4年以上の実績。推し活、コスプレ、生誕祭に最適な空間をご提供します。',
   keywords: 'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,大宮,北千住',
   openGraph: {
     title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
-    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。19店舗直営で4年以上の実績。',
+    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。20店舗直営で4年以上の実績。',
     url: 'https://osara-rock.com',
     siteName: '株式会社オサラロック',
     images: [
@@ -148,10 +148,10 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="text-center mt-8">
-                <Button 
-                  as="a" 
+                <Button
+                  as="a"
                   href="https://linktr.ee/osara_rock"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -228,7 +228,7 @@ export default function HomePage() {
       {/* 実績・数字 */}
       <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 直営店舗数 */}
             <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
@@ -237,9 +237,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">19</div>
+              <div className="text-4xl font-bold text-primary mb-2">20</div>
               <div className="text-lg font-semibold text-neutral-800 mb-1">直営店舗</div>
-              <div className="text-sm text-neutral-600">2025年9月現在</div>
+              <div className="text-sm text-neutral-600">2025年12月現在</div>
             </div>
 
             {/* 運営年数 */}
