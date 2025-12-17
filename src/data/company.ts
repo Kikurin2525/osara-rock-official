@@ -111,6 +111,18 @@ export const companyTimeline: TimelineItem[] = [
     description: '姫系セルフフォトスタジオ「Tiarina」北千住店オープン（東京都足立区）',
     category: 'opening',
   },
+  {
+    date: '2025年9月',
+    title: 'Tiarina 秋葉原店 オープン',
+    description: '姫系セルフフォトスタジオ「Tiarina」秋葉原店オープン（東京都千代田区）',
+    category: 'opening',
+  },
+  {
+    date: '2025年12月',
+    title: 'レンタルスタジオDAYS方南町店 オープン',
+    description: '東京都杉並区',
+    category: 'opening',
+  },
 ];
 
 export interface BusinessStats {
