@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   keywords: 'レンタルスペース事業,運営代行,コンサルティング,ダンススタジオ運営,フォトスタジオ運営,新規開業支援',
   openGraph: {
     title: 'サービス | 株式会社オサラロック - レンタルスペース事業・運営代行',
-    description: 'レンタルスペース事業から運営代行・コンサルティングまで、19店舗直営の実績とノウハウでお客様の事業成功をサポートします。',
+    description: 'レンタルスペース事業から運営代行・コンサルティングまで、22店舗直営の実績とノウハウでお客様の事業成功をサポートします。',
     url: 'https://osara-rock.com/services',
     siteName: '株式会社オサラロック',
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'サービス | 株式会社オサラロック',
-    description: 'レンタルスペース事業から運営代行・コンサルティングまで、19店舗直営の実績とノウハウでお客様をサポート。',
+    description: 'レンタルスペース事業から運営代行・コンサルティングまで、22店舗直営の実績とノウハウでお客様をサポート。',
     images: ['/og-default.png'],
   },
   robots: {

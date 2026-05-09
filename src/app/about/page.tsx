@@ -15,11 +15,11 @@ import {
 
 export const metadata: Metadata = {
   title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営。2021年創業から4年以上の実績とノウハウでお客様をサポートします。',
+  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営。2021年創業から5年以上の実績とノウハウでお客様をサポートします。',
   keywords: '株式会社オサラロック,会社概要,レンタルスペース運営,ダンススタジオ,フォトスタジオ,企業情報',
   openGraph: {
     title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営。',
+    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営。',
     url: 'https://osara-rock.com/about',
     siteName: '株式会社オサラロック',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '会社概要 | 株式会社オサラロック',
-    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで20店舗を直営運営する企業情報をご紹介。',
+    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営する企業情報をご紹介。',
     images: ['/og-default.png'],
   },
   robots: {
@@ -292,10 +292,10 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div className="text-5xl font-bold text-primary mb-3">20</div>
+              <div className="text-5xl font-bold text-primary mb-3">22</div>
               <div className="text-xl font-semibold text-neutral-800 mb-2">直営店舗</div>
               <div className="text-neutral-600">
-                2025年12月現在<br />
+                2026年5月現在<br />
                 ダンス・フォト・パーティスペースを<br />
                 都内を中心に展開
               </div>
@@ -308,7 +308,7 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-5xl font-bold text-primary mb-3">4年+</div>
+              <div className="text-5xl font-bold text-primary mb-3">5年+</div>
               <div className="text-xl font-semibold text-neutral-800 mb-2">運営実績</div>
               <div className="text-neutral-600">
                 2021年創業以来<br />

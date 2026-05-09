@@ -123,6 +123,12 @@ export const companyTimeline: TimelineItem[] = [
     description: '東京都杉並区',
     category: 'opening',
   },
+  {
+    date: '2026年5月',
+    title: 'Tiarina 新大久保店・町田店 オープン',
+    description: '姫系セルフフォトスタジオ「Tiarina」を新大久保・町田エリアに展開',
+    category: 'opening',
+  },
 ];
 
 export interface BusinessStats {
@@ -133,7 +139,7 @@ export interface BusinessStats {
 }
 
 export const businessStats: BusinessStats = {
-  totalRooms: '20室以上',
+  totalRooms: '22室以上',
   monthlyUsers: '500組以上',
   operatingAreas: '3都県',
   yearsInBusiness: '5年以上',

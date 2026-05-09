@@ -1,6 +1,14 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResendClient = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+
+  return new Resend(apiKey);
+};
 
 export interface ContactFormData {
   name: string;
@@ -53,7 +61,7 @@ export async function sendSupportNotice(formData: ContactFormData) {
     </div>
   `;
 
-  const { data, error } = await resend.emails.send({
+  const { data, error } = await getResendClient().emails.send({
     from: process.env.CONTACT_FROM || 'noreply@osara-rock.com',
     to: [process.env.CONTACT_TO || 'support@osara-rock.com'],
     subject: `【お問い合わせ】${subject} - ${name}様より`,
@@ -110,7 +118,7 @@ export async function sendCustomerThanks(formData: ContactFormData) {
     </div>
   `;
 
-  const { data, error } = await resend.emails.send({
+  const { data, error } = await getResendClient().emails.send({
     from: process.env.CONTACT_FROM || "noreply@osara-rock.com",
     to: [email],
     subject: "お問い合わせありがとうございます",

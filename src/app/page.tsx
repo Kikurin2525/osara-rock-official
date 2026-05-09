@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
-  description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。20店舗直営で4年以上の実績。推し活、コスプレ、生誕祭に最適な空間をご提供します。',
-  keywords: 'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,大宮,北千住',
+  description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。22店舗直営で5年以上の実績。推し活、コスプレ、生誕祭に最適な空間をご提供します。',
+  keywords: 'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,大宮,北千住,新大久保,町田',
   openGraph: {
     title: '株式会社オサラロック | ダンス・フォトスタジオ運営とレンタルスペース事業',
-    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。20店舗直営で4年以上の実績。',
+    description: 'ダンススタジオから姫系フォトスタジオまで、あなたの大切な時間と物語をサポートするレンタルスペースを運営。22店舗直営で5年以上の実績。',
     url: 'https://osara-rock.com',
     siteName: '株式会社オサラロック',
     images: [
@@ -237,9 +237,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">20</div>
+              <div className="text-4xl font-bold text-primary mb-2">22</div>
               <div className="text-lg font-semibold text-neutral-800 mb-1">直営店舗</div>
-              <div className="text-sm text-neutral-600">2025年12月現在</div>
+              <div className="text-sm text-neutral-600">2026年5月現在</div>
             </div>
 
             {/* 運営年数 */}
@@ -249,7 +249,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">4年+</div>
+              <div className="text-4xl font-bold text-primary mb-2">5年+</div>
               <div className="text-lg font-semibold text-neutral-800 mb-1">運営実績</div>
               <div className="text-sm text-neutral-600">2021年創業以来</div>
             </div>
