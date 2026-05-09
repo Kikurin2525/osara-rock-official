@@ -6,7 +6,7 @@ import { getNewsBySlug, getPublishedNews } from '@/data/news';
 import { ArrowLeft, Calendar, Tag, ArrowRight } from 'lucide-react';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const news = getNewsBySlug(params.slug);
+  const { slug } = await params;
+  const news = getNewsBySlug(slug);
   
   if (!news) {
     return {
@@ -38,10 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function NewsDetailPage({ params }: Props) {
-  const news = getNewsBySlug(params.slug);
+export default async function NewsDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const news = getNewsBySlug(slug);
   const relatedNews = getPublishedNews()
-    .filter(item => item.slug !== params.slug)
+    .filter(item => item.slug !== slug)
     .slice(0, 3);
 
   if (!news) {
