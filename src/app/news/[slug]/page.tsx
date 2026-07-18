@@ -55,7 +55,7 @@ export default async function NewsDetailPage({ params }: Props) {
   return (
     <div className="flex flex-col">
       <article className="bg-white">
-        <header className="border-b border-black/10 bg-[#eeeeea]">
+        <header className="border-b border-black/10 bg-neutral-100">
           <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
             <Link
               href="/news"
@@ -128,7 +128,7 @@ export default async function NewsDetailPage({ params }: Props) {
       </article>
 
       {relatedNews.length > 0 && (
-        <section className="section-space border-t border-black/10 bg-[#f7f7f4]">
+        <section className="section-space border-t border-black/10 bg-neutral-50">
           <div className="site-container grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
             <div>
               <p className="eyebrow">More news</p>

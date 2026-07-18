@@ -19,13 +19,6 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
   },
 
   // Compression
@@ -34,22 +27,6 @@ const nextConfig: NextConfig = {
   // Production optimizations
   poweredByHeader: false,
   generateEtags: true,
-
-  // ✅ Redirects
-  async redirects() {
-    return [
-      {
-        source: "/blog",
-        destination: "https://rental-space.net/",
-        permanent: true,
-      },
-      {
-        source: "/blog/:path*",
-        destination: "https://rental-space.net/",
-        permanent: true,
-      },
-    ];
-  },
 
   // Cache headers for static assets
   async headers() {

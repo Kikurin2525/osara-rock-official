@@ -8,8 +8,8 @@ interface ContactBandProps {
 }
 
 export function ContactBand({
-  title = '場所の運営について、相談しませんか。',
-  description = '新規開業、運営改善、法人利用など、内容が固まっていない段階でもご相談いただけます。',
+  title = '場所の運営について、お気軽にご相談ください。',
+  description = '新規開業、運営改善、法人利用など、まだ内容が固まっていない段階でも丁寧にお話を伺います。',
   showSpacesLink = true,
 }: ContactBandProps) {
   return (

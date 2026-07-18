@@ -22,7 +22,7 @@ export const companyInfo: CompanyInfo = {
   established: '2021年3月',
   incorporation: '2024年11月',
   mission: 'Rock Your Story, We\'re the Plate.',
-  vision: '人の大切な時間・物語を"受け止めるお皿"として、付加価値・楽しさ・喜び・思い出を支える。10年後、日本一のダンススタジオチェーンを目指す。',
+  vision: '人の大切な時間・物語を"受け止めるお皿"として、付加価値・楽しさ・喜び・思い出を支える。より多くの方に安心して選んでいただけるダンススタジオを目指す。',
   values: [
     '体験価値へのこだわり',
     'お客様の物語を大切に',

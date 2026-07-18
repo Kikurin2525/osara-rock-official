@@ -232,7 +232,7 @@ export default function ContactPage() {
                   required
                   checked={formData.consent}
                   onChange={handleInputChange}
-                  className="mt-1.5 h-4 w-4 shrink-0 accent-[#d94832]"
+                  className="mt-1.5 h-4 w-4 shrink-0 accent-[#2f6257]"
                 />
                 <span>
                   <span className="text-primary-blue">*</span>{' '}
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   <ReCAPTCHA ref={recaptchaRef} sitekey={recaptchaSiteKey} />
                 </div>
               ) : (
-                <div className="border-l-4 border-primary-blue bg-red-50 px-5 py-4 text-sm leading-7 text-red-900">
+                <div className="border-l-4 border-red-700 bg-red-50 px-5 py-4 text-sm leading-7 text-red-900">
                   現在フォームを送信できません。メールまたはお電話でお問い合わせください。
                 </div>
               )}
@@ -259,7 +259,7 @@ export default function ContactPage() {
                   className={`border-l-4 px-5 py-4 text-sm leading-7 ${
                     submissionStatus.type === 'success'
                       ? 'border-accent bg-emerald-50 text-emerald-900'
-                      : 'border-primary-blue bg-red-50 text-red-900'
+                      : 'border-red-700 bg-red-50 text-red-900'
                   }`}
                 >
                   {submissionStatus.message}

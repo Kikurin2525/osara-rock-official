@@ -7,7 +7,6 @@ const footerNavigation = [
   { name: 'ホーム', href: '/' },
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
-  { name: 'ブログ', href: 'https://rental-space.net/', external: true },
   { name: '会社概要', href: '/about' },
   { name: 'お問い合わせ', href: '/contact' },
   { name: 'プライバシーポリシー', href: '/privacy' },
@@ -18,7 +17,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#171716] text-white">
+    <footer className="bg-primary text-white">
       <div className="site-container py-14 sm:py-18">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           <div>
@@ -40,7 +39,7 @@ export function Footer() {
               </div>
             </div>
             <p className="max-w-lg text-xl font-semibold leading-relaxed text-white sm:text-2xl">
-              場所をつくり、体験を育てる。
+              大切な時間に、心地よい場所を。
             </p>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/55">
               ダンス、撮影、パーティ、仕事。人の大切な時間を受け止める空間を運営しています。
@@ -53,12 +52,9 @@ export function Footer() {
                 <li key={item.name} className="border-b border-white/15">
                   <Link
                     href={item.href}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
                     className="flex min-h-12 items-center justify-between text-sm font-medium text-white/70 transition-colors hover:text-white"
                   >
                     {item.name}
-                    {item.external && <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />}
                   </Link>
                 </li>
               ))}

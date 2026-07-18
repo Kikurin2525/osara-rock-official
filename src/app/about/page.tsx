@@ -27,12 +27,12 @@ const values = [
   {
     number: '03',
     title: '清潔で安心できる空間',
-    description: '華やかさより先に、安心して使えること。清掃と運用品質を日々の基本に置きます。',
+    description: '清潔さと安心して使えることを大切にし、清掃と運用品質を日々丁寧に整えます。',
   },
   {
     number: '04',
     title: '継続的な成長と改善',
-    description: '完成したと思わず、利用者の声と数字を見ながら、場所と仕組みを更新し続けます。',
+    description: '利用者の声と数字を見ながら、場所と仕組みに少しずつ改善を重ねます。',
   },
 ];
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            人の物語を受け止める、
+            大切な時間に寄り添う、
             <br />
             お皿のような場所を。
           </>
@@ -80,12 +80,12 @@ export default function AboutPage() {
           <div className="lg:pt-10">
             <p className="text-pretty text-lg leading-9 text-neutral-700">
               人の大切な時間と物語を受け止める「お皿」として、付加価値、楽しさ、喜び、思い出を支える。
-              私たちは、利用する人が主役になれる場所をつくり、日々の運営を通じて育てていきます。
+              私たちは、一人ひとりが心地よく過ごせる場所を、日々の運営を通じて丁寧に育てていきます。
             </p>
-            <div className="mt-10 border-l-4 border-primary-blue bg-[#f7f7f4] px-6 py-6 sm:px-8">
+            <div className="mt-10 border-l-4 border-primary-blue bg-neutral-50 px-6 py-6 sm:px-8">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-blue">Vision</p>
               <p className="mt-4 text-xl font-bold leading-8 text-primary sm:text-2xl">
-                10年後、日本一のダンススタジオチェーンへ。
+                より多くの方に、安心して選んでいただけるスタジオへ。
               </p>
               <p className="mt-3 text-sm leading-7 text-neutral-600">
                 場所の品質と運営の仕組みを磨き、使う人にも、運営する人にも持続可能な事業を目指します。
@@ -108,12 +108,12 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-white/65">Why we exist</p>
             <h2 className="mt-5 text-balance text-3xl font-bold leading-[1.4] text-white sm:text-5xl">
-              主役は場所ではなく、
+              大切なのは、
               <br />
-              そこで過ごす人。
+              そこで過ごす時間。
             </h2>
             <p className="mt-5 max-w-xl text-pretty text-sm leading-7 text-white/75 sm:text-base">
-              空間の美しさや機能は、目的ではありません。そこで生まれる練習、挑戦、会話、記念日を支えるための手段です。
+              空間の美しさや機能は、練習、挑戦、会話、記念日など、そこで生まれる時間を心地よく支えるためのものだと考えています。
             </p>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space bg-[#eeeeea]">
+      <section className="section-space bg-neutral-100">
         <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
           <div>
             <p className="eyebrow">Values</p>
@@ -180,7 +180,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space border-t border-black/10 bg-[#f7f7f4]">
+      <section className="section-space border-t border-black/10 bg-neutral-50">
         <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
           <div>
             <p className="eyebrow">Company</p>
@@ -210,7 +210,7 @@ export default function AboutPage() {
       </section>
 
       <ContactBand
-        title="人の時間を豊かにする場所を、これからも。"
+        title="大切な時間に寄り添う場所を、これからも。"
         description="スペースの利用、運営支援、事業に関するご相談を受け付けています。"
       />
     </div>

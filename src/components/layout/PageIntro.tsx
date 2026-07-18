@@ -8,7 +8,7 @@ interface PageIntroProps {
 
 export function PageIntro({ eyebrow, title, description }: PageIntroProps) {
   return (
-    <section className="border-b border-black/10 bg-[#eeeeea]">
+    <section className="border-b border-black/10 bg-neutral-100">
       <div className="site-container grid gap-8 py-16 sm:py-20 lg:grid-cols-[0.35fr_0.65fr] lg:gap-16 lg:py-24">
         <div>
           <p className="eyebrow">{eyebrow}</p>

@@ -89,17 +89,17 @@ export default function HomePage() {
 
         <div className="site-container relative z-10 flex h-full items-end pb-10 pt-16 sm:pb-18 lg:pb-20">
           <div className="max-w-4xl">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/65">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/65 sm:text-xs sm:tracking-[0.16em]">
               Osara Rock Inc. / Rental space operator
             </p>
             <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.18] text-white sm:text-6xl lg:text-7xl">
-              場所をつくり、
+              大切な時間に、
               <br />
-              体験を育てる。
+              心地よい場所を。
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-8 text-white/80 sm:text-lg">
               ダンス、撮影、パーティ、仕事。
-              人の大切な時間を受け止める空間を、自ら運営し、磨き続けています。
+              それぞれの時間に寄り添えるよう、安心して使える空間を丁寧に運営しています。
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -137,20 +137,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space bg-[#f7f7f4]">
+      <section className="section-space bg-neutral-50">
         <div className="site-container grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
           <div>
             <p className="eyebrow">What we do</p>
             <h2 className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl lg:text-5xl">
-              空間を貸すだけでは、
+              心地よく使われ続ける
               <br className="hidden sm:block" />
-              事業は育たない。
+              場所を目指して。
             </h2>
           </div>
           <div className="lg:pt-10">
             <p className="max-w-2xl text-pretty text-lg leading-9 text-neutral-700">
               オサラロックは、レンタルスペースを自社で企画し、出店し、日々の運営まで担います。
-              利用者の声と数字を見ながら改善を重ねること。それが、使われ続ける場所をつくる最短ルートだと考えています。
+              利用者の声と数字に丁寧に向き合いながら、一つひとつ改善を重ねています。
             </p>
             <div className="mt-12 grid gap-8 border-t border-black/15 pt-8 sm:grid-cols-2 sm:gap-10">
               <div>
@@ -184,7 +184,7 @@ export default function HomePage() {
           <div className="grid gap-8 border-b border-black/10 pb-9 sm:grid-cols-[1fr_auto] sm:items-end">
             <div>
               <p className="eyebrow">Our spaces</p>
-              <h2 className="mt-5 text-3xl font-bold text-primary sm:text-4xl">異なる目的に、異なる場所を。</h2>
+              <h2 className="mt-5 text-3xl font-bold text-primary sm:text-4xl">それぞれの目的に合う場所を。</h2>
             </div>
             <a
               href="https://linktr.ee/osara_rock"
@@ -224,15 +224,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-black/10 bg-[#eeeeea]">
+      <section className="section-space border-y border-black/10 bg-neutral-100">
         <div className="site-container grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-20">
           <div>
             <p className="eyebrow">Management support</p>
             <h2 className="mt-5 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">
-              直営の現場から得た知見を、次の場所へ。
+              直営で培った経験を、次の場所づくりに。
             </h2>
             <p className="mt-5 text-sm leading-7 text-neutral-600">
-              机上の提案ではなく、現在も複数店舗を動かしている運営者として支援します。
+              複数店舗を運営する中で培った知見をもとに、それぞれの状況に合わせて支援します。
             </p>
           </div>
           <ul className="border-t border-black/15">

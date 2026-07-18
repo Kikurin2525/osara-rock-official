@@ -4,13 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navigation = [
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
   { name: '会社概要', href: '/about' },
-  { name: 'ブログ', href: 'https://rental-space.net/', external: true },
 ];
 
 export function Header() {
@@ -45,17 +44,14 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                aria-current={!item.external && pathname === item.href ? 'page' : undefined}
+                aria-current={pathname === item.href ? 'page' : undefined}
                 className={`inline-flex items-center gap-1 border-b-2 py-1 text-sm font-semibold transition-colors ${
-                  !item.external && pathname === item.href
+                  pathname === item.href
                     ? 'border-primary-blue text-primary'
                     : 'border-transparent text-neutral-600 hover:text-primary'
                 }`}
               >
                 {item.name}
-                {item.external && <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />}
               </Link>
             ))}
             <Link
@@ -91,13 +87,10 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
                   className="flex min-h-12 items-center justify-between border-b border-neutral-100 px-2 text-base font-semibold text-neutral-700 transition-colors hover:text-primary-blue"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                  {item.external && <ArrowUpRight className="h-4 w-4" aria-hidden="true" />}
                 </Link>
               ))}
               <Link

@@ -66,9 +66,9 @@ const supportItems = [
 ];
 
 const operatingPrinciples = [
-  '利用者の目線で、予約前から退室後までを見る',
-  '感覚だけで決めず、数字と現場の両方で判断する',
-  '一度つくって終わりにせず、小さく改善を重ねる',
+  '予約前から退室後まで、利用者の目線で考える',
+  '数字と現場の両方を見ながら考える',
+  '小さな改善を無理なく重ねる',
 ];
 
 export default function ServicesPage() {
@@ -78,9 +78,9 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            場所を運営する。
+            場所を丁寧に運営し、
             <br />
-            その知見を、事業に返す。
+            そこで得た経験を活かします。
           </>
         }
         description="自社スペースの企画・出店・運営と、その現場で得た知見を活かす運営支援。株式会社オサラロックの事業は、この2つを軸にしています。"
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             <div>
               <p className="eyebrow">01 / Rental space</p>
               <h2 className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">
-                直営だから、改善の手触りがある。
+                直営で培った、小さな改善の積み重ね。
               </h2>
             </div>
             <div>
@@ -157,16 +157,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-black/10 bg-[#eeeeea]">
+      <section className="section-space border-y border-black/10 bg-neutral-100">
         <div className="site-container">
           <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-20">
             <div>
               <p className="eyebrow">02 / Management support</p>
               <h2 className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">
-                運営経験を、再現できる仕組みにする。
+                運営経験を、それぞれの課題に合わせて。
               </h2>
               <p className="mt-6 text-pretty text-sm leading-7 text-neutral-600">
-                施設の状態や課題に合わせて、必要な範囲を整理します。決まったパッケージを当てはめるのではなく、実際に動かせる運営設計を重視します。
+                施設の状態や課題を伺い、必要な範囲を一緒に整理します。無理なく続けられる運営設計を大切にしています。
               </p>
             </div>
 
@@ -197,7 +197,7 @@ export default function ServicesPage() {
             <div className="p-7 sm:p-10 lg:p-14">
               <p className="eyebrow">Our approach</p>
               <h3 className="mt-5 text-2xl font-bold leading-[1.5] text-primary sm:text-3xl">
-                現場で動くかどうかを、判断基準に。
+                無理なく続けられる運営を大切に。
               </h3>
               <ul className="mt-8 border-t border-black/15">
                 {operatingPrinciples.map((principle) => (
