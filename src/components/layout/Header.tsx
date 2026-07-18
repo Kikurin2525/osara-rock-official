@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const navigation = [
+  { name: 'スペース', href: '/#spaces' },
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
   { name: '会社概要', href: '/about' },

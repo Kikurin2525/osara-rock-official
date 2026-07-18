@@ -3,53 +3,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
 import { ContactBand } from '@/components/layout/ContactBand';
+import { VirtualShowroom } from '@/components/virtual/VirtualShowroom';
 import { businessStats } from '@/data/company';
 import { getRecentNews } from '@/data/news';
+import { spaces } from '@/data/spaces';
 
 export const metadata: Metadata = {
   title: '株式会社オサラロック | レンタルスペース・スタジオ運営',
   description:
-    'ダンス、撮影、パーティ、ワークスペースなど22室以上を直営。株式会社オサラロックは、場所づくりから運営改善まで一貫して取り組むレンタルスペース運営会社です。',
+    'ダンス、撮影、パーティ、ワークスペースを巡るバーチャルショールーム。株式会社オサラロックは、22室以上のレンタルスペースを直営しています。',
   keywords:
     'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,スタジオ運営,運営代行',
   alternates: {
     canonical: 'https://osara-rock.com',
   },
 };
-
-const heroImages = [
-  { src: '/DAYS.jpeg', alt: 'レンタルスタジオDAYS' },
-  { src: '/tiarina.jpg', alt: 'フォトスタジオTiarina' },
-  { src: '/party.jpeg', alt: 'パーティスペース' },
-  { src: '/torano.jpeg', alt: 'とらのワークスペース' },
-];
-
-const spaces = [
-  {
-    name: 'DAYS',
-    category: 'Dance studio',
-    description: 'ダンス練習からレッスンまで、日常的に使いやすいスタジオ。',
-    image: '/DAYS.jpeg',
-  },
-  {
-    name: 'Tiarina',
-    category: 'Photo studio',
-    description: '推し活、生誕祭、撮影に特化した世界観のあるセルフフォトスタジオ。',
-    image: '/tiarina.jpg',
-  },
-  {
-    name: 'Rays / cotton etc.',
-    category: 'Party space',
-    description: '集まる時間そのものを楽しめる、用途に合わせたパーティスペース。',
-    image: '/party.jpeg',
-  },
-  {
-    name: 'とらのワークスペース',
-    category: 'Work space',
-    description: '仕事や勉強に集中できる、静かで機能的な個室空間。',
-    image: '/torano.jpeg',
-  },
-];
 
 const stats = [
   { value: businessStats.totalRooms, label: '直営スペース' },
@@ -70,58 +38,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100svh-112px)] min-h-[480px] max-h-[780px] overflow-hidden bg-primary text-white">
-        <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4" aria-hidden="true">
-          {heroImages.map((image) => (
-            <div key={image.src} className="relative border-r border-white/10 last:border-r-0">
-              <Image
-                src={image.src}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover"
-                loading="eager"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
-
-        <div className="site-container relative z-10 flex h-full items-end pb-10 pt-16 sm:pb-18 lg:pb-20">
-          <div className="max-w-4xl">
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/65 sm:text-xs sm:tracking-[0.16em]">
-              Osara Rock Inc. / Rental space operator
-            </p>
-            <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.18] text-white sm:text-6xl lg:text-7xl">
-              大切な時間に、
-              <br />
-              心地よい場所を。
-            </h1>
-            <p className="mt-6 max-w-2xl text-pretty text-base leading-8 text-white/80 sm:text-lg">
-              ダンス、撮影、パーティ、仕事。
-              それぞれの時間に寄り添えるよう、安心して使える空間を丁寧に運営しています。
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://linktr.ee/osara_rock"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-between gap-8 rounded-md bg-primary-blue px-6 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-primary"
-              >
-                運営スペースを見る
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <Link
-                href="/services"
-                className="inline-flex min-h-12 items-center justify-between gap-8 rounded-md border border-white/50 px-6 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-primary"
-              >
-                事業について
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VirtualShowroom spaces={spaces} />
 
       <section className="border-b border-black/10 bg-white" aria-label="事業実績">
         <div className="site-container grid grid-cols-2 lg:grid-cols-4">
@@ -179,7 +96,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space bg-white">
+      <section id="spaces" className="section-space scroll-mt-20 bg-white">
         <div className="site-container">
           <div className="grid gap-8 border-b border-black/10 pb-9 sm:grid-cols-[1fr_auto] sm:items-end">
             <div>

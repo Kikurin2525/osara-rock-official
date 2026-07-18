@@ -93,6 +93,13 @@ html {
   text-wrap: balance;
 }
 
+.virtual-showroom:fullscreen {
+  width: 100vw;
+  height: 100svh;
+  min-height: 100svh;
+  max-height: none;
+}
+
 .editorial-prose h2 {
   margin-top: 3.5rem;
   margin-bottom: 1.25rem;
