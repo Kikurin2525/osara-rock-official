@@ -1,154 +1,75 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { getPublishedNews, getNewsByCategory } from '@/data/news';
-import { ArrowRight, Calendar, Tag } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { ContactBand } from '@/components/layout/ContactBand';
+import { PageIntro } from '@/components/layout/PageIntro';
+import { getPublishedNews } from '@/data/news';
 
 export const metadata: Metadata = {
-  title: 'ニュース | 株式会社オサラロック - 最新情報・新店舗・キャンペーン',
-  description: '株式会社オサラロックの最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。レンタルスペース業界の最新動向や企業の取り組みをご紹介します。',
-  keywords: 'ニュース,最新情報,新店舗,キャンペーン,イベント,レンタルスペース,オサラロック',
-  openGraph: {
-    title: 'ニュース | 株式会社オサラロック - 最新情報・新店舗・キャンペーン',
-    description: '株式会社オサラロックの最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。',
-    url: 'https://osara-rock.com/news',
-    siteName: '株式会社オサラロック',
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '株式会社オサラロック ニュース',
-      },
-    ],
-    locale: 'ja_JP',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ニュース | 株式会社オサラロック',
-    description: '最新ニュース、新店舗オープン情報、キャンペーン・イベント情報をお届け。',
-    images: ['/og-default.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: 'ニュース',
+  description: '株式会社オサラロックの新店舗、サービス、会社に関する最新情報をお知らせします。',
   alternates: {
     canonical: 'https://osara-rock.com/news',
   },
 };
 
-const categories = [
-  { id: 'all', name: '全て' },
-  { id: 'お知らせ', name: 'お知らせ' },
-  { id: '新店舗', name: '新店舗' },
-  { id: 'キャンペーン', name: 'キャンペーン' },
-  { id: 'イベント', name: 'イベント' },
-  { id: 'メディア', name: 'メディア' },
-];
-
 export default function NewsPage() {
-  const allNews = getPublishedNews();
+  const news = getPublishedNews();
 
   return (
     <div className="flex flex-col">
-      {/* ヒーローセクション */}
-      <section className="relative bg-gradient-to-br from-neutral-50 to-white py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="ニュースや最新情報を伝える新聞やメディアのイメージ"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-              ニュース
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              新店舗情報やキャンペーン、<br className="block sm:hidden" />各種お知らせなど、<br />
-              株式会社オサラロックの<br className="block sm:hidden" />最新情報をお届けします。
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="News"
+        title="ニュース"
+        description="新店舗のオープン、サービス、会社に関するお知らせを掲載しています。"
+      />
 
-      {/* ニュース一覧 */}
-      <section className="py-20 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allNews.map((news) => (
-              <Card key={news.id} className="group bg-white hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-primary-blue bg-primary-blue/10 px-2 py-1 rounded-full font-medium">
-                      {news.category}
-                    </span>
-                    <div className="flex items-center text-sm text-neutral-500">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      <span>{new Date(news.publishDate).toLocaleDateString('ja-JP')}</span>
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary-blue transition-colors line-clamp-2">
-                    {news.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-neutral-600 leading-relaxed mb-4">
-                    {news.summary}
-                  </p>
-                  <div className="flex flex-wrap gap-1">
-                    {news.tags.slice(0, 3).map((tag) => (
-                      <span key={tag} className="text-xs bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {allNews.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-16 h-16 bg-neutral-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Tag className="h-8 w-8 text-neutral-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-primary mb-2">まだニュースがありません</h3>
-              <p className="text-neutral-600">
-                最新情報は随時更新いたします。
-              </p>
+      <section className="section-space bg-white">
+        <div className="site-container">
+          <div className="grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
+            <div>
+              <p className="text-sm font-bold text-primary">All news</p>
+              <p className="mt-2 text-xs text-neutral-500">{news.length}件のお知らせ</p>
             </div>
-          )}
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            最新情報をお見逃しなく
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            新店舗オープンやお得なキャンペーン情報を
-            いち早くお知らせいたします。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              お問い合わせ
-            </Button>
-            <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md hover:bg-white hover:text-primary">
-              サービスを見る
-            </Button>
+            {news.length > 0 ? (
+              <div className="border-t border-black/15">
+                {news.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/news/${item.slug}`}
+                    className="group grid gap-4 border-b border-black/15 py-7 sm:grid-cols-[8.5rem_7rem_1fr_auto] sm:items-start sm:gap-5"
+                  >
+                    <time dateTime={item.publishDate} className="text-xs font-semibold text-neutral-500 sm:pt-1">
+                      {item.publishDate.replaceAll('-', '.')}
+                    </time>
+                    <span className="text-xs font-bold text-primary-blue sm:pt-1">{item.category}</span>
+                    <div>
+                      <h2 className="text-base font-bold leading-7 text-primary transition-colors group-hover:text-primary-blue sm:text-lg">
+                        {item.title}
+                      </h2>
+                      <p className="mt-2 text-sm leading-7 text-neutral-600">{item.summary}</p>
+                    </div>
+                    <ArrowRight
+                      className="hidden h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary-blue sm:mt-1 sm:block"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="border-y border-black/15 py-12">
+                <p className="text-sm text-neutral-600">現在、掲載中のニュースはありません。</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      <ContactBand
+        title="事業・サービスに関するご相談はこちら。"
+        description="掲載内容へのご質問や、レンタルスペース運営に関するお問い合わせを受け付けています。"
+      />
     </div>
   );
 }

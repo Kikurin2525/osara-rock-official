@@ -1,104 +1,97 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { companyInfo } from '@/data/company';
-import { Instagram, Twitter } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const footerNavigation = [
   { name: 'ホーム', href: '/' },
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
-  { name: 'ブログ', href: '/blog' },
+  { name: 'ブログ', href: 'https://rental-space.net/', external: true },
   { name: '会社概要', href: '/about' },
   { name: 'お問い合わせ', href: '/contact' },
   { name: 'プライバシーポリシー', href: '/privacy' },
+  { name: '利用規約', href: '/terms' },
 ];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* 会社情報 */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+    <footer className="bg-[#171716] text-white">
+      <div className="site-container py-14 sm:py-18">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+          <div>
+            <div className="mb-6 flex items-center gap-3">
               <Image 
                 src="/logo1.png" 
                 alt="Osara Rock" 
-                width={120} 
-                height={40} 
-                className="h-8 w-auto"
+                width={58}
+                height={40}
+                className="h-10 w-auto object-contain brightness-0 invert"
               />
               <div>
-                <h3 className="text-lg font-semibold text-black">
-                  オサラロック
-                </h3>
-                <p className="text-xs text-neutral-600 -mt-1">
+                <h2 className="text-base font-bold text-white">
+                  株式会社オサラロック
+                </h2>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
                   Osara Rock Inc.
                 </p>
               </div>
             </div>
-            <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
-              思い出を受け止める、お皿のような場所づくり
+            <p className="max-w-lg text-xl font-semibold leading-relaxed text-white sm:text-2xl">
+              場所をつくり、体験を育てる。
             </p>
-            <div className="space-y-2 text-sm text-neutral-600">
-              <p>{companyInfo.address}</p>
-              <p>TEL: {companyInfo.phone}</p>
-              <p>Email: {companyInfo.email}</p>
-            </div>
-            
-            {/* ソーシャルメディア */}
-            <div className="flex space-x-3 mt-4">
-              {companyInfo.socialMedia.twitter && (
-                <a
-                  href={companyInfo.socialMedia.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-primary transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-              )}
-              {companyInfo.socialMedia.instagram && (
-                <a
-                  href={companyInfo.socialMedia.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-primary transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-              )}
-            </div>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/55">
+              ダンス、撮影、パーティ、仕事。人の大切な時間を受け止める空間を運営しています。
+            </p>
           </div>
 
-          {/* ナビゲーション */}
-          <div className="lg:col-span-2">
-            <ul className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-8">
+          <nav aria-label="フッターナビゲーション">
+            <ul className="grid grid-cols-2 gap-x-6 border-t border-white/15">
               {footerNavigation.map((item) => (
-                <li key={item.name}>
+                <li key={item.name} className="border-b border-white/15">
                   <Link
                     href={item.href}
-                    className="text-sm text-neutral-600 hover:text-primary transition-colors"
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    className="flex min-h-12 items-center justify-between text-sm font-medium text-white/70 transition-colors hover:text-white"
                   >
                     {item.name}
+                    {item.external && <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
-        <div className="border-t border-neutral-200 mt-8 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm text-neutral-500">
-              &copy; {currentYear} {companyInfo.name}. All rights reserved.
+        <div className="mt-14 grid gap-6 border-t border-white/15 pt-7 text-xs text-white/45 sm:grid-cols-2 sm:items-end">
+          <address className="not-italic leading-6">
+            <p>{companyInfo.address}</p>
+            <p>
+              <a href={`tel:${companyInfo.phone.replace(/-/g, '')}`} className="transition-colors hover:text-white">
+                TEL {companyInfo.phone}
+              </a>
+              <span className="mx-2 text-white/20">/</span>
+              <a href={`mailto:${companyInfo.email}`} className="transition-colors hover:text-white">
+                {companyInfo.email}
+              </a>
             </p>
-            <p className="text-xs text-neutral-400 mt-2 sm:mt-0">
-              Rock Your Story, We&apos;re the Plate.
+          </address>
+          <div className="sm:text-right">
+            {companyInfo.socialMedia.tiktok && (
+              <a
+                href={companyInfo.socialMedia.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-2 inline-flex items-center gap-1 font-semibold text-white/70 transition-colors hover:text-white"
+              >
+                TikTok <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            )}
+            <p>
+              &copy; {currentYear} {companyInfo.name}. All rights reserved.
             </p>
           </div>
         </div>

@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-sans-jp" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://osara-rock.com"),
   title: {
     default: "株式会社オサラロック | レンタルスペース・スタジオ運営",
     template: "%s | 株式会社オサラロック",
@@ -30,12 +31,19 @@ export const metadata: Metadata = {
     title: "株式会社オサラロック | レンタルスペース・スタジオ運営",
     description: "思い出を受け止める、お皿のような場所づくり。ダンス、パーティ、撮影、ワークスペースまで多彩なレンタルスペースをご提供。",
     siteName: "株式会社オサラロック",
+    images: [
+      {
+        url: "/top2.jpg",
+        width: 1200,
+        height: 800,
+        alt: "株式会社オサラロック",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "株式会社オサラロック | レンタルスペース・スタジオ運営",
     description: "思い出を受け止める、お皿のような場所づくり。",
-    creator: "@osara_rock",
   },
   robots: {
     index: true,
@@ -47,9 +55,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'google-site-verification-code', // 実際の値は後で設定
   },
 };
 

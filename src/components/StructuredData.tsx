@@ -9,7 +9,7 @@ export function StructuredData() {
     name: companyInfo.name,
     alternateName: companyInfo.nameEn,
     url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
+    logo: `${baseUrl}/logo1.png`,
     description: '株式会社オサラロックは、ダンススタジオ、パーティスペース、フォトスタジオ、ワークスペースを運営するレンタルスペース企業です。',
     foundingDate: '2021-03',
     legalName: companyInfo.name,
@@ -46,7 +46,7 @@ export function StructuredData() {
           itemOffered: {
             '@type': 'Service',
             name: 'ダンススタジオレンタル',
-            description: 'プロ仕様の設備を完備したダンススタジオのレンタルサービス',
+            description: 'ダンス練習やレッスンに利用できるスタジオのレンタルサービス',
           },
         },
         {
@@ -86,14 +86,6 @@ export function StructuredData() {
     publisher: {
       '@type': 'Organization',
       name: companyInfo.name,
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${baseUrl}/locations?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
     },
   };
 

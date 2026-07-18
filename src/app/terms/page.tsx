@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
+import { ContactBand } from '@/components/layout/ContactBand';
+import { PageIntro } from '@/components/layout/PageIntro';
 import { companyInfo } from '@/data/company';
-import { ArrowLeft, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '利用規約',
@@ -12,35 +11,16 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="flex flex-col">
-      {/* ナビゲーション */}
-      <section className="py-6 bg-white border-b border-neutral-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button as="a" href="/contact" className="px-3 py-1 text-sm rounded-md hover:bg-gray-100">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            お問い合わせページに戻る
-          </Button>
-        </div>
-      </section>
-
-      {/* ヘッダー */}
-      <section className="py-12 bg-gradient-to-br from-neutral-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <FileText className="h-8 w-8 text-primary-blue" />
-          </div>
-          <h1 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-            利用規約
-          </h1>
-          <p className="text-lg text-neutral-600">
-            サービス利用時のルールと注意事項
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Legal"
+        title="利用規約"
+        description="サービス利用時のルールと注意事項を定めています。"
+      />
 
       {/* 利用規約本文 */}
-      <section className="py-16 bg-white">
+      <section className="section-space bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
+          <div className="editorial-prose max-w-none">
             <div className="text-sm text-neutral-600 mb-8">
               制定日：2024年11月1日<br />
               最終更新：2024年11月1日
@@ -186,7 +166,7 @@ export default function TermsPage() {
               本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。
             </p>
 
-            <div className="bg-neutral-50 p-6 rounded-lg mt-12">
+            <div className="mt-12 rounded-md border border-black/15 bg-neutral-50 p-6">
               <h3 className="text-lg font-semibold text-primary mb-4">お問い合わせ</h3>
               <p className="text-neutral-700 mb-4">
                 本規約に関するお問い合わせは、下記までご連絡ください。
@@ -200,22 +180,11 @@ export default function TermsPage() {
         </div>
       </section>
 
-      {/* フッター */}
-      <section className="py-12 bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-neutral-600 mb-6">
-            ご不明な点がございましたら、お気軽にお問い合わせください。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button as="a" href="/contact" className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              お問い合わせ
-            </Button>
-            <Button as="a" href="/privacy" className="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
-              プライバシーポリシー
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ContactBand
+        title="利用規約に関するお問い合わせ"
+        description="本規約についてご不明な点がありましたら、お問い合わせフォームよりご連絡ください。"
+        showSpacesLink={false}
+      />
     </div>
   );
 }

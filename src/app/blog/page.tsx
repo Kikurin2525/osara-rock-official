@@ -1,9 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { ArrowRight, Calendar, User, Clock, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'ブログ | 株式会社オサラロック - レンタルスペース運営ノウハウ・業界情報',
@@ -16,7 +13,7 @@ export const metadata: Metadata = {
     siteName: '株式会社オサラロック',
     images: [
       {
-        url: '/og-default.png',
+        url: '/top2.jpg',
         width: 1200,
         height: 630,
         alt: '株式会社オサラロック ブログ',
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ブログ | 株式会社オサラロック',
     description: 'レンタルスペース運営ノウハウ、ダンス・撮影のコツ、業界最新情報をお届け。',
-    images: ['/og-default.png'],
+    images: ['/top2.jpg'],
   },
   robots: {
     index: true,

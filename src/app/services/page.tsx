@@ -1,168 +1,225 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
-import { 
-  Building2,
-  Users,
-  Target,
-  CheckCircle,
-  ArrowRight,
-  Clock,
-  Shield,
-  TrendingUp,
-  Heart,
-  Lightbulb,
-  Handshake
-} from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import { ContactBand } from '@/components/layout/ContactBand';
+import { PageIntro } from '@/components/layout/PageIntro';
+import { businessStats } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'サービス | 株式会社オサラロック - レンタルスペース事業・運営代行',
-  description: 'レンタルスペース事業から運営代行・コンサルティングまで、株式会社オサラロックの事業サービスをご紹介。ダンススタジオ、姫系フォトスタジオ、パーティスペースの運営と新規開業支援を行っています。',
-  keywords: 'レンタルスペース事業,運営代行,コンサルティング,ダンススタジオ運営,フォトスタジオ運営,新規開業支援',
-  openGraph: {
-    title: 'サービス | 株式会社オサラロック - レンタルスペース事業・運営代行',
-    description: 'レンタルスペース事業から運営代行・コンサルティングまで、22店舗直営の実績とノウハウでお客様の事業成功をサポートします。',
-    url: 'https://osara-rock.com/services',
-    siteName: '株式会社オサラロック',
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '株式会社オサラロック サービス紹介',
-      },
-    ],
-    locale: 'ja_JP',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'サービス | 株式会社オサラロック',
-    description: 'レンタルスペース事業から運営代行・コンサルティングまで、22店舗直営の実績とノウハウでお客様をサポート。',
-    images: ['/og-default.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: 'サービス | レンタルスペース運営・運営支援',
+  description:
+    '株式会社オサラロックのレンタルスペース事業、運営代行・コンサルティングをご紹介。22室以上の直営経験をもとに、新規開業から日々の運営、収益改善まで支援します。',
   alternates: {
     canonical: 'https://osara-rock.com/services',
   },
 };
 
+const categories = [
+  {
+    number: '01',
+    name: 'ダンススタジオ',
+    brand: 'DAYS',
+    description: '個人練習、レッスン、撮影まで。日常的な使いやすさを磨くスタジオ。',
+  },
+  {
+    number: '02',
+    name: 'フォトスタジオ',
+    brand: 'Tiarina',
+    description: '推し活や生誕祭に応える、世界観と撮影体験に特化した空間。',
+  },
+  {
+    number: '03',
+    name: 'パーティスペース',
+    brand: 'Rays / cotton etc.',
+    description: '集まり方や利用人数に合わせて選べる、複数コンセプトのスペース。',
+  },
+  {
+    number: '04',
+    name: 'ワークスペース',
+    brand: 'とらのワークスペース',
+    description: '仕事、勉強、面談に集中できる、静かで機能的な個室。',
+  },
+];
+
+const supportItems = [
+  {
+    number: '01',
+    title: '事業設計・開業支援',
+    description: '商圏、用途、価格帯、設備、予約導線を整理し、開業後に運営できる形へ落とし込みます。',
+  },
+  {
+    number: '02',
+    title: '運営設計・代行',
+    description: '予約管理、顧客対応、清掃品質、トラブル対応など、日々の運営を仕組み化します。',
+  },
+  {
+    number: '03',
+    title: '稼働・収益改善',
+    description: '利用データと現場の声をもとに、価格、掲載内容、プラン、運用品質を改善します。',
+  },
+  {
+    number: '04',
+    title: 'ブランド・集客改善',
+    description: '選ばれる理由を言語化し、写真、ページ構成、発信内容まで一貫して整えます。',
+  },
+];
+
+const operatingPrinciples = [
+  '利用者の目線で、予約前から退室後までを見る',
+  '感覚だけで決めず、数字と現場の両方で判断する',
+  '一度つくって終わりにせず、小さく改善を重ねる',
+];
 
 export default function ServicesPage() {
   return (
     <div className="flex flex-col">
-      {/* ヒーローセクション */}
-      <section className="relative bg-gradient-to-br from-neutral-50 to-white py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="モダンなオフィス空間での会議の様子"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-              サービス
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              レンタルスペース事業から<br className="block sm:hidden" />運営代行・コンサルティングまで、<br />
-              お客様の成功を支える<br className="block sm:hidden" />幅広いサービスをご提供します。
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Services"
+        title={
+          <>
+            場所を運営する。
+            <br />
+            その知見を、事業に返す。
+          </>
+        }
+        description="自社スペースの企画・出店・運営と、その現場で得た知見を活かす運営支援。株式会社オサラロックの事業は、この2つを軸にしています。"
+      />
 
-      {/* サービス紹介 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {/* レンタルスペース事業 */}
+      <section className="section-space bg-white">
+        <div className="site-container">
+          <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <div>
-              <Card className="bg-gradient-to-br from-primary to-primary-navy text-white">
-                <CardHeader className="text-center pb-8">
-                  <div className="w-20 h-20 bg-primary-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Building2 className="h-10 w-10 text-white" />
-                  </div>
-                  <CardTitle className="text-3xl text-white mb-4">レンタルスペース事業</CardTitle>
-                  <CardDescription className="text-white/80 text-lg">
-                    お客様の大切な時間と物語を受け止める場所づくり
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-white/90 text-lg leading-relaxed mb-8">
-                    ダンス・フォト・パーティ・ワークスペースなど<br />
-                    多様な用途に対応したレンタルスペースを運営。<br />
-                    お客様の特別な時間をサポートします。
-                  </p>
-                  <Button 
-                    as="a" 
-                    href="https://linktr.ee/osara_rock"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 text-base bg-gradient-to-r from-primary to-primary-blue text-white rounded-full hover:from-primary-navy hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
-                  >
-                    📍 運営スペース一覧を見る
-                  </Button>
-                </CardContent>
-              </Card>
+              <p className="eyebrow">01 / Rental space</p>
+              <h2 className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">
+                直営だから、改善の手触りがある。
+              </h2>
             </div>
-
-            {/* 運営代行・コンサルティング事業 */}
             <div>
-              <Card className="bg-neutral-50 border-2 border-neutral-200">
-                <CardHeader className="text-center pb-8">
-                  <div className="w-20 h-20 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Lightbulb className="h-10 w-10 text-primary-blue" />
-                  </div>
-                  <CardTitle className="text-3xl text-primary mb-4">運営代行・コンサルティング事業</CardTitle>
-                  <CardDescription className="text-neutral-600 text-lg">
-                    豊富な実績とノウハウで事業成功をサポート
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-neutral-700 text-lg leading-relaxed mb-8">
-                    豊富な運営経験とノウハウを活かし、<br />
-                    事業者様の運営代行からコンサルティングまで幅広くサポート。<br />
-                    新規開業から既存事業改善まで、お気軽にご相談ください。
-                  </p>
-                  <Button as="a" href="/contact" className="px-6 py-3 text-base border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
-                    詳しくお問い合わせ
-                  </Button>
-                </CardContent>
-              </Card>
+              <p className="max-w-3xl text-pretty text-lg leading-9 text-neutral-700">
+                ダンス、撮影、パーティ、仕事。利用目的が違えば、求められる設備も、導線も、空気感も変わります。
+                私たちは複数カテゴリーのスペースを直営し、予約の入り方から清掃、顧客対応まで、自分たちで確かめながら運営しています。
+              </p>
+              <div className="mt-10 grid grid-cols-3 border-y border-black/15">
+                <div className="border-r border-black/15 py-6 pr-4">
+                  <p className="text-2xl font-bold text-primary sm:text-3xl">{businessStats.totalRooms}</p>
+                  <p className="mt-2 text-xs font-semibold text-neutral-600">直営スペース</p>
+                </div>
+                <div className="border-r border-black/15 px-4 py-6">
+                  <p className="text-2xl font-bold text-primary sm:text-3xl">4</p>
+                  <p className="mt-2 text-xs font-semibold text-neutral-600">カテゴリー</p>
+                </div>
+                <div className="py-6 pl-4">
+                  <p className="text-2xl font-bold text-primary sm:text-3xl">{businessStats.operatingAreas}</p>
+                  <p className="mt-2 text-xs font-semibold text-neutral-600">展開地域</p>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div className="mt-16 grid grid-cols-2 gap-2 sm:gap-4 lg:mt-20 lg:grid-cols-4">
+            {['/DAYS.jpeg', '/tiarina.jpg', '/party.jpeg', '/torano.jpeg'].map((src, index) => (
+              <div key={src} className="relative aspect-[4/5] overflow-hidden rounded-md bg-neutral-100">
+                <Image
+                  src={src}
+                  alt={`${categories[index].name}の内観`}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 border-t border-black/15">
+            {categories.map((category) => (
+              <div
+                key={category.number}
+                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.7fr_0.8fr_1.5fr] sm:items-start sm:gap-6"
+              >
+                <span className="text-xs font-bold text-primary-blue">{category.number}</span>
+                <h3 className="text-base font-bold text-primary">{category.name}</h3>
+                <p className="text-sm font-semibold text-neutral-700">{category.brand}</p>
+                <p className="text-sm leading-7 text-neutral-600">{category.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="https://linktr.ee/osara_rock"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
+          >
+            運営スペース一覧
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-            お気軽にお問い合わせください
-          </h2>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            サービスについての<br className="block sm:hidden" />ご質問やご相談など、<br />
-            何でもお気軽に<br className="block sm:hidden" />お問い合わせください。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              お問い合わせ
-            </Button>
-            <Button as="a" href="/about" className="px-6 py-3 text-base border border-white text-white rounded-md hover:bg-white hover:text-primary">
-              会社概要
-            </Button>
+      <section className="section-space border-y border-black/10 bg-[#eeeeea]">
+        <div className="site-container">
+          <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-20">
+            <div>
+              <p className="eyebrow">02 / Management support</p>
+              <h2 className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">
+                運営経験を、再現できる仕組みにする。
+              </h2>
+              <p className="mt-6 text-pretty text-sm leading-7 text-neutral-600">
+                施設の状態や課題に合わせて、必要な範囲を整理します。決まったパッケージを当てはめるのではなく、実際に動かせる運営設計を重視します。
+              </p>
+            </div>
+
+            <div className="border-t border-black/15">
+              {supportItems.map((item) => (
+                <article
+                  key={item.number}
+                  className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.7fr_1.3fr] sm:gap-6"
+                >
+                  <span className="text-xs font-bold text-primary-blue">{item.number}</span>
+                  <h3 className="text-base font-bold text-primary">{item.title}</h3>
+                  <p className="text-sm leading-7 text-neutral-600">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 grid overflow-hidden rounded-md border border-black/15 bg-white lg:grid-cols-[0.4fr_0.6fr]">
+            <div className="relative min-h-72 lg:min-h-[420px]">
+              <Image
+                src="/DAYS.jpeg"
+                alt="運営中のレンタルスタジオDAYS"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-7 sm:p-10 lg:p-14">
+              <p className="eyebrow">Our approach</p>
+              <h3 className="mt-5 text-2xl font-bold leading-[1.5] text-primary sm:text-3xl">
+                現場で動くかどうかを、判断基準に。
+              </h3>
+              <ul className="mt-8 border-t border-black/15">
+                {operatingPrinciples.map((principle) => (
+                  <li key={principle} className="flex gap-4 border-b border-black/15 py-5 text-sm font-semibold leading-7 text-primary">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
+                    {principle}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+              >
+                相談内容を送る
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
+      <ContactBand />
     </div>
   );
 }

@@ -1,48 +1,13 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { companyInfo, companyTimeline } from '@/data/company';
-import {
-  Calendar,
-  Target,
-  Users,
-  Heart,
-  Building,
-  TrendingUp
-} from 'lucide-react';
+import { ContactBand } from '@/components/layout/ContactBand';
+import { PageIntro } from '@/components/layout/PageIntro';
+import { businessStats, companyInfo, companyTimeline } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-  description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営。2021年創業から5年以上の実績とノウハウでお客様をサポートします。',
-  keywords: '株式会社オサラロック,会社概要,レンタルスペース運営,ダンススタジオ,フォトスタジオ,企業情報',
-  openGraph: {
-    title: '会社概要 | 株式会社オサラロック - ダンス・フォトスタジオ運営会社',
-    description: '株式会社オサラロックの会社概要。お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営。',
-    url: 'https://osara-rock.com/about',
-    siteName: '株式会社オサラロック',
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '株式会社オサラロック 会社概要',
-      },
-    ],
-    locale: 'ja_JP',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '会社概要 | 株式会社オサラロック',
-    description: 'お皿のような場所づくりをミッションに、ダンススタジオから姫系フォトスタジオまで22店舗を直営運営する企業情報をご紹介。',
-    images: ['/og-default.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: '会社概要',
+  description:
+    '株式会社オサラロックの理念、歩み、会社情報。2021年の創業から、ダンススタジオ、フォトスタジオ、パーティスペース、ワークスペースを展開しています。',
   alternates: {
     canonical: 'https://osara-rock.com/about',
   },
@@ -50,385 +15,204 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Heart,
+    number: '01',
     title: '体験価値へのこだわり',
-    description: '単なるスペース提供ではなく、お客様の大切な時間を豊かにする体験価値の創出を重視します。',
+    description: '設備を並べるだけでなく、その場所で過ごす時間がどう記憶に残るかまで考えます。',
   },
   {
-    icon: Users,
+    number: '02',
     title: 'お客様の物語を大切に',
-    description: 'あらゆるお客様の物語を受け止め、それぞれのニーズに寄り添ったサービスをご提供します。',
+    description: '利用目的や背景を決めつけず、一人ひとりの「やりたい」に場所の側から応えます。',
   },
   {
-    icon: Building,
-    title: '清潔で安心できる空間提供',
-    description: '常に清潔で快適、そして安全な環境を維持し、安心してご利用いただける空間づくりに努めます。',
+    number: '03',
+    title: '清潔で安心できる空間',
+    description: '華やかさより先に、安心して使えること。清掃と運用品質を日々の基本に置きます。',
   },
   {
-    icon: TrendingUp,
+    number: '04',
     title: '継続的な成長と改善',
-    description: 'お客様のフィードバックを真摯に受け止め、常により良いサービスへと改善し続けます。',
+    description: '完成したと思わず、利用者の声と数字を見ながら、場所と仕組みを更新し続けます。',
   },
+];
+
+const companyRows = [
+  { label: '会社名', value: companyInfo.name, subValue: companyInfo.nameEn },
+  { label: '創業', value: companyInfo.established },
+  { label: '法人設立', value: companyInfo.incorporation },
+  { label: '所在地', value: companyInfo.address },
+  { label: '電話番号', value: companyInfo.phone, href: `tel:${companyInfo.phone.replace(/-/g, '')}` },
+  { label: 'メール', value: companyInfo.email, href: `mailto:${companyInfo.email}` },
+];
+
+const stats = [
+  { value: businessStats.totalRooms, label: '直営スペース' },
+  { value: businessStats.monthlyUsers, label: '月間利用' },
+  { value: businessStats.operatingAreas, label: '展開地域' },
+  { value: businessStats.yearsInBusiness, label: '運営実績' },
 ];
 
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      {/* ヒーローセクション */}
-      <section className="relative bg-gradient-to-br from-neutral-50 to-white py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="会社概要・オフィス環境のイメージ"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-              会社概要
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              思い出を受け止める、<br className="block sm:hidden" />お皿のような場所づくり。<br />
-              株式会社オサラロックの<br className="block sm:hidden" />理念と歩みをご紹介します。
+      <PageIntro
+        eyebrow="About us"
+        title={
+          <>
+            人の物語を受け止める、
+            <br />
+            お皿のような場所を。
+          </>
+        }
+        description="オサラロックという社名には、人の大切な時間や物語を受け止め、その価値を引き立てる存在でありたいという思いを込めています。"
+      />
+
+      <section className="section-space bg-white">
+        <div className="site-container grid gap-14 lg:grid-cols-[0.43fr_0.57fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">Mission</p>
+            <p className="mt-6 text-balance text-3xl font-bold leading-[1.4] text-primary sm:text-4xl lg:text-5xl">
+              Rock Your Story,
+              <br />
+              We&apos;re the Plate.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* ミッション・ビジョン */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-              ミッション・ビジョン
-            </h2>
-            <p className="text-lg text-neutral-600">
-              私たちが大切にしている理念
+          <div className="lg:pt-10">
+            <p className="text-pretty text-lg leading-9 text-neutral-700">
+              人の大切な時間と物語を受け止める「お皿」として、付加価値、楽しさ、喜び、思い出を支える。
+              私たちは、利用する人が主役になれる場所をつくり、日々の運営を通じて育てていきます。
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <Card className="bg-gradient-to-br from-primary to-primary-navy text-white">
-              <CardHeader className="text-center pb-6">
-                <div className="w-16 h-16 bg-primary-blue rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white">ミッション</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-xl font-semibold mb-4 text-primary-blue">
-                  {companyInfo.mission}
-                </p>
-                <p className="text-white/90 leading-relaxed">
-                  人々の大切な時間と物語を受け止める&quot;お皿&quot;として、<br />
-                  付加価値・楽しさ・喜び・思い出を提供し続ける。<br />
-                  私たちは、レンタルスペース・スタジオを通じて、<br />
-                  利用者一人ひとりの体験を豊かにし、安心と笑顔を届けます。
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-neutral-50 border-2 border-neutral-200">
-              <CardHeader className="text-center pb-6">
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="h-8 w-8 text-primary-blue" />
-                </div>
-                <CardTitle className="text-2xl text-primary">ビジョン</CardTitle>
-              </CardHeader>
-              <CardContent className="text-left">
-                <div className="space-y-4 text-neutral-700 leading-relaxed">
-                  <p className="text-lg font-medium">
-                    レンタルスペースで持続可能な事業モデルを確立し、<br />
-                    誰もが活用できる形で提供する。
-                  </p>
-                  <ul className="space-y-3 text-base">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      副業から独立まで、挑戦する人々を支援する仕組みを整備する。
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      「仕事に悩む人」「自由を求める人」が新しいキャリアを築ける道を開く。
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-primary-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      全国に広がるレンタルスペースを通じて、社会に多様な居場所と機会を生み出す。
-                    </li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* バリュー（価値観） */}
-      <section className="py-20 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-              私たちの価値観
-            </h2>
-            <p className="text-lg text-neutral-600">
-              日々の事業活動で大切にしている4つの価値観
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary-blue/10 rounded-xl flex items-center justify-center">
-                      <value.icon className="h-6 w-6 text-primary-blue" />
-                    </div>
-                    <CardTitle className="text-xl text-primary">{value.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-neutral-600 leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 会社沿革 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-              会社沿革
-            </h2>
-            <p className="text-lg text-neutral-600">
-              私たちの成長の歩み
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {companyTimeline.map((item, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-4 h-4 bg-primary-blue rounded-full mt-2"></div>
-                    {index < companyTimeline.length - 1 && (
-                      <div className="w-px bg-neutral-200 h-16 ml-2 mt-2"></div>
-                    )}
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <span className="text-sm font-semibold text-primary-blue bg-primary-blue/10 px-3 py-1 rounded-full">
-                        {item.date}
-                      </span>
-                      <Calendar className="h-4 w-4 text-neutral-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">{item.title}</h3>
-                    <p className="text-neutral-600 leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 代表メッセージ */}
-      <section className="py-20 bg-gradient-to-r from-neutral-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-12 text-center">
-              代表メッセージ
-            </h2>
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-lg">
-                <div className="text-lg text-neutral-700 leading-relaxed space-y-6">
-                  <p>
-                    株式会社オサラロックは、2021年の創業以来、「人の大切な時間と物語を受け止めるお皿」として、
-                    多くのお客様の特別な瞬間をサポートしてまいりました。
-                  </p>
-                  <p>
-                    ダンスの練習に励む方、大切な仲間との時間を過ごす方、理想の写真撮影を求める方、
-                    集中して作業したい方——様々な「物語」を持つお客様お一人おひとりに寄り添い、
-                    最高の体験をご提供することが私たちの使命です。
-                  </p>
-                  <p>
-                    これからも「Rock Your Story, We&apos;re the Plate.」の理念のもと、
-                    お客様の物語をしっかりと受け止められる存在として、
-                    さらなるサービスの向上と新しい価値の創造に取り組んでまいります。
-                  </p>
-                </div>
-                <div className="mt-8 pt-6 border-t border-neutral-200">
-                  <p className="text-lg font-semibold text-primary">
-                    株式会社オサラロック　代表取締役
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 実績・数字で見るオサラロック */}
-      <section className="py-20 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-              これまでの実績
-            </h2>
-            <p className="text-lg text-neutral-600">
-              多くのお客様に支えられながら成長してまいりました
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* 直営店舗数 */}
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <div className="text-5xl font-bold text-primary mb-3">22</div>
-              <div className="text-xl font-semibold text-neutral-800 mb-2">直営店舗</div>
-              <div className="text-neutral-600">
-                2026年5月現在<br />
-                ダンス・フォト・パーティスペースを<br />
-                都内を中心に展開
-              </div>
-            </div>
-
-            {/* 運営年数 */}
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div className="text-5xl font-bold text-primary mb-3">5年+</div>
-              <div className="text-xl font-semibold text-neutral-800 mb-2">運営実績</div>
-              <div className="text-neutral-600">
-                2021年創業以来<br />
-                安定したサービス提供を<br />
-                継続しています
-              </div>
-            </div>
-
-            {/* 満足度 */}
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 bg-primary-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-primary-blue" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
-              <div className="text-5xl font-bold text-primary mb-3">4.7★</div>
-              <div className="text-xl font-semibold text-neutral-800 mb-2">お客様満足度</div>
-              <div className="text-neutral-600">
-                スペースマーケット・<br />
-                インスタベース平均評価<br />
-                高品質なサービスの証拠
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-primary to-primary-navy text-white rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">お客様からの信頼</h3>
-              <p className="text-lg leading-relaxed">
-                多種多様なお客様のニーズにお応えし、常に高い満足度を維持しています。<br />
-                これからもお客様の大切な時間と物語を受け止める場所として、<br />
-                さらなるサービス向上に努めてまいります。
+            <div className="mt-10 border-l-4 border-primary-blue bg-[#f7f7f4] px-6 py-6 sm:px-8">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-blue">Vision</p>
+              <p className="mt-4 text-xl font-bold leading-8 text-primary sm:text-2xl">
+                10年後、日本一のダンススタジオチェーンへ。
+              </p>
+              <p className="mt-3 text-sm leading-7 text-neutral-600">
+                場所の品質と運営の仕組みを磨き、使う人にも、運営する人にも持続可能な事業を目指します。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 会社情報 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-              会社情報
+      <section className="relative min-h-[460px] overflow-hidden bg-primary text-white sm:min-h-[560px]">
+        <Image
+          src="/top2.jpg"
+          alt="大切な時間を共に過ごす人々"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+        <div className="site-container relative z-10 flex min-h-[460px] items-end py-14 sm:min-h-[560px] sm:py-18">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-white/65">Why we exist</p>
+            <h2 className="mt-5 text-balance text-3xl font-bold leading-[1.4] text-white sm:text-5xl">
+              主役は場所ではなく、
+              <br />
+              そこで過ごす人。
             </h2>
+            <p className="mt-5 max-w-xl text-pretty text-sm leading-7 text-white/75 sm:text-base">
+              空間の美しさや機能は、目的ではありません。そこで生まれる練習、挑戦、会話、記念日を支えるための手段です。
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-neutral-50">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        会社名
-                      </h3>
-                      <p className="text-lg font-semibold text-primary">{companyInfo.name}</p>
-                      <p className="text-sm text-neutral-600">{companyInfo.nameEn}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        創業
-                      </h3>
-                      <p className="text-lg text-neutral-700">{companyInfo.established}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        法人設立
-                      </h3>
-                      <p className="text-lg text-neutral-700">{companyInfo.incorporation}</p>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        所在地
-                      </h3>
-                      <p className="text-lg text-neutral-700">{companyInfo.address}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        TEL
-                      </h3>
-                      <p className="text-lg text-neutral-700">{companyInfo.phone}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-1">
-                        Email
-                      </h3>
-                      <p className="text-lg text-neutral-700">{companyInfo.email}</p>
-                    </div>
-                  </div>
+      <section className="border-b border-black/10 bg-white" aria-label="会社実績">
+        <div className="site-container grid grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="border-b border-r border-black/10 px-4 py-8 even:border-r-0 lg:border-b-0 lg:px-7 lg:py-10 lg:even:border-r lg:last:border-r-0"
+            >
+              <p className="text-2xl font-bold text-primary sm:text-3xl">{stat.value}</p>
+              <p className="mt-2 text-xs font-semibold text-neutral-600">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-space bg-[#eeeeea]">
+        <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">Values</p>
+            <h2 className="mt-6 text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">日々の判断を支える、4つの価値観。</h2>
+          </div>
+          <div className="border-t border-black/15">
+            {values.map((value) => (
+              <article
+                key={value.number}
+                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.8fr_1.2fr] sm:gap-6"
+              >
+                <span className="text-xs font-bold text-primary-blue">{value.number}</span>
+                <h3 className="text-base font-bold leading-7 text-primary">{value.title}</h3>
+                <p className="text-sm leading-7 text-neutral-600">{value.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-white">
+        <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">History</p>
+            <h2 className="mt-6 text-3xl font-bold text-primary sm:text-4xl">これまでの歩み</h2>
+            <p className="mt-5 text-sm leading-7 text-neutral-600">
+              2021年の1店舗から始まり、利用目的の異なる空間へ少しずつ事業を広げてきました。
+            </p>
+          </div>
+          <ol className="border-t border-black/15">
+            {companyTimeline.map((item) => (
+              <li
+                key={`${item.date}-${item.title}`}
+                className="grid gap-3 border-b border-black/15 py-6 sm:grid-cols-[7rem_1fr] sm:gap-8"
+              >
+                <time className="text-xs font-bold text-primary-blue">{item.date}</time>
+                <div>
+                  <h3 className="text-sm font-bold leading-6 text-primary sm:text-base">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-neutral-600">{item.description}</p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            あなたの物語をお聞かせください
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            お客様のニーズに合わせた最適なスペースとサービスをご提案いたします。
-            まずはお気軽にお問い合わせください。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button as="a" href="/contact" className="px-6 py-3 text-base bg-blue-600 text-white rounded-md">
-              お問い合わせ
-            </Button>
-
-            <Button as="a" href="/services" className="px-6 py-3 text-base border border-white text-white rounded-md">
-              サービスを見る
-            </Button>
+      <section className="section-space border-t border-black/10 bg-[#f7f7f4]">
+        <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">Company</p>
+            <h2 className="mt-6 text-3xl font-bold text-primary sm:text-4xl">会社情報</h2>
           </div>
+          <dl className="border-t border-black/15">
+            {companyRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-2 border-b border-black/15 py-5 sm:grid-cols-[9rem_1fr] sm:items-start sm:gap-6"
+              >
+                <dt className="text-xs font-bold text-neutral-500">{row.label}</dt>
+                <dd className="text-sm font-semibold leading-7 text-primary sm:text-base">
+                  {row.href ? (
+                    <a href={row.href} className="transition-colors hover:text-primary-blue">
+                      {row.value}
+                    </a>
+                  ) : (
+                    row.value
+                  )}
+                  {row.subValue && <span className="ml-3 text-xs font-medium text-neutral-500">{row.subValue}</span>}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
+
+      <ContactBand
+        title="人の時間を豊かにする場所を、これからも。"
+        description="スペースの利用、運営支援、事業に関するご相談を受け付けています。"
+      />
     </div>
   );
 }

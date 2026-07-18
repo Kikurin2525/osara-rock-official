@@ -3,96 +3,110 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Button } from '@/components/ui/Button';
-import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 const navigation = [
-  { name: 'ホーム', href: '/' },
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
-  { name: 'ブログ', href: '/blog' },
   { name: '会社概要', href: '/about' },
+  { name: 'ブログ', href: 'https://rental-space.net/', external: true },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="bg-white shadow-sm border-b border-neutral-100 sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="メインナビゲーション">
-        <div className="flex justify-between items-center h-16">
-          {/* ロゴ */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md">
+      <nav className="site-container" aria-label="メインナビゲーション">
+        <div className="flex h-[72px] items-center justify-between">
+          <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
               <Image 
                 src="/logo1.png" 
                 alt="Osara Rock" 
-                width={120} 
-                height={40} 
+                width={58}
+                height={40}
                 priority
-                className="h-8 sm:h-10 w-auto"
+                className="h-9 w-auto shrink-0 object-contain"
               />
-              <div className="hidden sm:block">
-                <span className="text-lg font-semibold text-black">
-                  オサラロック
+              <div className="min-w-0 leading-none">
+                <span className="block truncate text-sm font-bold text-black sm:text-base">
+                  株式会社オサラロック
+                </span>
+                <span className="mt-1 hidden text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500 sm:block">
+                  Osara Rock Inc.
                 </span>
               </div>
-            </Link>
-          </div>
+          </Link>
 
-          {/* デスクトップナビゲーション */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden items-center gap-7 lg:flex">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-neutral-700 hover:text-primary transition-colors font-medium"
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                aria-current={!item.external && pathname === item.href ? 'page' : undefined}
+                className={`inline-flex items-center gap-1 border-b-2 py-1 text-sm font-semibold transition-colors ${
+                  !item.external && pathname === item.href
+                    ? 'border-primary-blue text-primary'
+                    : 'border-transparent text-neutral-600 hover:text-primary'
+                }`}
               >
                 {item.name}
+                {item.external && <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />}
               </Link>
             ))}
-            <Button as="a" href="/contact" className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
+            >
               お問い合わせ
-            </Button>
+            </Link>
           </div>
 
-          {/* モバイルメニューボタン */}
           <div className="lg:hidden">
-            <Button
+            <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "メニューを閉じる" : "メニューを開く"}
-              className="p-2 rounded-md hover:bg-gray-100"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-primary transition-colors hover:bg-neutral-100"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
-            </Button>
+            </button>
           </div>
         </div>
 
-        {/* モバイルメニュー */}
         {mobileMenuOpen && (
-          <div className="lg:hidden" id="mobile-menu">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-neutral-100" role="menu">
+          <div className="border-t border-black/10 bg-white pb-5 pt-3 lg:hidden" id="mobile-menu">
+            <div className="space-y-1" role="menu">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-50 rounded-lg transition-colors"
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="flex min-h-12 items-center justify-between border-b border-neutral-100 px-2 text-base font-semibold text-neutral-700 transition-colors hover:text-primary-blue"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
+                  {item.external && <ArrowUpRight className="h-4 w-4" aria-hidden="true" />}
                 </Link>
               ))}
-              <div className="pt-2">
-                <Button as="a" href="/contact" className="w-full px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700" onClick={() => setMobileMenuOpen(false)}>
-                  お問い合わせ
-                </Button>
-              </div>
+              <Link
+                href="/contact"
+                className="mt-4 flex min-h-12 w-full items-center justify-center rounded-md bg-primary text-sm font-semibold text-white"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                お問い合わせ
+              </Link>
             </div>
           </div>
         )}

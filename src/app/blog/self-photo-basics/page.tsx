@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { ArrowLeft, Camera, Smartphone, Users } from 'lucide-react';
+import { ArrowLeft, Camera, Smartphone } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'スマホ1台でOK！セルフフォト初心者の始め方',
