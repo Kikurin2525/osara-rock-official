@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
 import { ContactBand } from '@/components/layout/ContactBand';
-import { VirtualShowroom } from '@/components/virtual/VirtualShowroom';
 import { businessStats } from '@/data/company';
 import { getRecentNews } from '@/data/news';
 import { spaces } from '@/data/spaces';
@@ -11,7 +10,7 @@ import { spaces } from '@/data/spaces';
 export const metadata: Metadata = {
   title: '株式会社オサラロック | レンタルスペース・スタジオ運営',
   description:
-    'レンタルダンススタジオDAYS(千歳烏山・早稲田・方南町・与野・横浜関内)をはじめ、フォトスタジオTiarina、パーティスペース、ワークスペースなど22室以上を運営。バーチャルショールームから各店舗の予約ページへ進めます。',
+    'レンタルダンススタジオDAYS(千歳烏山・早稲田・方南町・与野・横浜関内)をはじめ、フォトスタジオTiarina、パーティスペース、ワークスペースなど22室以上を運営。店舗一覧から各店舗の予約ページへ進めます。',
   keywords:
     'レンタルスペース,ダンススタジオ,レンタルスタジオ,DAYS,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,スタジオ運営,運営代行',
   alternates: {
@@ -38,7 +37,46 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <VirtualShowroom spaces={spaces} />
+      <section
+        className="relative flex h-[68svh] max-h-[780px] min-h-[520px] items-end overflow-hidden bg-[#1b2925] text-white"
+        aria-label="株式会社オサラロック"
+      >
+        <Image
+          src="/hero-brand.jpg"
+          alt="オサラロックが運営するダンススタジオ、フォトスタジオ、パーティスペース"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[64%_38%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#101c18]/85 via-[#101c18]/25 to-transparent" aria-hidden="true" />
+        <div className="site-container relative z-10 pb-12 sm:pb-16 lg:pb-20">
+          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/70 sm:text-xs">
+            Osara Rock Inc.
+          </p>
+          <h1 className="mt-4 max-w-2xl text-balance text-4xl font-bold leading-[1.18] text-white sm:text-5xl lg:text-6xl">
+            主役は、あなた。
+          </h1>
+          <p className="mt-4 max-w-xl text-pretty text-sm leading-7 text-white/80 sm:text-base">
+            やりたいことが輝く場所を、私たちは整え続けます。
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/spaces"
+              className="inline-flex min-h-12 items-center gap-3 rounded-md bg-white px-6 text-sm font-semibold text-primary transition-colors hover:bg-neutral-100"
+            >
+              店舗一覧を見る
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center gap-3 rounded-md border border-white/40 px-6 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+            >
+              お問い合わせ
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="border-b border-black/10 bg-white" aria-label="事業実績">
         <div className="site-container grid grid-cols-2 lg:grid-cols-4">

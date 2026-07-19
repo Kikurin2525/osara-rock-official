@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "osara-rock-official",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "3100"],
+      "cwd": "/Users/kikutadaisuke/osara-rock-official",
+      "port": 3100
+    }
+  ]
+}

@@ -11,7 +11,6 @@ export interface SpaceProfile {
   categoryJa: string;
   description: string;
   image: string;
-  textureImage: string;
   imageAspect: number;
   accent: string;
   locations: readonly SpaceLocation[];
@@ -30,7 +29,6 @@ export const spaces: readonly SpaceProfile[] = [
     description:
       '個人練習からレッスン、動画撮影まで。東京・埼玉・横浜で10スタジオを直営するレンタルダンススタジオです。24時間利用できる店舗もあります。',
     image: '/DAYS.jpeg',
-    textureImage: '/showroom/days.jpg',
     imageAspect: 16 / 9,
     accent: '#79a99b',
     locations: [
@@ -53,7 +51,6 @@ export const spaces: readonly SpaceProfile[] = [
     categoryJa: 'フォトスタジオ',
     description: '推し活、生誕祭、撮影に特化した世界観のあるセルフフォトスタジオ。',
     image: '/tiarina.jpg',
-    textureImage: '/showroom/tiarina.jpg',
     imageAspect: 3 / 2,
     accent: '#c59aa5',
     locations: [
@@ -70,7 +67,6 @@ export const spaces: readonly SpaceProfile[] = [
     categoryJa: 'パーティスペース',
     description: '集まる時間そのものを楽しめる、用途に合わせたパーティスペース。',
     image: '/fluffy.jpeg',
-    textureImage: '/showroom/fluffy.jpg',
     imageAspect: 16 / 9,
     accent: '#bda56e',
     locations: [
@@ -88,7 +84,6 @@ export const spaces: readonly SpaceProfile[] = [
     categoryJa: 'ワークスペース',
     description: '仕事や勉強に集中できる、静かで機能的な個室空間。',
     image: '/torano.jpeg',
-    textureImage: '/showroom/torano.jpg',
     imageAspect: 16 / 9,
     accent: '#7c95aa',
     locations: [
