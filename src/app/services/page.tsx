@@ -118,7 +118,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-16 grid grid-cols-2 gap-2 sm:gap-4 lg:mt-20 lg:grid-cols-4">
-            {['/DAYS.jpeg', '/tiarina.jpg', '/party.jpeg', '/torano.jpeg'].map((src, index) => (
+            {['/DAYS.jpeg', '/tiarina.jpg', '/fluffy.jpeg', '/torano.jpeg'].map((src, index) => (
               <div key={src} className="relative aspect-[4/5] overflow-hidden rounded-md bg-neutral-100">
                 <Image
                   src={src}

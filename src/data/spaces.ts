@@ -69,8 +69,8 @@ export const spaces: readonly SpaceProfile[] = [
     category: 'Party space',
     categoryJa: 'パーティスペース',
     description: '集まる時間そのものを楽しめる、用途に合わせたパーティスペース。',
-    image: '/party.jpeg',
-    textureImage: '/showroom/party.jpg',
+    image: '/fluffy.jpeg',
+    textureImage: '/showroom/fluffy.jpg',
     imageAspect: 16 / 9,
     accent: '#bda56e',
     locations: [

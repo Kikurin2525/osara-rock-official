@@ -357,10 +357,11 @@ export function VirtualShowroom({ spaces }: VirtualShowroomProps) {
           Osara Rock / Virtual space
         </p>
         <h1 className="mt-4 max-w-2xl text-balance text-4xl font-bold leading-[1.18] text-white sm:text-5xl lg:text-6xl">
-          空間を、
-          <br />
-          歩いて選ぶ。
+          主役は、あなた。
         </h1>
+        <p className="mt-4 max-w-xl text-pretty text-sm leading-7 text-white/75 sm:text-base">
+          やりたいことが輝く場所を、私たちは整え続けます。
+        </p>
       </div>
 
       <div className="absolute inset-x-0 bottom-0 z-30 border-t border-white/15 bg-[#0c1412]/95 backdrop-blur-md">
