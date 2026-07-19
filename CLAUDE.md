@@ -155,7 +155,7 @@ npm start -- --port 3100
 
 - トップのファーストビューは `public/hero-brand.jpg`(Pillowで生成したブランド画像: 深緑グラデーション+「お皿」の同心円リング+実店舗写真3枚を円形に配置)をフル幅表示する静的ヒーローに変更。コピーは「主役は、あなた。/やりたいことが輝く場所を、私たちは整え続けます。」をHTML側でオーバーレイ(画像に文字は焼き込まない)。
 - `VirtualShowroom` コンポーネント・`public/showroom/`・`spaces.ts` の `textureImage`・`three`/`@react-three/fiber`/`@react-three/drei` 依存を削除。復元する場合はコミット `58df41c` 以前を参照。
-- ヒーロー画像の生成スクリプトはセッションのscratchpadの `make_hero.py`(必要になったら再作成可能。構成: 2400x1350、リング中心66%/44%、DAYS大円+Fluffy小円+Tiarina小円)。
+- ヒーロー画像とOGP画像の生成スクリプトは `scripts/generate-hero.py` / `scripts/generate-og.py`(要Pillow)。写真を差し替えたら再実行して `public/hero-brand.jpg` / `public/og.jpg` を更新する。
 - パーティスペースの代表写真はユーザー指定のカット(spacemarket掲載 attachment 1526457、ウッドウォール全景)に差し替え済み。OG画像も再生成。
 
 ## 2026-07-19 追記2(店舗一覧の内製化とデプロイ)
