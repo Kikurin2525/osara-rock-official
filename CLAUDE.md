@@ -149,6 +149,12 @@ npm start -- --port 3100
 - lint、TypeScript、production buildが成功している。
 - デプロイする場合は、本番URLまで確認している。
 
+## 2026-07-19 追記4(ブランド公式サイトへの誘導)
+
+- DAYS / Tiarina / とらのワークスペースは、店舗別の予約リンクではなくブランド公式サイトへ誘導する(ユーザー指示)。URLは `spaces.ts` の `officialSite`: https://days-studio.com/ ・ https://tiarina.jp/ ・ https://torano-space.com/ (いずれも実アクセスで稼働確認済み)。
+- パーティスペースのみブランドサイトがないため、スペースマーケットの店舗別予約リンクを維持。
+- 構造化データはDAYSの店舗ItemListを廃止し、Organizationに `brand`(3ブランドの公式URL)を追加。
+
 ## 2026-07-19 追記3(3Dショールーム廃止・静的ヒーローへ)
 
 ユーザー指示「ヒーローセクションは今のをやめたい。イメージ画像を1枚フル幅で表示したい」により方針転換。

@@ -10,7 +10,7 @@ import { spaces } from '@/data/spaces';
 export const metadata: Metadata = {
   title: '株式会社オサラロック | レンタルスペース・スタジオ運営',
   description:
-    'レンタルダンススタジオDAYS(千歳烏山・早稲田・方南町・与野・横浜関内)をはじめ、フォトスタジオTiarina、パーティスペース、ワークスペースなど22室以上を運営。店舗一覧から各店舗の予約ページへ進めます。',
+    'レンタルダンススタジオDAYS(千歳烏山・早稲田・方南町・与野・横浜関内)をはじめ、フォトスタジオTiarina、パーティスペース、ワークスペースなど22室以上を運営。店舗一覧から各ブランドの公式サイト・予約ページへ進めます。',
   keywords:
     'レンタルスペース,ダンススタジオ,レンタルスタジオ,DAYS,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,スタジオ運営,運営代行',
   alternates: {
@@ -151,7 +151,7 @@ export default function HomePage() {
           </div>
 
           <p className="pt-6 text-sm leading-7 text-neutral-600">
-            各店舗の空き状況・料金は、店舗名のリンク先にある予約ページでご確認いただけます。
+            各ブランドの店舗・料金・ご予約は、公式サイトまたは各店舗の予約ページでご確認いただけます。
           </p>
 
           <div className="grid gap-x-5 gap-y-12 pt-8 md:grid-cols-2">
@@ -175,6 +175,20 @@ export default function HomePage() {
                   </div>
                   <p className="text-sm leading-7 text-neutral-600">{space.description}</p>
                 </div>
+                {space.officialSite && (
+                  <p className="mt-4">
+                    <a
+                      href={space.officialSite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-blue hover:text-primary-blue"
+                    >
+                      公式サイトを見る
+                      <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400" aria-hidden="true" />
+                    </a>
+                  </p>
+                )}
+                {space.locations.length > 0 && (
                 <ul role="list" className="mt-4 flex flex-wrap gap-2" aria-label={`${space.name}の店舗一覧`}>
                   {space.locations.map((location) => (
                     <li key={location.name}>
@@ -193,6 +207,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
+                )}
               </article>
             ))}
           </div>

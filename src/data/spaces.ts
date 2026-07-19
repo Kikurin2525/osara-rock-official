@@ -13,13 +13,15 @@ export interface SpaceProfile {
   image: string;
   imageAspect: number;
   accent: string;
+  /** ブランド公式サイト。設定されているブランドは店舗別リンクではなく公式サイトを案内する。 */
+  officialSite?: string;
   locations: readonly SpaceLocation[];
 }
 
-// 各店舗の名称と予約URLは、2026-07-19に各予約ページ(instabase / spacemarket)の実掲載で照合済み。
+// DAYS / Tiarina / とらのワークスペースはブランド公式サイトへ誘導する(2026-07-19ユーザー指示。各URLは実アクセスで確認済み)。
+// パーティスペースはブランドサイトがないため、店舗別の予約ページを直接案内する。
 // パーティスペースは運営を株式会社スペースモールに委託しており、掲載名は「811_HOME大宮」の
 // ように管理番号付きだが、本サイトでは番号を除いた店舗名で表記する。
-// 営業時間は運営側で確認できた店舗のみ記載する。未確認の店舗には記載しない。
 export const spaces: readonly SpaceProfile[] = [
   {
     id: 'days',
@@ -31,18 +33,8 @@ export const spaces: readonly SpaceProfile[] = [
     image: '/DAYS.jpeg',
     imageAspect: 16 / 9,
     accent: '#79a99b',
-    locations: [
-      { name: '千歳烏山', hours: '6:00-23:30', url: 'https://days-karasuyama.com/' },
-      { name: '早稲田', hours: '24時間', url: 'https://www.instabase.jp/space/9929423880' },
-      { name: '方南町', hours: '6:00-24:00', url: 'https://www.instabase.jp/space/296677270' },
-      { name: '与野 2F', hours: '24時間', url: 'https://www.instabase.jp/space/8156762421' },
-      { name: '与野 3F', hours: '24時間', url: 'https://www.instabase.jp/space/398679506' },
-      { name: '横浜関内 1F', url: 'https://www.instabase.jp/space/6412748471' },
-      { name: '横浜関内 2F', url: 'https://www.instabase.jp/space/4899918082' },
-      { name: '横浜関内 3F', url: 'https://www.instabase.jp/space/8111693371' },
-      { name: '横浜関内 4F', url: 'https://www.instabase.jp/space/5605669232' },
-      { name: '横浜関内 5F', url: 'https://www.instabase.jp/space/6927531120' },
-    ],
+    officialSite: 'https://days-studio.com/',
+    locations: [],
   },
   {
     id: 'tiarina',
@@ -53,12 +45,8 @@ export const spaces: readonly SpaceProfile[] = [
     image: '/tiarina.jpg',
     imageAspect: 3 / 2,
     accent: '#c59aa5',
-    locations: [
-      { name: '北千住', url: 'https://spacemarket.com/p/r2gSey8YV82bEwI0' },
-      { name: '秋葉原', url: 'https://spacemarket.com/p/CpvrkKIeItOunGpq' },
-      { name: '新大久保', url: 'https://spacemarket.com/p/F2RCB8L2muLvAX4N' },
-      { name: '町田', url: 'https://spacemarket.com/p/B5YoYU9nUdXMnc__' },
-    ],
+    officialSite: 'https://tiarina.jp/',
+    locations: [],
   },
   {
     id: 'party',
@@ -86,10 +74,7 @@ export const spaces: readonly SpaceProfile[] = [
     image: '/torano.jpeg',
     imageAspect: 16 / 9,
     accent: '#7c95aa',
-    locations: [
-      { name: '川口 301', url: 'https://www.instabase.jp/space/583230448' },
-      { name: '川口 302', url: 'https://www.instabase.jp/space/8622076712' },
-      { name: '川口 303', url: 'https://www.instabase.jp/space/9543145095' },
-    ],
+    officialSite: 'https://torano-space.com/',
+    locations: [],
   },
 ];

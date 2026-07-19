@@ -3,7 +3,6 @@ import { spaces } from '@/data/spaces';
 
 export function StructuredData() {
   const baseUrl = 'https://osara-rock.com';
-  const daysSpace = spaces.find((space) => space.id === 'days');
 
   const organizationData = {
     '@context': 'https://schema.org',
@@ -39,6 +38,13 @@ export function StructuredData() {
       '@type': 'AdministrativeArea',
       name: '埼玉県、東京都、神奈川県',
     },
+    brand: spaces
+      .filter((space) => space.officialSite)
+      .map((space) => ({
+        '@type': 'Brand',
+        name: space.name,
+        url: space.officialSite,
+      })),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'レンタルスペースサービス',
@@ -79,22 +85,6 @@ export function StructuredData() {
     },
   };
 
-  const daysStudiosData = daysSpace
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        name: 'レンタルダンススタジオDAYS 店舗一覧',
-        description:
-          '株式会社オサラロックが直営するレンタルダンススタジオDAYSの店舗と予約ページの一覧です。',
-        itemListElement: daysSpace.locations.map((location, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: `レンタルスタジオDAYS ${location.name}`,
-          url: location.url,
-        })),
-      }
-    : null;
-
   const websiteData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -121,14 +111,6 @@ export function StructuredData() {
           __html: JSON.stringify(websiteData),
         }}
       />
-      {daysStudiosData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(daysStudiosData),
-          }}
-        />
-      )}
     </>
   );
 }
