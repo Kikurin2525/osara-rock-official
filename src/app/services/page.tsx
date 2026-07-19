@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { ContactBand } from '@/components/layout/ContactBand';
 import { PageIntro } from '@/components/layout/PageIntro';
 import { businessStats } from '@/data/company';
@@ -31,7 +31,7 @@ const categories = [
   {
     number: '03',
     name: 'パーティスペース',
-    brand: 'Rays / cotton etc.',
+    brand: 'HOME / Fluffy ほか',
     description: '集まり方や利用人数に合わせて選べる、複数コンセプトのスペース。',
   },
   {
@@ -103,7 +103,7 @@ export default function ServicesPage() {
               <div className="mt-10 grid grid-cols-3 border-y border-black/15">
                 <div className="border-r border-black/15 py-6 pr-4">
                   <p className="text-2xl font-bold text-primary sm:text-3xl">{businessStats.totalRooms}</p>
-                  <p className="mt-2 text-xs font-semibold text-neutral-600">直営スペース</p>
+                  <p className="mt-2 text-xs font-semibold text-neutral-600">運営スペース</p>
                 </div>
                 <div className="border-r border-black/15 px-4 py-6">
                   <p className="text-2xl font-bold text-primary sm:text-3xl">4</p>
@@ -145,15 +145,13 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <a
-            href="https://linktr.ee/osara_rock"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/spaces"
             className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
           >
-            運営スペース一覧
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+            店舗一覧を見る
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 

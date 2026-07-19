@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const footerNavigation = [
   { name: 'ホーム', href: '/' },
+  { name: '店舗一覧', href: '/spaces' },
   { name: 'サービス', href: '/services' },
   { name: 'ニュース', href: '/news' },
   { name: '会社概要', href: '/about' },

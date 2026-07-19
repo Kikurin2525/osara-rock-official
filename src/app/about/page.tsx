@@ -40,13 +40,14 @@ const companyRows = [
   { label: '会社名', value: companyInfo.name, subValue: companyInfo.nameEn },
   { label: '創業', value: companyInfo.established },
   { label: '法人設立', value: companyInfo.incorporation },
+  { label: '事業内容', value: 'レンタルスペースの企画・出店・運営、運営代行・コンサルティング' },
   { label: '所在地', value: companyInfo.address },
   { label: '電話番号', value: companyInfo.phone, href: `tel:${companyInfo.phone.replace(/-/g, '')}` },
   { label: 'メール', value: companyInfo.email, href: `mailto:${companyInfo.email}` },
 ];
 
 const stats = [
-  { value: businessStats.totalRooms, label: '直営スペース' },
+  { value: businessStats.totalRooms, label: '運営スペース' },
   { value: businessStats.monthlyUsers, label: '月間利用' },
   { value: businessStats.operatingAreas, label: '展開地域' },
   { value: businessStats.yearsInBusiness, label: '運営実績' },

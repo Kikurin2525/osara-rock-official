@@ -5,7 +5,7 @@ import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'rea
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Grid, RoundedBox, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Maximize2, Minimize2, Pause, Play } from 'lucide-react';
+import { ArrowDown, ArrowLeft, ArrowRight, Maximize2, Minimize2, Pause, Play } from 'lucide-react';
 import type { SpaceProfile } from '@/data/spaces';
 
 const portalTransforms = [
@@ -87,7 +87,7 @@ function StudioPortal({
   onSelect: (index: number) => void;
 }) {
   const groupRef = useRef<THREE.Group>(null);
-  const sourceTexture = useTexture(space.image);
+  const sourceTexture = useTexture(space.textureImage);
   const { gl } = useThree();
   const transform = portalTransforms[index] ?? portalTransforms[0];
   const imageWidth = 4.25;
@@ -296,14 +296,30 @@ export function VirtualShowroom({ spaces }: VirtualShowroomProps) {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      goToPrevious();
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      goToNext();
+    }
+  };
+
   return (
     <section
       ref={wrapperRef}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       className="virtual-showroom relative isolate h-[calc(100svh-112px)] min-h-[560px] max-h-[820px] overflow-hidden bg-[#0d1513] text-white"
       data-scene-ready={sceneReady ? 'true' : 'false'}
       data-selected-space={activeSpace.id}
       aria-label="オサラロック バーチャルショールーム"
+      aria-describedby="showroom-keyboard-hint"
     >
+      <p id="showroom-keyboard-hint" className="sr-only">
+        左右の矢印キーでスペースを切り替えられます
+      </p>
       <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4" aria-hidden="true">
         {spaces.map((space) => (
           <div key={space.id} className="relative opacity-35">
@@ -404,13 +420,41 @@ export function VirtualShowroom({ spaces }: VirtualShowroomProps) {
               {isFullscreen ? <Minimize2 className="h-4 w-4" aria-hidden="true" /> : <Maximize2 className="h-4 w-4" aria-hidden="true" />}
             </button>
             <a
-              href="https://linktr.ee/osara_rock"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`#space-${activeSpace.id}`}
+              onClick={async (event) => {
+                event.preventDefault();
+                const target = document.getElementById(`space-${activeSpace.id}`);
+                if (!target) return;
+                if (document.fullscreenElement) {
+                  try {
+                    await document.exitFullscreen();
+                  } catch {
+                    // 退出に失敗してもスクロールは試みる
+                  }
+                  // 退出アニメーション中はビューポート高が変わり続けるため、
+                  // resizeが止むのを待ってからスクロールしないと着地位置がずれる
+                  await new Promise<void>((resolve) => {
+                    let timer = 0;
+                    const finish = () => {
+                      window.removeEventListener('resize', onResize);
+                      resolve();
+                    };
+                    const onResize = () => {
+                      window.clearTimeout(timer);
+                      timer = window.setTimeout(finish, 250);
+                    };
+                    window.addEventListener('resize', onResize);
+                    timer = window.setTimeout(finish, 250);
+                  });
+                }
+                history.replaceState(null, '', `#space-${activeSpace.id}`);
+                target.focus({ preventScroll: true });
+                target.scrollIntoView();
+              }}
               className="inline-flex min-h-11 w-full items-center justify-between gap-6 rounded-md bg-white px-5 text-sm font-semibold text-primary transition-colors hover:bg-neutral-100 sm:w-auto"
             >
-              スペース一覧
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              店舗を選んで予約
+              <ArrowDown className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>

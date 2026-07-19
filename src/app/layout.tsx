@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     siteName: "株式会社オサラロック",
     images: [
       {
-        url: "/top2.jpg",
+        url: "/og.jpg",
         width: 1200,
-        height: 800,
-        alt: "株式会社オサラロック",
+        height: 630,
+        alt: "株式会社オサラロック | レンタルスペース・スタジオ運営",
       },
     ],
   },
@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "株式会社オサラロック | レンタルスペース・スタジオ運営",
     description: "思い出を受け止める、お皿のような場所づくり。",
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

@@ -11,16 +11,16 @@ import { spaces } from '@/data/spaces';
 export const metadata: Metadata = {
   title: '株式会社オサラロック | レンタルスペース・スタジオ運営',
   description:
-    'ダンス、撮影、パーティ、ワークスペースを巡るバーチャルショールーム。株式会社オサラロックは、22室以上のレンタルスペースを直営しています。',
+    'レンタルダンススタジオDAYS(千歳烏山・早稲田・方南町・与野・横浜関内)をはじめ、フォトスタジオTiarina、パーティスペース、ワークスペースなど22室以上を運営。バーチャルショールームから各店舗の予約ページへ進めます。',
   keywords:
-    'レンタルスペース,ダンススタジオ,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,スタジオ運営,運営代行',
+    'レンタルスペース,ダンススタジオ,レンタルスタジオ,DAYS,フォトスタジオ,推し活,コスプレ,生誕祭,パーティスペース,スタジオ運営,運営代行',
   alternates: {
     canonical: 'https://osara-rock.com',
   },
 };
 
 const stats = [
-  { value: businessStats.totalRooms, label: '直営スペース' },
+  { value: businessStats.totalRooms, label: '運営スペース' },
   { value: businessStats.monthlyUsers, label: '月間利用' },
   { value: businessStats.operatingAreas, label: '展開地域' },
   { value: businessStats.yearsInBusiness, label: '運営実績' },
@@ -74,7 +74,7 @@ export default function HomePage() {
                 <p className="text-xs font-bold text-primary-blue">01 / OPERATE</p>
                 <h3 className="mt-3 text-xl font-bold text-primary">レンタルスペース事業</h3>
                 <p className="mt-3 text-sm leading-7 text-neutral-600">
-                  用途も世界観も異なる複数ブランドを、22室以上直営しています。
+                  用途も世界観も異なる複数ブランドで、22室以上を運営しています。
                 </p>
               </div>
               <div>
@@ -103,20 +103,22 @@ export default function HomePage() {
               <p className="eyebrow">Our spaces</p>
               <h2 className="mt-5 text-3xl font-bold text-primary sm:text-4xl">それぞれの目的に合う場所を。</h2>
             </div>
-            <a
-              href="https://linktr.ee/osara_rock"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/spaces"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
             >
-              全スペースを見る
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+              店舗一覧を見る
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
 
-          <div className="grid gap-x-5 gap-y-10 pt-10 md:grid-cols-2">
+          <p className="pt-6 text-sm leading-7 text-neutral-600">
+            各店舗の空き状況・料金は、店舗名のリンク先にある予約ページでご確認いただけます。
+          </p>
+
+          <div className="grid gap-x-5 gap-y-12 pt-8 md:grid-cols-2">
             {spaces.map((space) => (
-              <article key={space.name}>
+              <article key={space.name} id={`space-${space.id}`} tabIndex={-1} className="scroll-mt-24 focus:outline-none">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-neutral-100">
                   <Image
                     src={space.image}
@@ -135,6 +137,24 @@ export default function HomePage() {
                   </div>
                   <p className="text-sm leading-7 text-neutral-600">{space.description}</p>
                 </div>
+                <ul role="list" className="mt-4 flex flex-wrap gap-2" aria-label={`${space.name}の店舗一覧`}>
+                  {space.locations.map((location) => (
+                    <li key={location.name}>
+                      <a
+                        href={location.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-blue hover:text-primary-blue"
+                      >
+                        {location.name}
+                        {location.hours && (
+                          <span className="text-[11px] font-medium text-neutral-500">{location.hours}</span>
+                        )}
+                        <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

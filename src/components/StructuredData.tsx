@@ -1,7 +1,9 @@
 import { companyInfo } from '@/data/company';
+import { spaces } from '@/data/spaces';
 
 export function StructuredData() {
   const baseUrl = 'https://osara-rock.com';
+  const daysSpace = spaces.find((space) => space.id === 'days');
 
   const organizationData = {
     '@context': 'https://schema.org',
@@ -77,6 +79,22 @@ export function StructuredData() {
     },
   };
 
+  const daysStudiosData = daysSpace
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'レンタルダンススタジオDAYS 店舗一覧',
+        description:
+          '株式会社オサラロックが直営するレンタルダンススタジオDAYSの店舗と予約ページの一覧です。',
+        itemListElement: daysSpace.locations.map((location, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `レンタルスタジオDAYS ${location.name}`,
+          url: location.url,
+        })),
+      }
+    : null;
+
   const websiteData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -103,6 +121,14 @@ export function StructuredData() {
           __html: JSON.stringify(websiteData),
         }}
       />
+      {daysStudiosData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(daysStudiosData),
+          }}
+        />
+      )}
     </>
   );
 }

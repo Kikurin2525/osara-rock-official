@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface ContactBandProps {
   title?: string;
@@ -33,15 +33,13 @@ export function ContactBand({
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
           {showSpacesLink && (
-            <a
-              href="https://linktr.ee/osara_rock"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/spaces"
               className="inline-flex min-h-12 items-center justify-between gap-8 rounded-md border border-white/50 px-6 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-primary"
             >
-              運営スペース一覧
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+              店舗一覧
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           )}
         </div>
       </div>
