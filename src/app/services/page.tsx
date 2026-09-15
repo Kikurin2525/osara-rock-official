@@ -45,6 +45,7 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       <PageIntro
+        backgroundImage="/hero-services.webp"
         eyebrow="Our businesses"
         title="事業紹介"
         description={companyDescription}

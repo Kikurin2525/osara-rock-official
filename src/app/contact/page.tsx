@@ -109,6 +109,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       <PageIntro
+        backgroundImage="/hero-contact.webp"
         eyebrow="Contact"
         title="お問い合わせ"
         description="スペースのご利用、輸出事業、教育事業・教材に関するご質問など、お問い合わせ内容に合わせてご連絡します。"

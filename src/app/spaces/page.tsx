@@ -19,6 +19,7 @@ export default function SpacesPage() {
   return (
     <div className="flex flex-col">
       <PageIntro
+        backgroundImage="/hero-spaces.webp"
         eyebrow="Spaces"
         title="店舗一覧"
         description={`現在、4カテゴリー・${businessStats.totalRooms}を運営しています。店舗の詳細・料金・ご予約は、各ブランドの公式サイトまたは予約ページでご確認いただけます。`}

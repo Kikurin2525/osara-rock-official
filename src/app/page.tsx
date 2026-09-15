@@ -34,8 +34,8 @@ export default function HomePage() {
         aria-label="株式会社オサラロック"
       >
         <Image
-          src="/hero-dance-v3.webp"
-          alt="夕方の光と風を感じながら、屋上で伸びやかに踊る女性のイメージ"
+          src="/hero-dance-v2.webp"
+          alt="青空へ両腕を伸ばし、屋上で伸びやかに踊る女性のイメージ"
           fill
           priority
           sizes="100vw"

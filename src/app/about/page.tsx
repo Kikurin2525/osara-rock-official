@@ -57,6 +57,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       <PageIntro
+        backgroundImage="/hero-about.webp"
         eyebrow="About us"
         title={
           <>

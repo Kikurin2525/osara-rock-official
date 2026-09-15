@@ -19,6 +19,7 @@ export default function NewsPage() {
   return (
     <div className="flex flex-col">
       <PageIntro
+        backgroundImage="/hero-news.webp"
         eyebrow="News"
         title="ニュース"
         description="新店舗のオープン、サービス、会社に関するお知らせを掲載しています。"
