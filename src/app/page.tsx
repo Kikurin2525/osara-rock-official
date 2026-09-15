@@ -34,14 +34,14 @@ export default function HomePage() {
         aria-label="株式会社オサラロック"
       >
         <Image
-          src="/hero-brand.jpg"
-          alt="オサラロックが運営するダンススタジオ、フォトスタジオ、パーティスペース"
+          src="/hero-businesses-v2.webp"
+          alt="光が差し込む空間に本と梱包箱を配した、空間・貿易・学びのコンセプト画像"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[64%_38%]"
+          className="object-cover object-[72%_50%] sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101c18]/85 via-[#101c18]/25 to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/25 bg-gradient-to-t from-[#101c18]/80 via-[#101c18]/15 to-transparent sm:bg-transparent" aria-hidden="true" />
         <div className="site-container relative z-10 pb-12 sm:pb-16 lg:pb-20">
           <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/70 sm:text-xs">
             Osara Rock Inc.

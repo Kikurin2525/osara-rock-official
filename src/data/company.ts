@@ -159,12 +159,12 @@ export const businesses = [
     id: 'export',
     label: '02 / EXPORT',
     name: '輸出事業',
-    description: 'eBayを通じて、日本から海外のお客様へ商品を販売しています。',
+    description: '日本から海外のお客様へ商品を販売しています。',
   },
   {
     id: 'education',
     label: '03 / EDUCATION',
     name: '教育事業',
-    description: 'レンタルスペース経営・eBay輸出・AI活用について、実践で得た知識を教材にまとめて提供しています。',
+    description: 'レンタルスペース経営・輸出貿易・AI活用について、実践で得た知識を教材にまとめて提供しています。',
   },
 ];
