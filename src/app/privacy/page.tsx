@@ -112,7 +112,7 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。
             </p>
-            <div className="mt-8 rounded-md border border-black/15 bg-neutral-50 p-6">
+            <div className="mt-8 rounded-md border border-primary/15 bg-neutral-50 p-6">
               <p className="text-neutral-700 mb-2"><strong>会社名：</strong>{companyInfo.name}</p>
               <p className="text-neutral-700 mb-2"><strong>住所：</strong>{companyInfo.address}</p>
               <p className="text-neutral-700 mb-2"><strong>電話番号：</strong>{companyInfo.phone}</p>

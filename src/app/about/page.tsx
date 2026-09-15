@@ -105,7 +105,7 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+        <div className="absolute inset-0 bg-primary/55" aria-hidden="true" />
         <div className="site-container relative z-10 flex min-h-[460px] items-end py-14 sm:min-h-[560px] sm:py-18">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-white/65">Why we exist</p>
@@ -121,12 +121,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-white" aria-label="会社実績">
+      <section className="border-b border-primary/10 bg-white" aria-label="会社実績">
         <div className="site-container grid grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="border-b border-r border-black/10 px-4 py-8 even:border-r-0 lg:border-b-0 lg:px-7 lg:py-10 lg:even:border-r lg:last:border-r-0"
+              className="border-b border-r border-primary/10 px-4 py-8 even:border-r-0 lg:border-b-0 lg:px-7 lg:py-10 lg:even:border-r lg:last:border-r-0"
             >
               <p className="whitespace-nowrap text-xl font-bold text-primary min-[360px]:text-2xl sm:text-3xl">{stat.value}</p>
               <p className="mt-2 text-xs font-semibold text-neutral-600">{stat.label}</p>
@@ -141,11 +141,11 @@ export default function AboutPage() {
             <p className="eyebrow">Values</p>
             <h2 className="mt-6 text-3xl font-bold leading-[1.4] text-primary sm:text-4xl">日々の判断を支える、4つの価値観。</h2>
           </div>
-          <div className="border-t border-black/15">
+          <div className="border-t border-primary/15">
             {values.map((value) => (
               <article
                 key={value.number}
-                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.8fr_1.2fr] sm:gap-6"
+                className="grid gap-3 border-b border-primary/15 py-7 sm:grid-cols-[4rem_0.8fr_1.2fr] sm:gap-6"
               >
                 <span className="text-xs font-bold text-primary-muted">{value.number}</span>
                 <h3 className="text-base font-bold leading-7 text-primary">{value.title}</h3>
@@ -165,11 +165,11 @@ export default function AboutPage() {
               2021年の1店舗から始まり、利用目的の異なる空間へ少しずつ事業を広げてきました。
             </p>
           </div>
-          <ol className="border-t border-black/15">
+          <ol className="border-t border-primary/15">
             {companyTimeline.map((item) => (
               <li
                 key={`${item.date}-${item.title}`}
-                className="grid gap-3 border-b border-black/15 py-6 sm:grid-cols-[7rem_1fr] sm:gap-8"
+                className="grid gap-3 border-b border-primary/15 py-6 sm:grid-cols-[7rem_1fr] sm:gap-8"
               >
                 <time className="text-xs font-bold text-primary-muted">{item.date}</time>
                 <div>
@@ -182,17 +182,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space border-t border-black/10 bg-neutral-50">
+      <section className="section-space border-t border-primary/10 bg-neutral-50">
         <div className="site-container grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
           <div>
             <p className="eyebrow">Company</p>
             <h2 className="mt-6 text-3xl font-bold text-primary sm:text-4xl">会社情報</h2>
           </div>
-          <dl className="border-t border-black/15">
+          <dl className="border-t border-primary/15">
             {companyRows.map((row) => (
               <div
                 key={row.label}
-                className="grid gap-2 border-b border-black/15 py-5 sm:grid-cols-[9rem_1fr] sm:items-start sm:gap-6"
+                className="grid gap-2 border-b border-primary/15 py-5 sm:grid-cols-[9rem_1fr] sm:items-start sm:gap-6"
               >
                 <dt className="text-xs font-bold text-neutral-500">{row.label}</dt>
                 <dd className="text-sm font-semibold leading-7 text-primary sm:text-base">

@@ -34,12 +34,12 @@ export default function NewsPage() {
             </div>
 
             {news.length > 0 ? (
-              <div className="border-t border-black/15">
+              <div className="border-t border-primary/15">
                 {news.map((item) => (
                   <Link
                     key={item.id}
                     href={`/news/${item.slug}`}
-                    className="group grid gap-4 border-b border-black/15 py-7 sm:grid-cols-[8.5rem_7rem_1fr_auto] sm:items-start sm:gap-5"
+                    className="group grid gap-4 border-b border-primary/15 py-7 sm:grid-cols-[8.5rem_7rem_1fr_auto] sm:items-start sm:gap-5"
                   >
                     <time dateTime={item.publishDate} className="text-xs font-semibold text-neutral-500 sm:pt-1">
                       {item.publishDate.replaceAll('-', '.')}
@@ -59,7 +59,7 @@ export default function NewsPage() {
                 ))}
               </div>
             ) : (
-              <div className="border-y border-black/15 py-12">
+              <div className="border-y border-primary/15 py-12">
                 <p className="text-sm text-neutral-600">現在、掲載中のニュースはありません。</p>
               </div>
             )}

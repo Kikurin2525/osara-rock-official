@@ -32,7 +32,7 @@ const initialFormData: FormData = {
 };
 
 const fieldClassName =
-  'w-full rounded-md border border-black/20 bg-white px-4 py-3 text-base text-primary outline-none transition-colors placeholder:text-neutral-400 focus:border-primary-muted focus:ring-2 focus:ring-primary-muted/15';
+  'w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-base text-primary outline-none transition-colors placeholder:text-neutral-400 focus:border-primary-muted focus:ring-2 focus:ring-primary-muted/15';
 
 export default function ContactPage() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -118,7 +118,7 @@ export default function ContactPage() {
       <section className="section-space bg-white">
         <div className="site-container grid gap-14 lg:grid-cols-[0.66fr_0.34fr] lg:gap-20">
           <div>
-            <div className="border-b border-black/15 pb-7">
+            <div className="border-b border-primary/15 pb-7">
               <p className="eyebrow">Inquiry form</p>
               <h2 className="mt-5 text-2xl font-bold text-primary sm:text-3xl">ご相談内容をお送りください</h2>
               <p className="mt-3 text-sm leading-7 text-neutral-600">
@@ -269,7 +269,7 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <aside className="lg:border-l lg:border-black/15 lg:pl-10">
+          <aside className="lg:border-l lg:border-primary/15 lg:pl-10">
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow">Direct contact</p>
               <h2 className="mt-5 text-2xl font-bold text-primary">直接のご連絡</h2>
@@ -277,15 +277,15 @@ export default function ContactPage() {
                 お急ぎの場合やフォームを送信できない場合は、電話またはメールをご利用ください。
               </p>
 
-              <dl className="mt-8 border-t border-black/15">
-                <div className="border-b border-black/15 py-5">
+              <dl className="mt-8 border-t border-primary/15">
+                <div className="border-b border-primary/15 py-5">
                   <dt className="flex items-center gap-2 text-xs font-bold text-neutral-500">
                     <Clock3 className="h-4 w-4" aria-hidden="true" />
                     返信目安
                   </dt>
                   <dd className="mt-2 text-sm font-semibold text-primary">通常3営業日以内</dd>
                 </div>
-                <div className="border-b border-black/15 py-5">
+                <div className="border-b border-primary/15 py-5">
                   <dt className="flex items-center gap-2 text-xs font-bold text-neutral-500">
                     <Phone className="h-4 w-4" aria-hidden="true" />
                     電話
@@ -299,7 +299,7 @@ export default function ContactPage() {
                     </a>
                   </dd>
                 </div>
-                <div className="border-b border-black/15 py-5">
+                <div className="border-b border-primary/15 py-5">
                   <dt className="flex items-center gap-2 text-xs font-bold text-neutral-500">
                     <Mail className="h-4 w-4" aria-hidden="true" />
                     メール

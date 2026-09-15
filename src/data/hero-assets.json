@@ -1,0 +1,38 @@
+{
+  "/hero-dance-v2.webp": {
+    "src": "/heroes/hero-dance-v2-1672-4bde22c72b9a.webp",
+    "srcSet": "/heroes/hero-dance-v2-800-502f3c54ac06.webp 800w, /heroes/hero-dance-v2-1440-c92de51ad52e.webp 1440w, /heroes/hero-dance-v2-1672-4bde22c72b9a.webp 1672w",
+    "width": 1672,
+    "height": 941
+  },
+  "/hero-spaces.webp": {
+    "src": "/heroes/hero-spaces-1920-b2bdb8af7e3e.webp",
+    "srcSet": "/heroes/hero-spaces-800-e9e68ceb5f30.webp 800w, /heroes/hero-spaces-1440-2e9909ea7dd0.webp 1440w, /heroes/hero-spaces-1920-b2bdb8af7e3e.webp 1920w",
+    "width": 2400,
+    "height": 1600
+  },
+  "/hero-services.webp": {
+    "src": "/heroes/hero-services-1920-35466e150fd2.webp",
+    "srcSet": "/heroes/hero-services-800-7fcd26735287.webp 800w, /heroes/hero-services-1440-21d9a2617b42.webp 1440w, /heroes/hero-services-1920-35466e150fd2.webp 1920w",
+    "width": 2400,
+    "height": 1590
+  },
+  "/hero-news.webp": {
+    "src": "/heroes/hero-news-1920-857b7e968766.webp",
+    "srcSet": "/heroes/hero-news-800-2b8a248b2c64.webp 800w, /heroes/hero-news-1440-a0dff699b0d2.webp 1440w, /heroes/hero-news-1920-857b7e968766.webp 1920w",
+    "width": 2400,
+    "height": 1639
+  },
+  "/hero-about.webp": {
+    "src": "/heroes/hero-about-1920-ffb04b7296cc.webp",
+    "srcSet": "/heroes/hero-about-800-3fabf12846f6.webp 800w, /heroes/hero-about-1440-8a1aa9d3138f.webp 1440w, /heroes/hero-about-1920-ffb04b7296cc.webp 1920w",
+    "width": 2400,
+    "height": 1600
+  },
+  "/hero-contact.webp": {
+    "src": "/heroes/hero-contact-1920-1e23998f019f.webp",
+    "srcSet": "/heroes/hero-contact-800-78d21532758f.webp 800w, /heroes/hero-contact-1440-ba50ea30b19d.webp 1440w, /heroes/hero-contact-1920-1e23998f019f.webp 1920w",
+    "width": 2400,
+    "height": 1600
+  }
+}

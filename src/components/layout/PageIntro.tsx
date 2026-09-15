@@ -1,19 +1,20 @@
 import type { ReactNode } from 'react';
-import Image from 'next/image';
+import { HeroImage } from './HeroImage';
+import type assets from '@/data/hero-assets.json';
 
 interface PageIntroProps {
   eyebrow: string;
   title: ReactNode;
   description: ReactNode;
-  backgroundImage?: string;
+  backgroundImage?: keyof typeof assets;
 }
 
 export function PageIntro({ eyebrow, title, description, backgroundImage }: PageIntroProps) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-black/10 bg-neutral-100">
+    <section className="relative isolate overflow-hidden border-b border-primary/10 bg-neutral-100">
       {backgroundImage && (
         <>
-          <Image src={backgroundImage} alt="" fill priority sizes="100vw" className="object-cover" />
+          <HeroImage src={backgroundImage} alt="" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-white/85 lg:bg-gradient-to-r lg:from-white/40 lg:via-white/70 lg:to-white/85" aria-hidden="true" />
         </>
       )}

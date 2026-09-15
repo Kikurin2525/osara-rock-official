@@ -13,7 +13,7 @@ export function ContactBand({
   showSpacesLink = true,
 }: ContactBandProps) {
   return (
-    <section className="border-t border-black/10 bg-neutral-100 text-primary">
+    <section className="border-t border-primary/10 bg-neutral-100 text-primary">
       <div className="site-container grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-neutral-600">Contact</p>
@@ -35,7 +35,7 @@ export function ContactBand({
           {showSpacesLink && (
             <Link
               href="/spaces"
-              className="inline-flex min-h-12 items-center justify-between gap-8 rounded-md border border-black/20 px-6 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-white"
+              className="inline-flex min-h-12 items-center justify-between gap-8 rounded-md border border-primary/20 px-6 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-white"
             >
               店舗一覧
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

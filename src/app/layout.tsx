@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StructuredData } from "@/components/StructuredData";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { companyDescription } from "@/data/company";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-sans-jp" });
+const notoSansJP = localFont({
+  src: "./fonts/noto-sans-jp-site.woff2",
+  variable: "--font-noto-sans-jp",
+  weight: "100 900",
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://osara-rock.com"),

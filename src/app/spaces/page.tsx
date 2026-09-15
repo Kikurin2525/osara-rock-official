@@ -52,7 +52,7 @@ export default function SpacesPage() {
             </div>
 
             {space.officialSite ? (
-              <div className="self-start border-t border-black/15 pt-7">
+              <div className="self-start border-t border-primary/15 pt-7">
                 <p className="max-w-xl text-sm leading-7 text-neutral-600">
                   店舗一覧、料金、空き状況、ご予約は、{space.name}のブランド公式サイトでご確認いただけます。
                 </p>
@@ -70,9 +70,9 @@ export default function SpacesPage() {
                 </p>
               </div>
             ) : (
-              <ul className="self-start border-t border-black/15">
+              <ul className="self-start border-t border-primary/15">
                 {space.locations.map((location) => (
-                  <li key={location.name} className="border-b border-black/15">
+                  <li key={location.name} className="border-b border-primary/15">
                     <a
                       href={location.url}
                       target="_blank"

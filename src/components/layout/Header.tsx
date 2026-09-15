@@ -18,7 +18,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-white">
       <nav className="site-container" aria-label="メインナビゲーション">
         <div className="flex h-[72px] items-center justify-between">
           <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
@@ -28,10 +28,10 @@ export function Header() {
                 width={58}
                 height={40}
                 priority
-                className="h-9 w-auto shrink-0 object-contain"
+                className="h-9 w-auto shrink-0 object-contain opacity-80"
               />
               <div className="min-w-0 leading-none">
-                <span className="block truncate text-sm font-bold text-black sm:text-base">
+                <span className="block truncate text-sm font-bold text-primary sm:text-base">
                   株式会社オサラロック
                 </span>
                 <span className="mt-1 hidden text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500 sm:block">
@@ -82,7 +82,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t border-black/10 bg-white pb-5 pt-3 lg:hidden" id="mobile-menu">
+          <div className="border-t border-primary/10 bg-white pb-5 pt-3 lg:hidden" id="mobile-menu">
             <div className="space-y-1" role="menu">
               {navigation.map((item) => (
                 <Link

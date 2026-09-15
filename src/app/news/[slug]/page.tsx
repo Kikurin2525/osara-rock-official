@@ -55,7 +55,7 @@ export default async function NewsDetailPage({ params }: Props) {
   return (
     <div className="flex flex-col">
       <article className="bg-white">
-        <header className="border-b border-black/10 bg-neutral-100">
+        <header className="border-b border-primary/10 bg-neutral-100">
           <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
             <Link
               href="/news"
@@ -113,7 +113,7 @@ export default async function NewsDetailPage({ params }: Props) {
           </div>
 
           {news.tags.length > 0 && (
-            <footer className="mt-14 border-t border-black/15 pt-6">
+            <footer className="mt-14 border-t border-primary/15 pt-6">
               <p className="text-xs font-bold uppercase tracking-[0.1em] text-neutral-500">Tags</p>
               <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 {news.tags.map((tag) => (
@@ -128,18 +128,18 @@ export default async function NewsDetailPage({ params }: Props) {
       </article>
 
       {relatedNews.length > 0 && (
-        <section className="section-space border-t border-black/10 bg-neutral-50">
+        <section className="section-space border-t border-primary/10 bg-neutral-50">
           <div className="site-container grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
             <div>
               <p className="eyebrow">More news</p>
               <h2 className="mt-5 text-2xl font-bold text-primary">その他のお知らせ</h2>
             </div>
-            <div className="border-t border-black/15">
+            <div className="border-t border-primary/15">
               {relatedNews.map((item) => (
                 <Link
                   key={item.id}
                   href={`/news/${item.slug}`}
-                  className="group grid gap-3 border-b border-black/15 py-6 sm:grid-cols-[8rem_1fr_auto] sm:items-start sm:gap-5"
+                  className="group grid gap-3 border-b border-primary/15 py-6 sm:grid-cols-[8rem_1fr_auto] sm:items-start sm:gap-5"
                 >
                   <time dateTime={item.publishDate} className="text-xs font-semibold text-neutral-500 sm:pt-1">
                     {item.publishDate.replaceAll('-', '.')}

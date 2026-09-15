@@ -166,7 +166,7 @@ export default function TermsPage() {
               本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。
             </p>
 
-            <div className="mt-12 rounded-md border border-black/15 bg-neutral-50 p-6">
+            <div className="mt-12 rounded-md border border-primary/15 bg-neutral-50 p-6">
               <h3 className="text-lg font-semibold text-primary mb-4">お問い合わせ</h3>
               <p className="text-neutral-700 mb-4">
                 本規約に関するお問い合わせは、下記までご連絡ください。

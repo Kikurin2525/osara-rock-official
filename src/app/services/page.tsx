@@ -65,12 +65,12 @@ export default function ServicesPage() {
                 ダンス、撮影、パーティ、仕事。利用目的が違えば、求められる設備も、導線も、空気感も変わります。
                 私たちは複数カテゴリーのスペースを運営し、設備や予約導線、日々の運用品質を改善しています。
               </p>
-              <div className="mt-10 grid grid-cols-3 border-y border-black/15">
-                <div className="border-r border-black/15 py-6 pr-4">
+              <div className="mt-10 grid grid-cols-3 border-y border-primary/15">
+                <div className="border-r border-primary/15 py-6 pr-4">
                   <p className="text-2xl font-bold text-primary sm:text-3xl">{businessStats.totalRooms}</p>
                   <p className="mt-2 text-xs font-semibold text-neutral-600">運営スペース</p>
                 </div>
-                <div className="border-r border-black/15 px-4 py-6">
+                <div className="border-r border-primary/15 px-4 py-6">
                   <p className="text-2xl font-bold text-primary sm:text-3xl">4</p>
                   <p className="mt-2 text-xs font-semibold text-neutral-600">カテゴリー</p>
                 </div>
@@ -96,11 +96,11 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div className="mt-14 border-t border-black/15">
+          <div className="mt-14 border-t border-primary/15">
             {categories.map((category) => (
               <div
                 key={category.number}
-                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.7fr_0.8fr_1.5fr] sm:items-start sm:gap-6"
+                className="grid gap-3 border-b border-primary/15 py-7 sm:grid-cols-[4rem_0.7fr_0.8fr_1.5fr] sm:items-start sm:gap-6"
               >
                 <span className="text-xs font-bold text-primary-muted">{category.number}</span>
                 <h3 className="text-base font-bold text-primary">{category.name}</h3>
@@ -120,10 +120,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-black/10 bg-neutral-50" aria-label="輸出事業・教育事業">
+      <section className="section-space border-y border-primary/10 bg-neutral-50" aria-label="輸出事業・教育事業">
         <div className="site-container grid gap-12 md:grid-cols-2 md:gap-16">
           {businesses.slice(1).map((business) => (
-            <article key={business.id} id={business.id} className="scroll-mt-24 border-t border-black/15 pt-8">
+            <article key={business.id} id={business.id} className="scroll-mt-24 border-t border-primary/15 pt-8">
               <p className="eyebrow">{business.label}</p>
               <h2 className="mt-5 text-3xl font-bold text-primary">{business.name}</h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-neutral-700">{business.description}</p>

@@ -34,7 +34,7 @@ export function Footer() {
                 <h2 className="text-base font-bold text-white">
                   株式会社オサラロック
                 </h2>
-                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/70">
                   Osara Rock Inc.
                 </p>
               </div>
@@ -42,7 +42,7 @@ export function Footer() {
             <p className="max-w-lg text-xl font-semibold leading-relaxed text-white sm:text-2xl">
               空間・商品・学びを、日々の暮らしへ。
             </p>
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/55">
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/75">
               {companyDescription}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-14 grid gap-6 border-t border-white/15 pt-7 text-xs text-white/45 sm:grid-cols-2 sm:items-end">
+        <div className="mt-14 grid gap-6 border-t border-white/15 pt-7 text-xs text-white/70 sm:grid-cols-2 sm:items-end">
           <address className="not-italic leading-6">
             <p>{companyInfo.address}</p>
             <p>
