@@ -59,14 +59,14 @@ export default async function NewsDetailPage({ params }: Props) {
           <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
             <Link
               href="/news"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 transition-colors hover:text-primary-blue"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 transition-colors hover:text-primary-muted"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               ニュース一覧
             </Link>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2">
-              <span className="text-xs font-bold text-primary-blue">{news.category}</span>
+              <span className="text-xs font-bold text-primary-muted">{news.category}</span>
               <time dateTime={news.publishDate} className="text-xs font-semibold text-neutral-500">
                 {news.publishDate.replaceAll('-', '.')}
               </time>
@@ -145,8 +145,8 @@ export default async function NewsDetailPage({ params }: Props) {
                     {item.publishDate.replaceAll('-', '.')}
                   </time>
                   <div>
-                    <p className="text-xs font-bold text-primary-blue">{item.category}</p>
-                    <h3 className="mt-2 text-sm font-bold leading-6 text-primary transition-colors group-hover:text-primary-blue sm:text-base">
+                    <p className="text-xs font-bold text-primary-muted">{item.category}</p>
+                    <h3 className="mt-2 text-sm font-bold leading-6 text-primary transition-colors group-hover:text-primary-muted sm:text-base">
                       {item.title}
                     </h3>
                   </div>
@@ -155,7 +155,7 @@ export default async function NewsDetailPage({ params }: Props) {
               ))}
               <Link
                 href="/news"
-                className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+                className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-primary transition-colors hover:text-primary-muted"
               >
                 ニュース一覧を見る
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

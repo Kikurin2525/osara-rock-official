@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f7f6;
-  --foreground: #19211f;
+  --background: #ffffff;
+  --foreground: #111111;
   --surface: #ffffff;
-  --neutral-50: #f5f7f6;
-  --neutral-100: #e9eeec;
-  --neutral-200: #d7dfdc;
-  --neutral-600: #62706b;
-  --neutral-700: #46534f;
-  --neutral-800: #26312e;
-  --primary: #19211f;
-  --primary-blue: #2f6257;
-  --primary-navy: #24302d;
-  --accent: #5c7084;
-  --shadow: 0 16px 45px rgb(25 33 31 / 0.08);
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --primary: #111111;
+  --primary-muted: #404040;
+  --primary-navy: #262626;
+  --accent: #737373;
+  --shadow: 0 16px 45px rgb(0 0 0 / 0.06);
 }
 
 @theme inline {
@@ -28,13 +28,13 @@
   --color-neutral-700: var(--neutral-700);
   --color-neutral-800: var(--neutral-800);
   --color-primary: var(--primary);
-  --color-primary-blue: var(--primary-blue);
+  --color-primary-muted: var(--primary-muted);
   --color-primary-navy: var(--primary-navy);
   --color-accent: var(--accent);
   --shadow-lg: var(--shadow);
   --font-sans: var(--font-inter), var(--font-noto-sans-jp), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --radius: 0.5rem;
-  --radius-md: 0.375rem;
+  --radius-md: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.5rem;
   --radius-2xl: 0.5rem;
@@ -58,12 +58,12 @@ html {
 }
 
 :focus-visible {
-  outline: 2px solid var(--primary-blue);
+  outline: 2px solid var(--primary-muted);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: #d9e9e3;
+  background: #e5e5e5;
   color: var(--foreground);
 }
 
@@ -77,7 +77,7 @@ html {
 }
 
 .eyebrow {
-  color: var(--primary-blue);
+  color: var(--primary-muted);
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
@@ -118,7 +118,7 @@ html {
 }
 
 .editorial-prose a {
-  color: var(--primary-blue);
+  color: var(--primary-muted);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }

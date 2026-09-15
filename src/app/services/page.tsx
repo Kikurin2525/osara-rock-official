@@ -101,7 +101,7 @@ export default function ServicesPage() {
                 key={category.number}
                 className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.7fr_0.8fr_1.5fr] sm:items-start sm:gap-6"
               >
-                <span className="text-xs font-bold text-primary-blue">{category.number}</span>
+                <span className="text-xs font-bold text-primary-muted">{category.number}</span>
                 <h3 className="text-base font-bold text-primary">{category.name}</h3>
                 <p className="text-sm font-semibold text-neutral-700">{category.brand}</p>
                 <p className="text-sm leading-7 text-neutral-600">{category.description}</p>
@@ -111,7 +111,7 @@ export default function ServicesPage() {
 
           <Link
             href="/spaces"
-            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
+            className="mt-10 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-muted"
           >
             店舗一覧を見る
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

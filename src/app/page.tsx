@@ -30,18 +30,19 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       <section
-        className="relative flex h-[68svh] max-h-[780px] min-h-[520px] items-end overflow-hidden bg-[#1b2925] text-white"
+        className="relative flex h-[68svh] max-h-[780px] min-h-[520px] items-end overflow-hidden bg-neutral-200 text-white"
         aria-label="株式会社オサラロック"
       >
         <Image
-          src="/hero-businesses-v2.webp"
-          alt="光が差し込む空間に本と梱包箱を配した、空間・貿易・学びのコンセプト画像"
+          src="/hero-dance-v3.webp"
+          alt="夕方の光と風を感じながら、屋上で伸びやかに踊る女性のイメージ"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_50%] sm:object-center"
+          className="object-cover object-[68%_50%] sm:object-top"
         />
-        <div className="absolute inset-0 bg-black/25 bg-gradient-to-t from-[#101c18]/80 via-[#101c18]/15 to-transparent sm:bg-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent sm:from-black/40 sm:via-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-black/60 via-black/15 to-transparent sm:block" aria-hidden="true" />
         <div className="site-container relative z-10 pb-12 sm:pb-16 lg:pb-20">
           <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/70 sm:text-xs">
             Osara Rock Inc.
@@ -77,7 +78,7 @@ export default function HomePage() {
               key={stat.label}
               className="border-b border-r border-black/10 px-4 py-7 even:border-r-0 lg:border-b-0 lg:px-7 lg:py-8 lg:even:border-r lg:last:border-r-0"
             >
-              <p className="text-2xl font-bold leading-none text-primary sm:text-3xl">{stat.value}</p>
+              <p className="whitespace-nowrap text-xl font-bold leading-none text-primary min-[360px]:text-2xl sm:text-3xl">{stat.value}</p>
               <p className="mt-3 text-xs font-semibold text-neutral-600">{stat.label}</p>
             </div>
           ))}
@@ -102,7 +103,7 @@ export default function HomePage() {
             <div className="mt-10 border-t border-black/15">
               {businesses.map((business) => (
                 <div key={business.id} className="border-b border-black/15 py-6">
-                  <p className="text-xs font-bold text-primary-blue">{business.label}</p>
+                  <p className="text-xs font-bold text-primary-muted">{business.label}</p>
                   <h3 className="mt-3 text-xl font-bold leading-relaxed text-primary">{business.name}</h3>
                   <p className="mt-3 text-sm leading-7 text-neutral-600">{business.description}</p>
                 </div>
@@ -110,7 +111,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/services"
-              className="mt-10 inline-flex min-h-11 items-center gap-3 border-b border-primary pb-1 text-sm font-semibold text-primary transition-colors hover:border-primary-blue hover:text-primary-blue"
+              className="mt-10 inline-flex min-h-11 items-center gap-3 border-b border-primary pb-1 text-sm font-semibold text-primary transition-colors hover:border-primary-muted hover:text-primary-muted"
             >
               事業紹介を見る
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -128,7 +129,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/spaces"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-muted"
             >
               店舗一覧を見る
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -153,7 +154,7 @@ export default function HomePage() {
                 </div>
                 <div className="mt-5 grid gap-3 border-t border-black/15 pt-4 sm:grid-cols-[0.35fr_0.65fr]">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary-blue">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary-muted">
                       {space.category}
                     </p>
                     <h3 className="mt-2 text-lg font-bold leading-6 text-primary">{space.name}</h3>
@@ -166,7 +167,7 @@ export default function HomePage() {
                       href={space.officialSite}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-blue hover:text-primary-blue"
+                      className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-muted hover:text-primary-muted"
                     >
                       公式サイトを見る
                       <ArrowUpRight className="h-3.5 w-3.5 text-neutral-400" aria-hidden="true" />
@@ -181,7 +182,7 @@ export default function HomePage() {
                         href={location.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-blue hover:text-primary-blue"
+                        className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-black/15 px-3 py-1.5 text-[13px] font-semibold text-primary transition-colors hover:border-primary-muted hover:text-primary-muted"
                       >
                         {location.name}
                         {location.hours && (
@@ -208,7 +209,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/news"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-muted"
             >
               ニュース一覧
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -220,13 +221,13 @@ export default function HomePage() {
               <Link
                 key={item.id}
                 href={`/news/${item.slug}`}
-                className="group grid gap-3 border-b border-black/15 py-6 transition-colors hover:text-primary-blue sm:grid-cols-[9rem_8rem_1fr_auto] sm:items-center sm:gap-5"
+                className="group grid gap-3 border-b border-black/15 py-6 transition-colors hover:text-primary-muted sm:grid-cols-[9rem_8rem_1fr_auto] sm:items-center sm:gap-5"
               >
                 <time dateTime={item.publishDate} className="text-xs font-semibold text-neutral-500">
                   {item.publishDate.replaceAll('-', '.')}
                 </time>
-                <span className="text-xs font-bold text-primary-blue">{item.category}</span>
-                <span className="text-base font-semibold leading-7 text-primary group-hover:text-primary-blue">
+                <span className="text-xs font-bold text-primary-muted">{item.category}</span>
+                <span className="text-base font-semibold leading-7 text-primary group-hover:text-primary-muted">
                   {item.title}
                 </span>
                 <ArrowRight className="hidden h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1 sm:block" aria-hidden="true" />

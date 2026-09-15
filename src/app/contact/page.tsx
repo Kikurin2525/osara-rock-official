@@ -32,7 +32,7 @@ const initialFormData: FormData = {
 };
 
 const fieldClassName =
-  'w-full rounded-md border border-black/20 bg-white px-4 py-3 text-base text-primary outline-none transition-colors placeholder:text-neutral-400 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/15';
+  'w-full rounded-md border border-black/20 bg-white px-4 py-3 text-base text-primary outline-none transition-colors placeholder:text-neutral-400 focus:border-primary-muted focus:ring-2 focus:ring-primary-muted/15';
 
 export default function ContactPage() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -121,7 +121,7 @@ export default function ContactPage() {
               <p className="eyebrow">Inquiry form</p>
               <h2 className="mt-5 text-2xl font-bold text-primary sm:text-3xl">ご相談内容をお送りください</h2>
               <p className="mt-3 text-sm leading-7 text-neutral-600">
-                <span className="font-bold text-primary-blue">*</span> は必須項目です。
+                <span className="font-bold text-primary-muted">*</span> は必須項目です。
               </p>
             </div>
 
@@ -129,7 +129,7 @@ export default function ContactPage() {
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-sm font-bold text-primary">
-                    氏名 <span className="text-primary-blue">*</span>
+                    氏名 <span className="text-primary-muted">*</span>
                   </label>
                   <input
                     type="text"
@@ -163,7 +163,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-bold text-primary">
-                  メールアドレス <span className="text-primary-blue">*</span>
+                  メールアドレス <span className="text-primary-muted">*</span>
                 </label>
                 <input
                   type="email"
@@ -180,7 +180,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="subject" className="mb-2 block text-sm font-bold text-primary">
-                  お問い合わせ種別 <span className="text-primary-blue">*</span>
+                  お問い合わせ種別 <span className="text-primary-muted">*</span>
                 </label>
                 <select
                   id="subject"
@@ -201,7 +201,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="message" className="mb-2 block text-sm font-bold text-primary">
-                  お問い合わせ内容 <span className="text-primary-blue">*</span>
+                  お問い合わせ内容 <span className="text-primary-muted">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -223,11 +223,11 @@ export default function ContactPage() {
                   required
                   checked={formData.consent}
                   onChange={handleInputChange}
-                  className="mt-1.5 h-4 w-4 shrink-0 accent-[#2f6257]"
+                  className="mt-1.5 h-4 w-4 shrink-0 accent-primary"
                 />
                 <span>
-                  <span className="text-primary-blue">*</span>{' '}
-                  <Link href="/privacy" target="_blank" className="font-semibold text-primary underline underline-offset-4 hover:text-primary-blue">
+                  <span className="text-primary-muted">*</span>{' '}
+                  <Link href="/privacy" target="_blank" className="font-semibold text-primary underline underline-offset-4 hover:text-primary-muted">
                     プライバシーポリシー
                   </Link>
                   に同意します
@@ -239,7 +239,7 @@ export default function ContactPage() {
                   <ReCAPTCHA ref={recaptchaRef} sitekey={recaptchaSiteKey} />
                 </div>
               ) : (
-                <div className="border-l-4 border-red-700 bg-red-50 px-5 py-4 text-sm leading-7 text-red-900">
+                <div className="border-l-4 border-primary bg-neutral-100 px-5 py-4 text-sm leading-7 text-primary">
                   現在フォームを送信できません。メールまたはお電話でお問い合わせください。
                 </div>
               )}
@@ -249,8 +249,8 @@ export default function ContactPage() {
                   role={submissionStatus.type === 'error' ? 'alert' : 'status'}
                   className={`border-l-4 px-5 py-4 text-sm leading-7 ${
                     submissionStatus.type === 'success'
-                      ? 'border-accent bg-emerald-50 text-emerald-900'
-                      : 'border-red-700 bg-red-50 text-red-900'
+                      ? 'border-neutral-400 bg-neutral-50 text-primary'
+                      : 'border-primary bg-neutral-100 text-primary'
                   }`}
                 >
                   {submissionStatus.message}
@@ -260,7 +260,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-blue disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-muted disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
               >
                 <Send className="h-4 w-4" aria-hidden="true" />
                 {isSubmitting ? '送信中...' : '送信する'}
@@ -292,7 +292,7 @@ export default function ContactPage() {
                   <dd className="mt-2">
                     <a
                       href={`tel:${companyInfo.phone.replace(/-/g, '')}`}
-                      className="text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+                      className="text-sm font-semibold text-primary transition-colors hover:text-primary-muted"
                     >
                       {companyInfo.phone}
                     </a>
@@ -306,7 +306,7 @@ export default function ContactPage() {
                   <dd className="mt-2 break-all">
                     <a
                       href={`mailto:${companyInfo.email}`}
-                      className="text-sm font-semibold text-primary transition-colors hover:text-primary-blue"
+                      className="text-sm font-semibold text-primary transition-colors hover:text-primary-muted"
                     >
                       {companyInfo.email}
                     </a>

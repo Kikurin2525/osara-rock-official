@@ -33,7 +33,7 @@ export default function SpacesPage() {
         >
           <div className="site-container grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary-blue">
+              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary-muted">
                 {space.category}
               </p>
               <h2 className="mt-3 text-2xl font-bold leading-snug text-primary sm:text-3xl">{space.name}</h2>
@@ -59,7 +59,7 @@ export default function SpacesPage() {
                   href={space.officialSite}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
+                  className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-md bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-muted"
                 >
                   公式サイトを見る
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -78,13 +78,13 @@ export default function SpacesPage() {
                       rel="noopener noreferrer"
                       className="group flex min-h-14 items-center gap-4 py-3"
                     >
-                      <span className="text-sm font-bold text-primary transition-colors group-hover:text-primary-blue sm:text-base">
+                      <span className="text-sm font-bold text-primary transition-colors group-hover:text-primary-muted sm:text-base">
                         {location.name}
                       </span>
                       {location.hours && (
                         <span className="text-xs font-medium text-neutral-500">営業時間 {location.hours}</span>
                       )}
-                      <span className="ml-auto inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-neutral-500 transition-colors group-hover:text-primary-blue">
+                      <span className="ml-auto inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-neutral-500 transition-colors group-hover:text-primary-muted">
                         予約ページ
                         <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                       </span>

@@ -48,7 +48,7 @@ export function Header() {
                 aria-current={pathname === item.href ? 'page' : undefined}
                 className={`inline-flex items-center gap-1 border-b-2 py-1 text-sm font-semibold transition-colors ${
                   pathname === item.href
-                    ? 'border-primary-blue text-primary'
+                    ? 'border-primary-muted text-primary'
                     : 'border-transparent text-neutral-600 hover:text-primary'
                 }`}
               >
@@ -57,7 +57,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-blue"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-muted"
             >
               お問い合わせ
             </Link>
@@ -88,7 +88,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex min-h-12 items-center justify-between border-b border-neutral-100 px-2 text-base font-semibold text-neutral-700 transition-colors hover:text-primary-blue"
+                  className="flex min-h-12 items-center justify-between border-b border-neutral-100 px-2 text-base font-semibold text-neutral-700 transition-colors hover:text-primary-muted"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

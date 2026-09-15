@@ -83,8 +83,8 @@ export default function AboutPage() {
               人の大切な時間と物語を受け止める「お皿」として、付加価値、楽しさ、喜び、思い出を支える。
               私たちは、空間・商品・学びを通じて、一人ひとりの暮らしや挑戦を支えていきます。
             </p>
-            <div className="mt-10 border-l-4 border-primary-blue bg-neutral-50 px-6 py-6 sm:px-8">
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-blue">Vision</p>
+            <div className="mt-10 border-l-4 border-primary-muted bg-neutral-50 px-6 py-6 sm:px-8">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-muted">Vision</p>
               <p className="mt-4 text-xl font-bold leading-8 text-primary sm:text-2xl">
                 より多くの方に、安心して選んでいただける会社へ。
               </p>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               key={stat.label}
               className="border-b border-r border-black/10 px-4 py-8 even:border-r-0 lg:border-b-0 lg:px-7 lg:py-10 lg:even:border-r lg:last:border-r-0"
             >
-              <p className="text-2xl font-bold text-primary sm:text-3xl">{stat.value}</p>
+              <p className="whitespace-nowrap text-xl font-bold text-primary min-[360px]:text-2xl sm:text-3xl">{stat.value}</p>
               <p className="mt-2 text-xs font-semibold text-neutral-600">{stat.label}</p>
             </div>
           ))}
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 key={value.number}
                 className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[4rem_0.8fr_1.2fr] sm:gap-6"
               >
-                <span className="text-xs font-bold text-primary-blue">{value.number}</span>
+                <span className="text-xs font-bold text-primary-muted">{value.number}</span>
                 <h3 className="text-base font-bold leading-7 text-primary">{value.title}</h3>
                 <p className="text-sm leading-7 text-neutral-600">{value.description}</p>
               </article>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 key={`${item.date}-${item.title}`}
                 className="grid gap-3 border-b border-black/15 py-6 sm:grid-cols-[7rem_1fr] sm:gap-8"
               >
-                <time className="text-xs font-bold text-primary-blue">{item.date}</time>
+                <time className="text-xs font-bold text-primary-muted">{item.date}</time>
                 <div>
                   <h3 className="text-sm font-bold leading-6 text-primary sm:text-base">{item.title}</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-600">{item.description}</p>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                 <dt className="text-xs font-bold text-neutral-500">{row.label}</dt>
                 <dd className="text-sm font-semibold leading-7 text-primary sm:text-base">
                   {row.href ? (
-                    <a href={row.href} className="transition-colors hover:text-primary-blue">
+                    <a href={row.href} className="transition-colors hover:text-primary-muted">
                       {row.value}
                     </a>
                   ) : (

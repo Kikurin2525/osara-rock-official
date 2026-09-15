@@ -43,15 +43,15 @@ export default function NewsPage() {
                     <time dateTime={item.publishDate} className="text-xs font-semibold text-neutral-500 sm:pt-1">
                       {item.publishDate.replaceAll('-', '.')}
                     </time>
-                    <span className="text-xs font-bold text-primary-blue sm:pt-1">{item.category}</span>
+                    <span className="text-xs font-bold text-primary-muted sm:pt-1">{item.category}</span>
                     <div>
-                      <h2 className="text-base font-bold leading-7 text-primary transition-colors group-hover:text-primary-blue sm:text-lg">
+                      <h2 className="text-base font-bold leading-7 text-primary transition-colors group-hover:text-primary-muted sm:text-lg">
                         {item.title}
                       </h2>
                       <p className="mt-2 text-sm leading-7 text-neutral-600">{item.summary}</p>
                     </div>
                     <ArrowRight
-                      className="hidden h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary-blue sm:mt-1 sm:block"
+                      className="hidden h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary-muted sm:mt-1 sm:block"
                       aria-hidden="true"
                     />
                   </Link>
