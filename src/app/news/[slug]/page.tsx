@@ -167,7 +167,7 @@ export default async function NewsDetailPage({ params }: Props) {
 
       <ContactBand
         title="掲載内容について、お気軽にお問い合わせください。"
-        description="サービス、店舗、運営支援に関するご質問を受け付けています。"
+        description="スペースのご利用、輸出事業、教材に関するご質問を受け付けています。"
       />
     </div>
   );

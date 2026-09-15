@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ContactBand } from '@/components/layout/ContactBand';
 import { PageIntro } from '@/components/layout/PageIntro';
-import { businessStats, companyInfo, companyTimeline } from '@/data/company';
+import { businesses, businessStats, companyInfo, companyTimeline } from '@/data/company';
 
 export const metadata: Metadata = {
   title: '会社概要',
   description:
-    '株式会社オサラロックの理念、歩み、会社情報。2021年の創業から、ダンススタジオ、フォトスタジオ、パーティスペース、ワークスペースを展開しています。',
+    '株式会社オサラロックの理念、歩み、会社情報。レンタルスタジオ・レンタルスペース運営、輸出、教育の3事業を展開しています。',
   alternates: {
     canonical: 'https://osara-rock.com/about',
   },
@@ -40,7 +40,7 @@ const companyRows = [
   { label: '会社名', value: companyInfo.name, subValue: companyInfo.nameEn },
   { label: '創業', value: companyInfo.established },
   { label: '法人設立', value: companyInfo.incorporation },
-  { label: '事業内容', value: 'レンタルスペースの企画・出店・運営、運営代行・コンサルティング' },
+  { label: '事業内容', value: businesses.map((business) => business.name).join('、') },
   { label: '所在地', value: companyInfo.address },
   { label: '電話番号', value: companyInfo.phone, href: `tel:${companyInfo.phone.replace(/-/g, '')}` },
   { label: 'メール', value: companyInfo.email, href: `mailto:${companyInfo.email}` },
@@ -81,15 +81,15 @@ export default function AboutPage() {
           <div className="lg:pt-10">
             <p className="text-pretty text-lg leading-9 text-neutral-700">
               人の大切な時間と物語を受け止める「お皿」として、付加価値、楽しさ、喜び、思い出を支える。
-              私たちは、一人ひとりが心地よく過ごせる場所を、日々の運営を通じて丁寧に育てていきます。
+              私たちは、空間・商品・学びを通じて、一人ひとりの暮らしや挑戦を支えていきます。
             </p>
             <div className="mt-10 border-l-4 border-primary-blue bg-neutral-50 px-6 py-6 sm:px-8">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-blue">Vision</p>
               <p className="mt-4 text-xl font-bold leading-8 text-primary sm:text-2xl">
-                より多くの方に、安心して選んでいただけるスタジオへ。
+                より多くの方に、安心して選んでいただける会社へ。
               </p>
               <p className="mt-3 text-sm leading-7 text-neutral-600">
-                場所の品質と運営の仕組みを磨き、使う人にも、運営する人にも持続可能な事業を目指します。
+                提供する空間・商品・教材の品質を磨き、日々の実践と改善を大切にします。
               </p>
             </div>
           </div>
@@ -211,8 +211,8 @@ export default function AboutPage() {
       </section>
 
       <ContactBand
-        title="大切な時間に寄り添う場所を、これからも。"
-        description="スペースの利用、運営支援、事業に関するご相談を受け付けています。"
+        title="事業に関するお問い合わせ"
+        description="スペースのご利用、輸出事業、教材に関するお問い合わせを受け付けています。"
       />
     </div>
   );

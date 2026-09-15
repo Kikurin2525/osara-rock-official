@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 
 const navigation = [
   { name: '店舗一覧', href: '/spaces' },
-  { name: 'サービス', href: '/services' },
+  { name: '事業紹介', href: '/services' },
   { name: 'ニュース', href: '/news' },
   { name: '会社概要', href: '/about' },
 ];

@@ -1,4 +1,4 @@
-import { companyInfo } from '@/data/company';
+import { companyDescription, companyInfo } from '@/data/company';
 import { spaces } from '@/data/spaces';
 
 export function StructuredData() {
@@ -11,7 +11,7 @@ export function StructuredData() {
     alternateName: companyInfo.nameEn,
     url: baseUrl,
     logo: `${baseUrl}/logo1.png`,
-    description: '株式会社オサラロックは、ダンススタジオ、パーティスペース、フォトスタジオ、ワークスペースを運営するレンタルスペース企業です。',
+    description: companyDescription,
     foundingDate: '2021-03',
     legalName: companyInfo.name,
     address: {
@@ -90,7 +90,7 @@ export function StructuredData() {
     '@type': 'WebSite',
     name: '株式会社オサラロック',
     url: baseUrl,
-    description: '思い出を受け止める、お皿のような場所づくり。ダンス、パーティ、撮影、ワークスペースまで多彩なレンタルスペースをご提供。',
+    description: companyDescription,
     publisher: {
       '@type': 'Organization',
       name: companyInfo.name,

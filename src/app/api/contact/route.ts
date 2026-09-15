@@ -1,3 +1,4 @@
+import { contactSubjects } from '@/data/contact';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendSupportNotice, sendCustomerThanks } from '@/lib/send-email';
@@ -63,17 +64,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// オプション: GET メソッドで問い合わせフォームの設定情報を返す場合
+// フォームと同じ問い合わせ種別を返す。
 export async function GET() {
-  const subjects = [
-    'サービスに関するお問い合わせ',
-    '予約・利用について',
-    '料金について',
-    '法人利用について',
-    '運営代行・コンサルティング',
-    '採用について',
-    'その他',
-  ];
-  
-  return NextResponse.json({ subjects });
+  return NextResponse.json({ subjects: contactSubjects });
 }

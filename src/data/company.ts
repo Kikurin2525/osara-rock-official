@@ -22,7 +22,7 @@ export const companyInfo: CompanyInfo = {
   established: '2021年3月',
   incorporation: '2024年11月',
   mission: 'Rock Your Story, We\'re the Plate.',
-  vision: '人の大切な時間・物語を"受け止めるお皿"として、付加価値・楽しさ・喜び・思い出を支える。より多くの方に安心して選んでいただけるダンススタジオを目指す。',
+  vision: '人の大切な時間・物語を"受け止めるお皿"として、付加価値・楽しさ・喜び・思い出を支える。空間・商品・学びを通じて、より多くの方に安心して選んでいただける会社を目指す。',
   values: [
     '体験価値へのこだわり',
     'お客様の物語を大切に',
@@ -139,8 +139,32 @@ export interface BusinessStats {
 }
 
 export const businessStats: BusinessStats = {
-  totalRooms: '22室以上',
+  totalRooms: '23室',
   monthlyUsers: '500組以上',
   operatingAreas: '3都県',
   yearsInBusiness: '5年以上',
 };
+
+// 2026-09-15: 事業構成・運営室数は代表者確認。教材テーマは既存の公開教材に準拠。
+export const companyDescription = `オサラロックは、${businessStats.totalRooms}のレンタルスタジオ・レンタルスペース運営をはじめ、輸出事業・教育事業を展開しています。`;
+
+export const businesses = [
+  {
+    id: 'rental-space',
+    label: '01 / RENTAL SPACE',
+    name: 'レンタルスタジオ・レンタルスペース事業',
+    description: `ダンス、撮影、パーティ、仕事など、用途に合わせた${businessStats.totalRooms}を運営しています。`,
+  },
+  {
+    id: 'export',
+    label: '02 / EXPORT',
+    name: '輸出事業',
+    description: 'eBayを通じて、日本から海外のお客様へ商品を販売しています。',
+  },
+  {
+    id: 'education',
+    label: '03 / EDUCATION',
+    name: '教育事業',
+    description: 'レンタルスペース経営・eBay輸出・AI活用について、実践で得た知識を教材にまとめて提供しています。',
+  },
+];

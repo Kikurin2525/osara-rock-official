@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { companyInfo } from '@/data/company';
+import { companyDescription, companyInfo } from '@/data/company';
 import { ArrowUpRight } from 'lucide-react';
 
 const footerNavigation = [
   { name: 'ホーム', href: '/' },
   { name: '店舗一覧', href: '/spaces' },
-  { name: 'サービス', href: '/services' },
+  { name: '事業紹介', href: '/services' },
   { name: 'ニュース', href: '/news' },
   { name: '会社概要', href: '/about' },
   { name: 'お問い合わせ', href: '/contact' },
@@ -40,10 +40,10 @@ export function Footer() {
               </div>
             </div>
             <p className="max-w-lg text-xl font-semibold leading-relaxed text-white sm:text-2xl">
-              大切な時間に、心地よい場所を。
+              空間・商品・学びを、日々の暮らしへ。
             </p>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/55">
-              ダンス、撮影、パーティ、仕事。人の大切な時間を受け止める空間を運営しています。
+              {companyDescription}
             </p>
           </div>
 

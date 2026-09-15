@@ -1,5 +1,6 @@
 'use client';
 
+import { contactSubjects } from '@/data/contact';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { Clock3, Mail, Phone, Send } from 'lucide-react';
@@ -29,16 +30,6 @@ const initialFormData: FormData = {
   message: '',
   consent: false,
 };
-
-const subjects = [
-  'サービスに関するお問い合わせ',
-  '予約・利用について',
-  '料金について',
-  '法人利用について',
-  '運営代行・コンサルティング',
-  '採用について',
-  'その他',
-];
 
 const fieldClassName =
   'w-full rounded-md border border-black/20 bg-white px-4 py-3 text-base text-primary outline-none transition-colors placeholder:text-neutral-400 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/15';
@@ -120,7 +111,7 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="Contact"
         title="お問い合わせ"
-        description="スペースのご利用、法人利用、運営支援など、ご相談内容に合わせて担当者よりご連絡します。"
+        description="スペースのご利用、輸出事業、教育事業・教材に関するご質問など、お問い合わせ内容に合わせてご連絡します。"
       />
 
       <section className="section-space bg-white">
@@ -200,7 +191,7 @@ export default function ContactPage() {
                   className={fieldClassName}
                 >
                   <option value="">選択してください</option>
-                  {subjects.map((subject) => (
+                  {contactSubjects.map((subject) => (
                     <option key={subject} value={subject}>
                       {subject}
                     </option>

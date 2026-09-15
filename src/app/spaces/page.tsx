@@ -21,7 +21,7 @@ export default function SpacesPage() {
       <PageIntro
         eyebrow="Spaces"
         title="店舗一覧"
-        description={`現在、4ブランド・${businessStats.totalRooms}を運営しています。店舗の詳細・料金・ご予約は、各ブランドの公式サイトまたは予約ページでご確認いただけます。`}
+        description={`現在、4カテゴリー・${businessStats.totalRooms}を運営しています。店舗の詳細・料金・ご予約は、各ブランドの公式サイトまたは予約ページでご確認いただけます。`}
       />
 
       {spaces.map((space, index) => (

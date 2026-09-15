@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StructuredData } from "@/components/StructuredData";
 import { Inter, Noto_Sans_JP } from "next/font/google";
+import { companyDescription } from "@/data/company";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -11,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-san
 export const metadata: Metadata = {
   metadataBase: new URL("https://osara-rock.com"),
   title: {
-    default: "株式会社オサラロック | レンタルスペース・スタジオ運営",
+    default: "株式会社オサラロック | レンタルスペース・輸出・教育",
     template: "%s | 株式会社オサラロック",
   },
   icons: {
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
-  description: "株式会社オサラロックは、ダンススタジオ、パーティスペース、フォトスタジオ、ワークスペースを運営しています。思い出を受け止める、お皿のような場所づくりをお手伝いします。",
-  keywords: ["レンタルスペース", "ダンススタジオ", "パーティスペース", "フォトスタジオ", "ワークスペース", "貸し会議室"],
+  description: companyDescription,
+  keywords: ["レンタルスペース", "ダンススタジオ", "パーティスペース", "フォトスタジオ", "ワークスペース", "貸し会議室", "輸出事業", "教育事業"],
   authors: [{ name: "株式会社オサラロック" }],
   creator: "株式会社オサラロック",
   publisher: "株式会社オサラロック",
@@ -28,22 +29,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     url: "https://osara-rock.com",
-    title: "株式会社オサラロック | レンタルスペース・スタジオ運営",
-    description: "思い出を受け止める、お皿のような場所づくり。ダンス、パーティ、撮影、ワークスペースまで多彩なレンタルスペースをご提供。",
+    title: "株式会社オサラロック | レンタルスペース・輸出・教育",
+    description: companyDescription,
     siteName: "株式会社オサラロック",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "株式会社オサラロック | レンタルスペース・スタジオ運営",
+        alt: "株式会社オサラロック | レンタルスペース・輸出・教育",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "株式会社オサラロック | レンタルスペース・スタジオ運営",
-    description: "思い出を受け止める、お皿のような場所づくり。",
+    title: "株式会社オサラロック | レンタルスペース・輸出・教育",
+    description: companyDescription,
     images: ["/og.jpg"],
   },
   robots: {
