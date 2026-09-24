@@ -29,7 +29,7 @@ export const spaces: readonly SpaceProfile[] = [
     category: 'Dance studio',
     categoryJa: 'ダンススタジオ',
     description:
-      '個人練習からレッスン、動画撮影まで。東京・埼玉・横浜で10スタジオを直営するレンタルダンススタジオです。24時間利用できる店舗もあります。',
+      '個人練習からレッスン、動画撮影まで。東京・埼玉で5スタジオを直営するレンタルダンススタジオです。24時間利用できる店舗もあります。',
     image: '/DAYS.jpeg',
     imageAspect: 16 / 9,
     accent: '#737373',
