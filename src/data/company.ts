@@ -30,7 +30,7 @@ export const companyInfo: CompanyInfo = {
     '継続的な成長と改善',
   ],
   address: '埼玉県さいたま市中央区下落合1088-3',
-  phone: '070-1327-6907',
+  phone: '050-1793-3894',
   email: 'support@osara-rock.com',
   socialMedia: {
     tiktok: 'https://tiktok.com/@osara_rock',
