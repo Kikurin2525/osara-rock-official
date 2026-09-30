@@ -12,6 +12,7 @@ const footerNavigation = [
   { name: 'お問い合わせ', href: '/contact' },
   { name: 'プライバシーポリシー', href: '/privacy' },
   { name: '利用規約', href: '/terms' },
+  { name: '特定商取引法に基づく表記', href: '/tokushoho' },
 ];
 
 export function Footer() {
