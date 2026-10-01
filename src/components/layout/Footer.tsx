@@ -13,6 +13,8 @@ const footerNavigation = [
   { name: 'プライバシーポリシー', href: '/privacy' },
   { name: '利用規約', href: '/terms' },
   { name: '特定商取引法に基づく表記', href: '/tokushoho' },
+  // 2026-10-01 DAYS定期利用のお客さま向けマイページ(Stripe・PayPay審査で決済画面への導線として必要)
+  { name: 'マイページ(定期利用のお客さま)', href: 'https://days-mypage.kikurin.workers.dev/' },
 ];
 
 export function Footer() {
